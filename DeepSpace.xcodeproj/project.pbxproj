@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
+		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
+		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
+		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
+		FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F62199B9670035DF53 /* Assets.xcassets */; };
+		FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */; };
+		FCF159052199B9670035DF53 /* DeepSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF159042199B9670035DF53 /* DeepSpaceTests.swift */; };
+		FCF159102199B9670035DF53 /* DeepSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCF159012199B9670035DF53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCF158E12199B9630035DF53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCF158E82199B9630035DF53;
+			remoteInfo = DeepSpace;
+		};
+		FCF1590C2199B9670035DF53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCF158E12199B9630035DF53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCF158E82199B9630035DF53;
+			remoteInfo = DeepSpace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCF158F42199B9630035DF53 /* DeepSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeepSpace.xcdatamodel; sourceTree = "<group>"; };
+		FCF158F62199B9670035DF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCF158F92199B9670035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCF158FB2199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF159002199B9670035DF53 /* DeepSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF159042199B9670035DF53 /* DeepSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSpaceTests.swift; sourceTree = "<group>"; };
+		FCF159062199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF1590B2199B9670035DF53 /* DeepSpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepSpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSpaceUITests.swift; sourceTree = "<group>"; };
+		FCF159112199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCF158E62199B9630035DF53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF158FD2199B9670035DF53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF159082199B9670035DF53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCF158E02199B9620035DF53 = {
+			isa = PBXGroup;
+			children = (
+				FCF158EB2199B9630035DF53 /* DeepSpace */,
+				FCF159032199B9670035DF53 /* DeepSpaceTests */,
+				FCF1590E2199B9670035DF53 /* DeepSpaceUITests */,
+				FCF158EA2199B9630035DF53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCF158EA2199B9630035DF53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCF158E92199B9630035DF53 /* DeepSpace.app */,
+				FCF159002199B9670035DF53 /* DeepSpaceTests.xctest */,
+				FCF1590B2199B9670035DF53 /* DeepSpaceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCF158EB2199B9630035DF53 /* DeepSpace */ = {
+			isa = PBXGroup;
+			children = (
+				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
+				FCF158EE2199B9630035DF53 /* ViewController.swift */,
+				FCF158F02199B9630035DF53 /* Main.storyboard */,
+				FCF158F62199B9670035DF53 /* Assets.xcassets */,
+				FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */,
+				FCF158FB2199B9670035DF53 /* Info.plist */,
+				FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */,
+			);
+			path = DeepSpace;
+			sourceTree = "<group>";
+		};
+		FCF159032199B9670035DF53 /* DeepSpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCF159042199B9670035DF53 /* DeepSpaceTests.swift */,
+				FCF159062199B9670035DF53 /* Info.plist */,
+			);
+			path = DeepSpaceTests;
+			sourceTree = "<group>";
+		};
+		FCF1590E2199B9670035DF53 /* DeepSpaceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */,
+				FCF159112199B9670035DF53 /* Info.plist */,
+			);
+			path = DeepSpaceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCF158E82199B9630035DF53 /* DeepSpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCF159142199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpace" */;
+			buildPhases = (
+				FCF158E52199B9630035DF53 /* Sources */,
+				FCF158E62199B9630035DF53 /* Frameworks */,
+				FCF158E72199B9630035DF53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeepSpace;
+			productName = DeepSpace;
+			productReference = FCF158E92199B9630035DF53 /* DeepSpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCF158FF2199B9670035DF53 /* DeepSpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCF159172199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpaceTests" */;
+			buildPhases = (
+				FCF158FC2199B9670035DF53 /* Sources */,
+				FCF158FD2199B9670035DF53 /* Frameworks */,
+				FCF158FE2199B9670035DF53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCF159022199B9670035DF53 /* PBXTargetDependency */,
+			);
+			name = DeepSpaceTests;
+			productName = DeepSpaceTests;
+			productReference = FCF159002199B9670035DF53 /* DeepSpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCF1590A2199B9670035DF53 /* DeepSpaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCF1591A2199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpaceUITests" */;
+			buildPhases = (
+				FCF159072199B9670035DF53 /* Sources */,
+				FCF159082199B9670035DF53 /* Frameworks */,
+				FCF159092199B9670035DF53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCF1590D2199B9670035DF53 /* PBXTargetDependency */,
+			);
+			name = DeepSpaceUITests;
+			productName = DeepSpaceUITests;
+			productReference = FCF1590B2199B9670035DF53 /* DeepSpaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCF158E12199B9630035DF53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Adriel Freire";
+				TargetAttributes = {
+					FCF158E82199B9630035DF53 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					FCF158FF2199B9670035DF53 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FCF158E82199B9630035DF53;
+					};
+					FCF1590A2199B9670035DF53 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FCF158E82199B9630035DF53;
+					};
+				};
+			};
+			buildConfigurationList = FCF158E42199B9630035DF53 /* Build configuration list for PBXProject "DeepSpace" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCF158E02199B9620035DF53;
+			productRefGroup = FCF158EA2199B9630035DF53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCF158E82199B9630035DF53 /* DeepSpace */,
+				FCF158FF2199B9670035DF53 /* DeepSpaceTests */,
+				FCF1590A2199B9670035DF53 /* DeepSpaceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCF158E72199B9630035DF53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
+				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
+				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF158FE2199B9670035DF53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF159092199B9670035DF53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCF158E52199B9630035DF53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
+				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
+				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF158FC2199B9670035DF53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF159052199B9670035DF53 /* DeepSpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF159072199B9670035DF53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF159102199B9670035DF53 /* DeepSpaceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCF159022199B9670035DF53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCF158E82199B9630035DF53 /* DeepSpace */;
+			targetProxy = FCF159012199B9670035DF53 /* PBXContainerItemProxy */;
+		};
+		FCF1590D2199B9670035DF53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCF158E82199B9630035DF53 /* DeepSpace */;
+			targetProxy = FCF1590C2199B9670035DF53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCF158F02199B9630035DF53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCF158F12199B9630035DF53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCF158F92199B9670035DF53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCF159122199B9670035DF53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCF159132199B9670035DF53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCF159152199B9670035DF53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCF159162199B9670035DF53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCF159182199B9670035DF53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeepSpace.app/DeepSpace";
+			};
+			name = Debug;
+		};
+		FCF159192199B9670035DF53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeepSpace.app/DeepSpace";
+			};
+			name = Release;
+		};
+		FCF1591B2199B9670035DF53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeepSpace;
+			};
+			name = Debug;
+		};
+		FCF1591C2199B9670035DF53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				INFOPLIST_FILE = DeepSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Adriel.DeepSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeepSpace;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCF158E42199B9630035DF53 /* Build configuration list for PBXProject "DeepSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCF159122199B9670035DF53 /* Debug */,
+				FCF159132199B9670035DF53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCF159142199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCF159152199B9670035DF53 /* Debug */,
+				FCF159162199B9670035DF53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCF159172199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCF159182199B9670035DF53 /* Debug */,
+				FCF159192199B9670035DF53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCF1591A2199B9670035DF53 /* Build configuration list for PBXNativeTarget "DeepSpaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCF1591B2199B9670035DF53 /* Debug */,
+				FCF1591C2199B9670035DF53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCF158F42199B9630035DF53 /* DeepSpace.xcdatamodel */,
+			);
+			currentVersion = FCF158F42199B9630035DF53 /* DeepSpace.xcdatamodel */;
+			path = DeepSpace.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FCF158E12199B9630035DF53 /* Project object */;
+}
