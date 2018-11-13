@@ -15,6 +15,8 @@
 		FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */; };
 		FCF159052199B9670035DF53 /* DeepSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF159042199B9670035DF53 /* DeepSpaceTests.swift */; };
 		FCF159102199B9670035DF53 /* DeepSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */; };
+		FCF159202199BB800035DF53 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1591F2199BB800035DF53 /* APIManager.swift */; };
+		FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FCF1590B2199B9670035DF53 /* DeepSpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepSpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSpaceUITests.swift; sourceTree = "<group>"; };
 		FCF159112199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF1591F2199BB800035DF53 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,8 @@
 		FCF158EB2199B9630035DF53 /* DeepSpace */ = {
 			isa = PBXGroup;
 			children = (
-				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
+				FCF1591E2199BB6F0035DF53 /* Protocols */,
+				FCF1591D2199BB5D0035DF53 /* Web */,
 				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 				FCF158F02199B9630035DF53 /* Main.storyboard */,
 				FCF158F62199B9670035DF53 /* Assets.xcassets */,
@@ -126,6 +131,23 @@
 				FCF159112199B9670035DF53 /* Info.plist */,
 			);
 			path = DeepSpaceUITests;
+			sourceTree = "<group>";
+		};
+		FCF1591D2199BB5D0035DF53 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		FCF1591E2199BB6F0035DF53 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
+				FCF1591F2199BB800035DF53 /* APIManager.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF159202199BB800035DF53 /* APIManager.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
+				FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
