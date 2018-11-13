@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
+		3C1E132F219AFC9F0048B34A /* GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1326219AFC9F0048B34A /* GET.swift */; };
+		3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1328219AFC9F0048B34A /* NasaMedia.swift */; };
+		3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1329219AFC9F0048B34A /* NasaTechport.swift */; };
+		3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */; };
+		3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132C219AFC9F0048B34A /* APIManager.swift */; };
+		3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132D219AFC9F0048B34A /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -35,8 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C1E1326219AFC9F0048B34A /* GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET.swift; sourceTree = "<group>"; };
+		3C1E1328219AFC9F0048B34A /* NasaMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaMedia.swift; sourceTree = "<group>"; };
+		3C1E1329219AFC9F0048B34A /* NasaTechport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaTechport.swift; sourceTree = "<group>"; };
+		3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaAPOD.swift; sourceTree = "<group>"; };
+		3C1E132C219AFC9F0048B34A /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		3C1E132D219AFC9F0048B34A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCF158F42199B9630035DF53 /* DeepSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeepSpace.xcdatamodel; sourceTree = "<group>"; };
@@ -76,6 +86,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C1E1324219AFC9F0048B34A /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E1327219AFC9F0048B34A /* NasaApis */,
+				3C1E1326219AFC9F0048B34A /* GET.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		3C1E1327219AFC9F0048B34A /* NasaApis */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E1328219AFC9F0048B34A /* NasaMedia.swift */,
+				3C1E1329219AFC9F0048B34A /* NasaTechport.swift */,
+				3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */,
+			);
+			path = NasaApis;
+			sourceTree = "<group>";
+		};
+		3C1E132B219AFC9F0048B34A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E132C219AFC9F0048B34A /* APIManager.swift */,
+				3C1E132D219AFC9F0048B34A /* AppDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		FCF158E02199B9620035DF53 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +137,8 @@
 		FCF158EB2199B9630035DF53 /* DeepSpace */ = {
 			isa = PBXGroup;
 			children = (
-				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
+				3C1E132B219AFC9F0048B34A /* Protocol */,
+				3C1E1324219AFC9F0048B34A /* Web */,
 				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 				FCF158F02199B9630035DF53 /* Main.storyboard */,
 				FCF158F62199B9670035DF53 /* Assets.xcassets */,
@@ -259,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */,
+				3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */,
+				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
+				3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */,
+				3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */,
+				3C1E132F219AFC9F0048B34A /* GET.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
-				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
