@@ -28,7 +28,7 @@ struct NasaMedia : APIManager {
     
     /// The possible types of media file
     public enum MediaTypes : String {
-        case images
+        case image
         case audio
     }
     
@@ -40,7 +40,7 @@ struct NasaMedia : APIManager {
     ///   - keywords: Keywords option
     ///   - mediaTypes: The media types to search
     ///   - completion: The handler of the API return
-    public static func search(search: String, keywords: [String] = [], mediaTypes: [MediaTypes] = [.images, .audio], completion: @escaping ([String:Any]) -> Void) {
+    public static func search(search: String, keywords: [String] = [], mediaTypes: [MediaTypes] = [.image, .audio], completion: @escaping ([String:Any]) -> Void) {
         
         var keywordsEndpoint = ""
         if !keywords.isEmpty {

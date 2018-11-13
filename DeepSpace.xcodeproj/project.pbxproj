@@ -13,6 +13,7 @@
 		3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */; };
 		3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132C219AFC9F0048B34A /* APIManager.swift */; };
 		3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E132D219AFC9F0048B34A /* AppDelegate.swift */; };
+		3C1E1336219B011E0048B34A /* NasaExoplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1335219B011E0048B34A /* NasaExoplanet.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 		3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaAPOD.swift; sourceTree = "<group>"; };
 		3C1E132C219AFC9F0048B34A /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		3C1E132D219AFC9F0048B34A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3C1E1335219B011E0048B34A /* NasaExoplanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaExoplanet.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				3C1E1328219AFC9F0048B34A /* NasaMedia.swift */,
 				3C1E1329219AFC9F0048B34A /* NasaTechport.swift */,
 				3C1E132A219AFC9F0048B34A /* NasaAPOD.swift */,
+				3C1E1335219B011E0048B34A /* NasaExoplanet.swift */,
 			);
 			path = NasaApis;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */,
 				3C1E132F219AFC9F0048B34A /* GET.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
+				3C1E1336219B011E0048B34A /* NasaExoplanet.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
