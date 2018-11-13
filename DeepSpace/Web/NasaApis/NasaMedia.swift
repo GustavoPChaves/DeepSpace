@@ -26,6 +26,13 @@ struct NasaMedia : APIManager {
     }
     
     
+    /// The possible types of media file
+    public enum MediaTypes : String {
+        case images
+        case audio
+    }
+    
+    
     /// Searches for an image and/or video in the NASA database
     ///
     /// - Parameters:
@@ -33,8 +40,27 @@ struct NasaMedia : APIManager {
     ///   - keywords: Keywords option
     ///   - mediaTypes: The media types to search
     ///   - completion: The handler of the API return
-    public static func search(search: String, keywords: [String] = [], mediaTypes: [String] = ["images", "audio"], completion: @escaping ([String:Any]) -> Void) {
-        GET.request(NasaMedia.baseURL + "search?q=" + search) { data in
+    public static func search(search: String, keywords: [String] = [], mediaTypes: [MediaTypes] = [.images, .audio], completion: @escaping ([String:Any]) -> Void) {
+        
+        var keywordsEndpoint = ""
+        if !keywords.isEmpty {
+            keywordsEndpoint += "&keywords="
+            for word in keywords {
+                keywordsEndpoint += word
+            }
+        }
+        
+        var mediaTypesEndpoint = ""
+        if !mediaTypes.isEmpty {
+            mediaTypesEndpoint += "&media_type="
+            for mediaType in mediaTypes {
+                mediaTypesEndpoint += mediaType.rawValue
+            }
+        }
+        
+        let endpoint = search + keywordsEndpoint + mediaTypesEndpoint
+        
+        GET.request(NasaMedia.baseURL + "search?q=" + endpoint) { data in
             let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
             completion(json!)
         }
