@@ -13,9 +13,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NasaMedia.search(search: "Jupiter", keywords: [], mediaTypes: [.image]) { json in
-            print(json)
+        NasaMedia.search(search: "Kepler-186f", keywords: [], mediaTypes: [.image]) { json in
+//            print(json)
         }
+        
+        NasaAPOD.request(hd: false) { apod in
+            print(apod.title)
+        }
+        
+//        NasaExoplanet.getExoplanetExtendedData { exoplanets in
+//            for exoplanet in exoplanets {
+//                print(exoplanet.name)
+//                print(exoplanet.bestMassEarthUnits)
+//                print(exoplanet.density)
+//                print(exoplanet.publishDate)
+//                print(exoplanet.status)
+//                print("")
+//            }
+//        }
     }
 
 

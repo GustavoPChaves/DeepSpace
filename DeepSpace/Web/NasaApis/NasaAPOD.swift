@@ -14,16 +14,20 @@ struct NasaAPOD : APIManager {
     static var baseURL: String = "https://api.nasa.gov/planetary/apod?"
     static var key: String? = "api_key=LRtMpKrcsuGyVAPgzppIY55cdPoETsObmejYUsWv"
 
-    /// Gets the Astronomy Picture of the Day JSON
+    /// Gets the Astronomy Picture of the Day Object
     ///
     /// - Parameters:
     ///   - hd: If the image which will be returned will be HD
     ///   - completion: The handler of the API return
-    public static func getJSON(hd: Bool = true, completion: @escaping ([String:Any]) -> Void) {
+    public static func request(hd: Bool = true, completion: @escaping (APOD) -> Void) {
         let hdString = hd ? "hd=true" : "hd=false"
-        GET.request(NasaAPOD.baseURL + "?" + hdString + "&" + NasaAPOD.key!) { data in
-            let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-            completion(json!)
+        GET.request(NasaAPOD.baseURL + hdString + "&" + NasaAPOD.key!) { data in
+            do {
+                let apod = try JSONDecoder().decode(APOD.self, from: data)
+                completion(apod)
+            } catch {
+                print("There was a JSON parse error. Error description: \(error.localizedDescription)")
+            }
         }
     }
     
