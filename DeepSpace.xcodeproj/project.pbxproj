@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC01755D219C5D83002B79CB /* RoadsterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01755C219C5D83002B79CB /* RoadsterDTO.swift */; };
+		FC0F5CC8219AFCB4006D37DE /* RocketsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F5CC7219AFCB4006D37DE /* RocketsDTO.swift */; };
+		FC0F5CCA219B0E50006D37DE /* DragonsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F5CC9219B0E4F006D37DE /* DragonsDTO.swift */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -17,6 +20,7 @@
 		FCF159102199B9670035DF53 /* DeepSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */; };
 		FCF159202199BB800035DF53 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1591F2199BB800035DF53 /* APIManager.swift */; };
 		FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */; };
+		FCF9057F219AF68900D0F607 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9057E219AF68900D0F607 /* Get.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC01755C219C5D83002B79CB /* RoadsterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterDTO.swift; sourceTree = "<group>"; };
+		FC0F5CC7219AFCB4006D37DE /* RocketsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsDTO.swift; sourceTree = "<group>"; };
+		FC0F5CC9219B0E4F006D37DE /* DragonsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonsDTO.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 		FCF159112199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1591F2199BB800035DF53 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIManager.swift; sourceTree = "<group>"; };
+		FCF9057E219AF68900D0F607 /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC0F5CC6219AFC9B006D37DE /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				FC0F5CC7219AFCB4006D37DE /* RocketsDTO.swift */,
+				FC0F5CC9219B0E4F006D37DE /* DragonsDTO.swift */,
+				FC01755C219C5D83002B79CB /* RoadsterDTO.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		FCF158E02199B9620035DF53 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +154,9 @@
 		FCF1591D2199BB5D0035DF53 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				FC0F5CC6219AFC9B006D37DE /* Elements */,
 				FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */,
+				FCF9057E219AF68900D0F607 /* Get.swift */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -281,11 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0F5CCA219B0E50006D37DE /* DragonsDTO.swift in Sources */,
+				FC01755D219C5D83002B79CB /* RoadsterDTO.swift in Sources */,
 				FCF159202199BB800035DF53 /* APIManager.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
+				FCF9057F219AF68900D0F607 /* Get.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
+				FC0F5CC8219AFCB4006D37DE /* RocketsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

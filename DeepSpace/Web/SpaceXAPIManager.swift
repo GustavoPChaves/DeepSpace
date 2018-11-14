@@ -8,53 +8,69 @@
 
 import Foundation
 class SpaceXAPIManager:APIManager {
+    typealias element = elements
+    
 
-    
-    
     enum elements: String {
-        case capsules
-        case cores
         case dragons
-        case history
-        case landpads
-        case launchs
-        case launchpads
-        case missions
-        case payloads
         case rockets
         case roadster
-        case ships
+        
     }
     
-    
-    func requestElement(withName elementName: elements) {
-        let url = self.baseURL+elementName.rawValue
-        let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
-            guard let data = data, error == nil else{
-                return
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) 
-                
-                print(json)
-                
-                
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-        task.resume()
-    }
     
     
     var baseURL: String = "https://api.spacexdata.com/v3/"
     var key: String?
     
   
+    
+    
+    func requestDragons() {
+        
+        let url = self.baseURL+"dragons"
+        GET.request(url) { (data) -> (Void) in
+            do{
+                let mystruct:[DragonDTO] = try JSONDecoder().decode([DragonDTO].self, from: data)
+                print(mystruct)
+
+            } catch{
+               print(error)
+                
+            }
+        }
+
+    }
+    
+    func requestRockets() {
+        
+        let url = self.baseURL+"rockets"
+        GET.request(url) { (data) -> (Void) in
+            do{
+                let mystruct:[RocketsDTO] = try JSONDecoder().decode([RocketsDTO].self, from: data)
+                print(mystruct)
+                
+            } catch{
+                print(error)
+                
+            }
+        }
+        
+    }
+    
+    func reuqestRoadster() {
+        let url = self.baseURL+"roadster"
+        GET.request(url) { (data) -> (Void) in
+            do{
+                let mystruct: RoadsterDTO = try JSONDecoder().decode(RoadsterDTO.self, from: data)
+                print(mystruct)
+                
+            } catch{
+                print(error)
+                
+            }
+        }
+    }
   
     
 }

@@ -11,6 +11,6 @@ protocol APIManager {
     associatedtype element
     var baseURL: String{get}
     var key: String?{get}
-    mutating func requestElement(withName elementName: element)
+//    mutating func requestElement(withName elementName: element, keyWord key: String?)
     
 }
