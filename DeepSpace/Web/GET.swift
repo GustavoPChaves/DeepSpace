@@ -22,7 +22,7 @@ class GET {
         
         URLSession.shared.dataTask(with: request) {
             (data, response, error) in
-            if error != nil { print("There was an error.\(error!.localizedDescription)") }
+            if error != nil { print("There was an error. \(error!.localizedDescription)") }
             
             if data == nil {
                 print("No results returned")
