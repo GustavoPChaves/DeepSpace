@@ -38,6 +38,18 @@ class ViewController: UIViewController {
 //            }
 //        }
         
+//        MinorPlanetAPI.fetch { minorPlanets in
+//            print(minorPlanets[0])
+//        }
+
+        SolarSystemAPI.fetch { planets in
+            print(planets)
+        }
+        
+        SolarSystemAPI.getBody(.mars) { planet in
+            print("\n\n\(planet)")
+        }
+        
     }
 
 

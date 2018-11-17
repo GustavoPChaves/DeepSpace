@@ -15,14 +15,16 @@ class GET {
     /// - Parameters:
     ///   - url: The full string with the url to call in the request
     ///   - completion: The handler of the request return
-    public static func request(_ url: String, _ completion: @escaping (Data) -> (Void)) {
+    public static func request(_ url: String, authentication: String? = nil, _ completion: @escaping (Data) -> (Void)) {
         guard let url = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else { return }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
+        if authentication != nil { request.setValue("Basic \(authentication!)", forHTTPHeaderField: "Authorization") }
         
         URLSession.shared.dataTask(with: request) {
             (data, response, error) in
-            if error != nil { print("There was an error. \(error!.localizedDescription)") }
+            if error != nil { print("There was an error. Error description: \(error!.localizedDescription)\n\(error!)") }
             
             if data == nil {
                 print("No results returned")

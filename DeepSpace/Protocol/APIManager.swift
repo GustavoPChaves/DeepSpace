@@ -9,9 +9,6 @@
 import Foundation
 
 protocol APIManager {
-//    associatedtype Element
     static var baseURL: String {get}
     static var key: String? {get}
-//    mutating func requestElement(withName elementName: Element)
-    
 }
