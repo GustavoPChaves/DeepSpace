@@ -23,6 +23,7 @@
 		3C1E134A219FC3390048B34A /* SolarSystemPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1349219FC3390048B34A /* SolarSystemPlanet.swift */; };
 		3C1E134F219FC3D60048B34A /* SolarSystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E134E219FC3D60048B34A /* SolarSystemAPI.swift */; };
 		3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */; };
+		3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -66,6 +67,7 @@
 		3C1E1349219FC3390048B34A /* SolarSystemPlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemPlanet.swift; sourceTree = "<group>"; };
 		3C1E134E219FC3D60048B34A /* SolarSystemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemAPI.swift; sourceTree = "<group>"; };
 		3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemBodies.swift; sourceTree = "<group>"; };
+		3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitType.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,9 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3C1E133C219C49C00048B34A /* APOD.swift */,
-				3C1E1337219B0A260048B34A /* Exoplanet.swift */,
-				3C1E133E219C5B9C0048B34A /* ExoplanetHostStar.swift */,
-				3C1E1339219C42830048B34A /* PlanetStatus.swift */,
+				3C2DFD1E21A2E403009D54C1 /* Exoplanet */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -203,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				3C1E1346219F3FCE0048B34A /* MinorPlanet.swift */,
+				3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */,
 			);
 			path = "Minor Planet API";
 			sourceTree = "<group>";
@@ -224,6 +225,16 @@
 				3C1E134B219FC3940048B34A /* NASA */,
 			);
 			path = "API Model";
+			sourceTree = "<group>";
+		};
+		3C2DFD1E21A2E403009D54C1 /* Exoplanet */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E1337219B0A260048B34A /* Exoplanet.swift */,
+				3C1E133E219C5B9C0048B34A /* ExoplanetHostStar.swift */,
+				3C1E1339219C42830048B34A /* PlanetStatus.swift */,
+			);
+			path = Exoplanet;
 			sourceTree = "<group>";
 		};
 		FCF158E02199B9620035DF53 = {
@@ -426,6 +437,7 @@
 				3C1E133F219C5B9C0048B34A /* ExoplanetHostStar.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 				3C1E1347219F3FCF0048B34A /* MinorPlanet.swift in Sources */,
+				3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

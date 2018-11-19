@@ -8,7 +8,12 @@
 
 import Foundation
 
-/// Status of the planet (1 = announced, 2 = submitted, 3 = accepted, 0 = retracted).
+/// Status of the planet
+///
+/// - retracted: 0
+/// - announced: 1
+/// - submitted: 2
+/// - accepted: 3
 public enum PlanetStatus : Int, Codable {
     case retracted = 0
     case announced = 1
