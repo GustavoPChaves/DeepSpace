@@ -18,9 +18,9 @@ class ViewController: UIViewController {
 ////            print(json)
 //        }
         
-//        NasaAPOD.request(hd: false) { apod in
-////            print(apod.title)
-//        }
+        NasaAPOD.request(hd: false) { apod in
+            print(apod.hdurl)
+        }
         
 //        NasaExoplanet.getExoplanetExtendedData { exoplanets in
 //            for exoplanet in exoplanets {
@@ -42,13 +42,13 @@ class ViewController: UIViewController {
 //            print(minorPlanets[0])
 //        }
 
-        SolarSystemAPI.fetch { planets in
-            print(planets)
-        }
-        
-        SolarSystemAPI.getBody(.mars) { planet in
-            print("\n\n\(planet)")
-        }
+//        SolarSystemAPI.fetch { planets in
+//            print(planets)
+//        }
+//
+//        SolarSystemAPI.getBody(.mars) { planet in
+//            print("\n\n\(planet)")
+//        }
         
     }
 

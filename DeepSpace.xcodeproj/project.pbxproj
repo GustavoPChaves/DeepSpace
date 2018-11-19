@@ -140,9 +140,7 @@
 		3C1E133B219C49AF0048B34A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3C1E134D219FC3AB0048B34A /* Solar System API */,
-				3C1E134C219FC3A00048B34A /* Minor Planet API */,
-				3C1E134B219FC3940048B34A /* NASA */,
+				3C1E1352219FC74F0048B34A /* API Model */,
 				3C1E1341219C89EE0048B34A /* CoreData */,
 				3C1E1324219AFC9F0048B34A /* Web */,
 			);
@@ -216,6 +214,16 @@
 				3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */,
 			);
 			path = "Solar System API";
+			sourceTree = "<group>";
+		};
+		3C1E1352219FC74F0048B34A /* API Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C1E134D219FC3AB0048B34A /* Solar System API */,
+				3C1E134C219FC3A00048B34A /* Minor Planet API */,
+				3C1E134B219FC3940048B34A /* NASA */,
+			);
+			path = "API Model";
 			sourceTree = "<group>";
 		};
 		FCF158E02199B9620035DF53 = {
