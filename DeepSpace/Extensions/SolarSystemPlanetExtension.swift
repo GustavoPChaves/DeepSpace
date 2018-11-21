@@ -26,7 +26,7 @@ extension SolarSystemPlanet {
         }
         
         let orbitalVelocityProperty = (property: "Orbital velocity", value: "\(self.orbitalVelocity!) km/s")
-        let rotationPeriodProperty = (property: "Rotation period", value: "\(self.rotationPeriod!)h")
+        let rotationPeriodProperty = (property: "Rotation period", value: "\(self.rotationPeriod!.replacingOccurrences(of: "-", with: ""))h")
         let gravityProperty = (property: "Gravity", value: "\(self.gravity!) m/sˆ2")
         let densityProperty = (property: "Density", value: "\(self.density!) g/cmˆ3")
         let massProperty = (property: "Mass", value: "\(self.mass!) x 10ˆ24 kg")

@@ -14,6 +14,7 @@
 		3C17C88621A4512100619919 /* PlanetyPropertyDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C88421A4512100619919 /* PlanetyPropertyDetailsTableViewCell.xib */; };
 		3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C88921A4821900619919 /* OtherPlanetsTableViewCell.swift */; };
 		3C17C88C21A4821A00619919 /* OtherPlanetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C88A21A4821A00619919 /* OtherPlanetsTableViewCell.xib */; };
+		3C17C88E21A5C8F100619919 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C88D21A5C8F100619919 /* HomeScreen.storyboard */; };
 		3C1E132F219AFC9F0048B34A /* GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1326219AFC9F0048B34A /* GET.swift */; };
 		3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1328219AFC9F0048B34A /* NasaMedia.swift */; };
 		3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1329219AFC9F0048B34A /* NasaTechport.swift */; };
@@ -67,6 +68,7 @@
 		3C17C88421A4512100619919 /* PlanetyPropertyDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetyPropertyDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		3C17C88921A4821900619919 /* OtherPlanetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPlanetsTableViewCell.swift; sourceTree = "<group>"; };
 		3C17C88A21A4821A00619919 /* OtherPlanetsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPlanetsTableViewCell.xib; sourceTree = "<group>"; };
+		3C17C88D21A5C8F100619919 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		3C1E1326219AFC9F0048B34A /* GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET.swift; sourceTree = "<group>"; };
 		3C1E1328219AFC9F0048B34A /* NasaMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaMedia.swift; sourceTree = "<group>"; };
 		3C1E1329219AFC9F0048B34A /* NasaTechport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaTechport.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				FCF158F02199B9630035DF53 /* Main.storyboard */,
 				FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */,
 				3C2DFD2321A2F0E3009D54C1 /* SolarSystemPlanetDetails.storyboard */,
+				3C17C88D21A5C8F100619919 /* HomeScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -186,6 +189,13 @@
 				3C17C88A21A4821A00619919 /* OtherPlanetsTableViewCell.xib */,
 			);
 			path = "Other Planets";
+			sourceTree = "<group>";
+		};
+		3C17C88F21A5CA8E00619919 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		3C1E1324219AFC9F0048B34A /* Web */ = {
@@ -232,6 +242,7 @@
 		3C1E1340219C89D90048B34A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C17C88F21A5CA8E00619919 /* New Group */,
 				3C17C88721A4525F00619919 /* Storyboards */,
 				3C17C88121A450E100619919 /* Table View Cell */,
 				3C17C87821A433B700619919 /* Collection View Cell */,
@@ -480,6 +491,7 @@
 				3C17C88C21A4821A00619919 /* OtherPlanetsTableViewCell.xib in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
 				3C2DFD2421A2F0E3009D54C1 /* SolarSystemPlanetDetails.storyboard in Resources */,
+				3C17C88E21A5C8F100619919 /* HomeScreen.storyboard in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
 				3C17C88621A4512100619919 /* PlanetyPropertyDetailsTableViewCell.xib in Resources */,
 			);

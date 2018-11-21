@@ -12,25 +12,24 @@ class SolarSystemPlanetDetailsViewController: UIViewController {
 
     @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var planetDetailsTableView: UITableView!
-    @IBOutlet weak var separatorConstraint: NSLayoutConstraint!
     
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
     var planets : [SolarSystemBodies] = []
     var planet : SolarSystemBodies? = .earth
     
     var planetObjectProperties : [(property: String, value: String)] = []
-    
-    var isExpanded = false
     var cellSize : CGSize?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.titleView = 
+        
         self.planetDetailsTableView.dataSource = self
         self.planetDetailsTableView.delegate = self
         
         let quarterOfScreenWidth = UIScreen.main.bounds.size.width/4
-        cellSize = CGSize(width: quarterOfScreenWidth, height: quarterOfScreenWidth + 36.5)
+        cellSize = CGSize(width: quarterOfScreenWidth, height: 1.33 * quarterOfScreenWidth)
         
         let planetDetailsXIB = UINib(nibName: "PlanetyPropertyDetailsTableViewCell", bundle: Bundle.main)
         self.planetDetailsTableView.register(planetDetailsXIB, forCellReuseIdentifier: "planetDetails")
@@ -43,6 +42,7 @@ class SolarSystemPlanetDetailsViewController: UIViewController {
     }
     
     func updatePlanetObject(_ planet: SolarSystemBodies) {
+        self.planetDetailsTableView.contentOffset.y = 0.0
         SolarSystemAPI.getBody(planet) { planetObject in
             DispatchQueue.main.sync {
                 self.planet = planet
@@ -63,7 +63,26 @@ class SolarSystemPlanetDetailsViewController: UIViewController {
     }
     
     func isTheCellWithCollectionView(tableViewRow: Int) -> Bool {
-        return !(tableViewRow < self.planetObjectProperties.count)
+        return tableViewRow == self.planetDetailsTableView.numberOfRows(inSection: 0) - 1
+    }
+    
+    func collapseImageOnScroll(_ scrollView: UIScrollView) {
+        let safeAreaY = (self.navigationController?.navigationBar.frame.size.height ?? 0) + UIApplication.shared.statusBarFrame.size.height
+        let scrollOffset = scrollView.contentOffset.y
+        let imageViewHeight = self.planetImageView.frame.size.height
+        
+        UIView.animate(withDuration: 0.2) {
+            if scrollOffset > 0 {
+                self.planetImageView.frame.origin.y = safeAreaY - imageViewHeight
+                self.planetDetailsTableView.frame.origin.y = safeAreaY
+                self.planetDetailsTableView.frame.size.height = self.view.frame.size.height - safeAreaY
+            } else {
+                let tableY = safeAreaY + imageViewHeight
+                self.planetImageView.frame.origin.y = safeAreaY
+                self.planetDetailsTableView.frame.origin.y = tableY
+                self.planetDetailsTableView.frame.size.height = self.view.frame.size.height - tableY
+            }
+        }
     }
     
 }
@@ -110,14 +129,13 @@ extension SolarSystemPlanetDetailsViewController : UITableViewDataSource, UITabl
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let location = scrollView.panGestureRecognizer.location(in: self.planetDetailsTableView)
+        let indexPath = self.planetDetailsTableView.indexPathForRow(at: location)
         
-        let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height ?? 0
-        let offset = scrollView.contentOffset.y - navigationBarHeight
-
+        let lastRowIndex = self.planetDetailsTableView.numberOfRows(inSection: 0) - 1
+        if indexPath?.row == lastRowIndex { return }
         
-        UIView.animate(withDuration: 0.2) {
-            
-        }
+        self.collapseImageOnScroll(scrollView)
     }
     
 }
@@ -139,7 +157,8 @@ extension SolarSystemPlanetDetailsViewController : UICollectionViewDataSource, U
         cell?.planetImage.image = UIImage(named: "\(imageName).jpg")
         cell?.planetNameLabel.text = imageName
         
-        cell?.planetImage.layer.cornerRadius = cellSize!.width/2
+        cell?.layer.cornerRadius = 13
+        cell?.planetImage.backgroundColor = UIColor.black
         
         return cell!
     }

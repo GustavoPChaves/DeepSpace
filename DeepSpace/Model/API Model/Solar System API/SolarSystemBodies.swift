@@ -9,14 +9,14 @@
 import Foundation
 
 public enum SolarSystemBodies : String {
-    case earth = "/earth"
-    case mars = "/mars"
-    case venus = "/venus"
-    case jupiter = "/jupiter"
-    case mercury = "/mercury"
-    case moon = "/moon"
-    case saturn = "/saturn"
-    case neptune = "/neptune"
-    case uranus = "/uranus"
-    case pluto = "/pluto"
+    case mercury = "/Mercury"
+    case venus = "/Venus"
+    case earth = "/Earth"
+    case moon = "/Moon"
+    case mars = "/Mars"
+    case jupiter = "/Jupiter"
+    case saturn = "/Saturn"
+    case uranus = "/Uranus"
+    case neptune = "/Neptune"
+    case pluto = "/Pluto"
 }
