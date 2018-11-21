@@ -25,6 +25,7 @@ struct SolarSystemPlanet : Codable {
     let orbitalVelocity : String?
     let rotationPeriod : String?
     let updatedAt : String?
+    var solarSystemBody : SolarSystemBodies? = nil
     
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"

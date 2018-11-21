@@ -27,7 +27,8 @@ struct SolarSystemAPI : APIManager {
     public static func getBody(_ body: SolarSystemBodies, _ completion: @escaping (SolarSystemPlanet) -> Void) {
         GET.request(SolarSystemAPI.baseURL + body.rawValue) { data in
             do {
-                let planet = try JSONDecoder().decode(SolarSystemPlanet.self, from: data)
+                var planet = try JSONDecoder().decode(SolarSystemPlanet.self, from: data)
+                planet.solarSystemBody = body
                 completion(planet)
             } catch {
                 print("There was a JSON parse error. Error description: \(error.localizedDescription) - \(error)")
