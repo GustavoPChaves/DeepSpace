@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B04823121A42B9A008B17CF /* ExperienceAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */; };
+		2B04823321A42DDE008B17CF /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B04823221A42DDE008B17CF /* Models.scnassets */; };
+		2BE5972B21A441CD00577BBD /* SolarSystemARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExperienceAR.storyboard; sourceTree = "<group>"; };
+		2B04823221A42DDE008B17CF /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemARViewController.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B04822F21A42B3A008B17CF /* SolarSystemAR */ = {
+			isa = PBXGroup;
+			children = (
+				2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */,
+				2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */,
+			);
+			path = SolarSystemAR;
+			sourceTree = "<group>";
+		};
 		FCF158E02199B9620035DF53 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +114,8 @@
 		FCF158EB2199B9630035DF53 /* DeepSpace */ = {
 			isa = PBXGroup;
 			children = (
+				2B04823221A42DDE008B17CF /* Models.scnassets */,
+				2B04822F21A42B3A008B17CF /* SolarSystemAR */,
 				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
 				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 				FCF158F02199B9630035DF53 /* Main.storyboard */,
@@ -233,7 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
+				2B04823121A42B9A008B17CF /* ExperienceAR.storyboard in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
+				2B04823321A42DDE008B17CF /* Models.scnassets in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE5972B21A441CD00577BBD /* SolarSystemARViewController.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
@@ -437,8 +457,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				DEVELOPMENT_TEAM = 6XYJN7S9JQ;
 				INFOPLIST_FILE = DeepSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,8 +476,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGG8YW8SJU;
+				DEVELOPMENT_TEAM = 6XYJN7S9JQ;
 				INFOPLIST_FILE = DeepSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
