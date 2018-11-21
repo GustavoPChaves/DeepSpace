@@ -69,7 +69,7 @@ class SolarSystemARViewController: UIViewController {
     }
     func rotationAstronomicalBodies(node: SCNNode){
         // y responsavel pela velocidade
-        let rotateOne = SCNAction.rotateBy(x: 30, y: 0 , z: 0, duration: 5.0)
+        let rotateOne = SCNAction.rotateBy(x: 10, y: 10, z: 10, duration: 5.0)
         let repeatForever = SCNAction.repeatForever(rotateOne)
         node.runAction(repeatForever)
     }
