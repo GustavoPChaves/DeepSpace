@@ -20,13 +20,7 @@
 		FCF159102199B9670035DF53 /* DeepSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1590F2199B9670035DF53 /* DeepSpaceUITests.swift */; };
 		FCF159202199BB800035DF53 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1591F2199BB800035DF53 /* APIManager.swift */; };
 		FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */; };
-		FCF34D1521A6C67C0069DF12 /* BackgroundTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF34D1421A6C67C0069DF12 /* BackgroundTest.storyboard */; };
-		FCF34D1721A6C6F00069DF12 /* BackgroundTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF34D1621A6C6F00069DF12 /* BackgroundTestViewController.swift */; };
-		FCF34D1921A6D97B0069DF12 /* MenusViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF34D1821A6D97B0069DF12 /* MenusViews.swift */; };
-		FCF47A5B21A5844100CE2963 /* TransitionTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF47A5A21A5844100CE2963 /* TransitionTest.storyboard */; };
-		FCF47A5D21A584A200CE2963 /* CustonTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF47A5C21A584A200CE2963 /* CustonTransitionManager.swift */; };
-		FCF47A6021A5853400CE2963 /* CollectionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF47A5F21A5853400CE2963 /* CollectionTestViewController.swift */; };
-		FCF47A6221A590BF00CE2963 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF47A6121A590BE00CE2963 /* CustomCollectionViewCell.swift */; };
+		FCF34D1921A6D97B0069DF12 /* BackgroundDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF34D1821A6D97B0069DF12 /* BackgroundDefault.swift */; };
 		FCF9057F219AF68900D0F607 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9057E219AF68900D0F607 /* Get.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,13 +61,7 @@
 		FCF159112199B9670035DF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1591F2199BB800035DF53 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FCF159212199BD000035DF53 /* SpaceXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIManager.swift; sourceTree = "<group>"; };
-		FCF34D1421A6C67C0069DF12 /* BackgroundTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BackgroundTest.storyboard; sourceTree = "<group>"; };
-		FCF34D1621A6C6F00069DF12 /* BackgroundTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTestViewController.swift; sourceTree = "<group>"; };
-		FCF34D1821A6D97B0069DF12 /* MenusViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViews.swift; sourceTree = "<group>"; };
-		FCF47A5A21A5844100CE2963 /* TransitionTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransitionTest.storyboard; sourceTree = "<group>"; };
-		FCF47A5C21A584A200CE2963 /* CustonTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTransitionManager.swift; sourceTree = "<group>"; };
-		FCF47A5F21A5853400CE2963 /* CollectionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestViewController.swift; sourceTree = "<group>"; };
-		FCF47A6121A590BE00CE2963 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCF34D1821A6D97B0069DF12 /* BackgroundDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDefault.swift; sourceTree = "<group>"; };
 		FCF9057E219AF68900D0F607 /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,13 +128,10 @@
 				FCF47A5821A5840800CE2963 /* Animations */,
 				FCF1591E2199BB6F0035DF53 /* Protocols */,
 				FCF1591D2199BB5D0035DF53 /* Web */,
-				FCF158EE2199B9630035DF53 /* ViewController.swift */,
-				FCF158F02199B9630035DF53 /* Main.storyboard */,
 				FCF158F62199B9670035DF53 /* Assets.xcassets */,
 				FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */,
 				FCF158FB2199B9670035DF53 /* Info.plist */,
 				FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */,
-				FCF34D1821A6D97B0069DF12 /* MenusViews.swift */,
 			);
 			path = DeepSpace;
 			sourceTree = "<group>";
@@ -184,6 +169,7 @@
 			children = (
 				FCF158EC2199B9630035DF53 /* AppDelegate.swift */,
 				FCF1591F2199BB800035DF53 /* APIManager.swift */,
+				FCF34D1821A6D97B0069DF12 /* BackgroundDefault.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -191,7 +177,6 @@
 		FCF47A5821A5840800CE2963 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				FCF47A5C21A584A200CE2963 /* CustonTransitionManager.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -199,8 +184,7 @@
 		FCF47A5921A5842500CE2963 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FCF47A5A21A5844100CE2963 /* TransitionTest.storyboard */,
-				FCF34D1421A6C67C0069DF12 /* BackgroundTest.storyboard */,
+				FCF158F02199B9630035DF53 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -208,9 +192,7 @@
 		FCF47A5E21A5850B00CE2963 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FCF47A5F21A5853400CE2963 /* CollectionTestViewController.swift */,
-				FCF47A6121A590BE00CE2963 /* CustomCollectionViewCell.swift */,
-				FCF34D1621A6C6F00069DF12 /* BackgroundTestViewController.swift */,
+				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,11 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF34D1521A6C67C0069DF12 /* BackgroundTest.storyboard in Resources */,
 				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
-				FCF47A5B21A5844100CE2963 /* TransitionTest.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,16 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF47A5D21A584A200CE2963 /* CustonTransitionManager.swift in Sources */,
 				FC0F5CCA219B0E50006D37DE /* DragonsDTO.swift in Sources */,
-				FCF34D1721A6C6F00069DF12 /* BackgroundTestViewController.swift in Sources */,
-				FCF34D1921A6D97B0069DF12 /* MenusViews.swift in Sources */,
+				FCF34D1921A6D97B0069DF12 /* BackgroundDefault.swift in Sources */,
 				FC01755D219C5D83002B79CB /* RoadsterDTO.swift in Sources */,
 				FCF159202199BB800035DF53 /* APIManager.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
 				FCF9057F219AF68900D0F607 /* Get.swift in Sources */,
-				FCF47A6021A5853400CE2963 /* CollectionTestViewController.swift in Sources */,
-				FCF47A6221A590BF00CE2963 /* CustomCollectionViewCell.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
