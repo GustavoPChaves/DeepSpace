@@ -10,6 +10,8 @@
 		2B04823121A42B9A008B17CF /* ExperienceAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */; };
 		2B04823321A42DDE008B17CF /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B04823221A42DDE008B17CF /* Models.scnassets */; };
 		2BE5972B21A441CD00577BBD /* SolarSystemARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */; };
+		2BF9C59321A59F4E00B7E450 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */; };
+		2BF9C59521A5A4AE00B7E450 /* FuncionsAuxiliaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExperienceAR.storyboard; sourceTree = "<group>"; };
 		2B04823221A42DDE008B17CF /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemARViewController.swift; sourceTree = "<group>"; };
+		2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
+		2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionsAuxiliaries.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			children = (
 				2B04823021A42B9A008B17CF /* ExperienceAR.storyboard */,
 				2BE5972A21A441CD00577BBD /* SolarSystemARViewController.swift */,
+				2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */,
+				2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */,
 			);
 			path = SolarSystemAR;
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE5972B21A441CD00577BBD /* SolarSystemARViewController.swift in Sources */,
+				2BF9C59521A5A4AE00B7E450 /* FuncionsAuxiliaries.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
+				2BF9C59321A59F4E00B7E450 /* AstronomicalObject.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 			);
