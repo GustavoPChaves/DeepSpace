@@ -7,6 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC90869C21A6FB7A0098B6AD /* 2k_mercury.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861521A6FB7A0098B6AD /* 2k_mercury.jpg_ambient.png */; };
+		EC90869D21A6FB7A0098B6AD /* 2k_mercury.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861621A6FB7A0098B6AD /* 2k_mercury.jpg_normal.png */; };
+		EC90869E21A6FB7A0098B6AD /* 2k_mercury.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90861721A6FB7A0098B6AD /* 2k_mercury.jpg */; };
+		EC90869F21A6FB7A0098B6AD /* 2k_mercury.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861821A6FB7A0098B6AD /* 2k_mercury.jpg_specular.png */; };
+		EC9086A021A6FB7A0098B6AD /* 2k_mercury.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861921A6FB7A0098B6AD /* 2k_mercury.jpg_displacement.png */; };
+		EC9086A121A6FB7A0098B6AD /* 8k_mercury.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861B21A6FB7A0098B6AD /* 8k_mercury.jpg_displacement.png */; };
+		EC9086A221A6FB7A0098B6AD /* 8k_mercury.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861C21A6FB7A0098B6AD /* 8k_mercury.jpg_ambient.png */; };
+		EC9086A321A6FB7A0098B6AD /* 8k_mercury.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861D21A6FB7A0098B6AD /* 8k_mercury.jpg_specular.png */; };
+		EC9086A421A6FB7A0098B6AD /* 8k_mercury.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90861E21A6FB7A0098B6AD /* 8k_mercury.jpg_normal.png */; };
+		EC9086A521A6FB7A0098B6AD /* 8k_mercury.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90861F21A6FB7A0098B6AD /* 8k_mercury.jpg */; };
+		EC9086A621A6FB7A0098B6AD /* 2k_sun.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862221A6FB7A0098B6AD /* 2k_sun.jpg_specular.png */; };
+		EC9086A721A6FB7A0098B6AD /* 2k_sun.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862321A6FB7A0098B6AD /* 2k_sun.jpg_ambient.png */; };
+		EC9086A821A6FB7A0098B6AD /* 2k_sun.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862421A6FB7A0098B6AD /* 2k_sun.jpg_normal.png */; };
+		EC9086A921A6FB7A0098B6AD /* 2k_sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90862521A6FB7A0098B6AD /* 2k_sun.jpg */; };
+		EC9086AA21A6FB7A0098B6AD /* 2k_sun.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862621A6FB7A0098B6AD /* 2k_sun.jpg_displacement.png */; };
+		EC9086AB21A6FB7A0098B6AD /* 8k_sun.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862821A6FB7A0098B6AD /* 8k_sun.jpg_specular.png */; };
+		EC9086AC21A6FB7A0098B6AD /* 8k_sun.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862921A6FB7A0098B6AD /* 8k_sun.jpg_normal.png */; };
+		EC9086AD21A6FB7A0098B6AD /* 8k_sun.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862A21A6FB7A0098B6AD /* 8k_sun.jpg_ambient.png */; };
+		EC9086AE21A6FB7A0098B6AD /* 8k_sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90862B21A6FB7A0098B6AD /* 8k_sun.jpg */; };
+		EC9086AF21A6FB7A0098B6AD /* 8k_sun.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862C21A6FB7A0098B6AD /* 8k_sun.jpg_displacement.png */; };
+		EC9086B021A6FB7A0098B6AD /* 2k_venus_surface.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90862F21A6FB7A0098B6AD /* 2k_venus_surface.jpg_specular.png */; };
+		EC9086B121A6FB7A0098B6AD /* 2k_venus_surface.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863021A6FB7A0098B6AD /* 2k_venus_surface.jpg_ambient.png */; };
+		EC9086B221A6FB7A0098B6AD /* 2k_venus_atmosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90863121A6FB7A0098B6AD /* 2k_venus_atmosphere.jpg */; };
+		EC9086B321A6FB7A0098B6AD /* 2k_venus_surface.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863221A6FB7A0098B6AD /* 2k_venus_surface.jpg_normal.png */; };
+		EC9086B421A6FB7A0098B6AD /* 2k_venus_surface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90863321A6FB7A0098B6AD /* 2k_venus_surface.jpg */; };
+		EC9086B521A6FB7A0098B6AD /* 2k_venus_surface.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863421A6FB7A0098B6AD /* 2k_venus_surface.jpg_displacement.png */; };
+		EC9086B621A6FB7A0098B6AD /* 8k_venus_surface.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863621A6FB7A0098B6AD /* 8k_venus_surface.jpg_ambient.png */; };
+		EC9086B721A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863721A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_specular.png */; };
+		EC9086B821A6FB7A0098B6AD /* 8k_venus_surface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90863821A6FB7A0098B6AD /* 8k_venus_surface.jpg */; };
+		EC9086B921A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863921A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_normal.png */; };
+		EC9086BA21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90863A21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg */; };
+		EC9086BB21A6FB7A0098B6AD /* 8k_venus_surface.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863B21A6FB7A0098B6AD /* 8k_venus_surface.jpg_displacement.png */; };
+		EC9086BC21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863C21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_ambient.png */; };
+		EC9086BD21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863D21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_displacement.png */; };
+		EC9086BE21A6FB7A0098B6AD /* 8k_venus_surface.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863E21A6FB7A0098B6AD /* 8k_venus_surface.jpg_specular.png */; };
+		EC9086BF21A6FB7A0098B6AD /* 8k_venus_surface.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90863F21A6FB7A0098B6AD /* 8k_venus_surface.jpg_normal.png */; };
+		EC9086C021A6FB7A0098B6AD /* 2k_moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90864221A6FB7A0098B6AD /* 2k_moon.jpg */; };
+		EC9086C121A6FB7A0098B6AD /* 2k_moon.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864321A6FB7A0098B6AD /* 2k_moon.jpg_ambient.png */; };
+		EC9086C221A6FB7A0098B6AD /* 2k_moon.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864421A6FB7A0098B6AD /* 2k_moon.jpg_normal.png */; };
+		EC9086C321A6FB7A0098B6AD /* 2k_moon.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864521A6FB7A0098B6AD /* 2k_moon.jpg_displacement.png */; };
+		EC9086C421A6FB7A0098B6AD /* 2k_moon.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864621A6FB7A0098B6AD /* 2k_moon.jpg_specular.png */; };
+		EC9086C521A6FB7A0098B6AD /* 8k_moon.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864821A6FB7A0098B6AD /* 8k_moon.jpg_ambient.png */; };
+		EC9086C621A6FB7A0098B6AD /* 8k_moon.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864921A6FB7A0098B6AD /* 8k_moon.jpg_normal.png */; };
+		EC9086C721A6FB7A0098B6AD /* 8k_moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90864A21A6FB7A0098B6AD /* 8k_moon.jpg */; };
+		EC9086C821A6FB7A0098B6AD /* 8k_moon.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864B21A6FB7A0098B6AD /* 8k_moon.jpg_displacement.png */; };
+		EC9086C921A6FB7A0098B6AD /* 8k_moon.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864C21A6FB7A0098B6AD /* 8k_moon.jpg_specular.png */; };
+		EC9086CA21A6FB7A0098B6AD /* 2k_neptune.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90864F21A6FB7A0098B6AD /* 2k_neptune.jpg_normal.png */; };
+		EC9086CB21A6FB7A0098B6AD /* 2k_neptune.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865021A6FB7A0098B6AD /* 2k_neptune.jpg_displacement.png */; };
+		EC9086CC21A6FB7A0098B6AD /* 2k_neptune.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865121A6FB7A0098B6AD /* 2k_neptune.jpg_ambient.png */; };
+		EC9086CD21A6FB7A0098B6AD /* 2k_neptune.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865221A6FB7A0098B6AD /* 2k_neptune.jpg_specular.png */; };
+		EC9086CE21A6FB7A0098B6AD /* 2k_neptune.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90865321A6FB7A0098B6AD /* 2k_neptune.jpg */; };
+		EC9086CF21A6FB7A0098B6AD /* saturnringpattern.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC90865521A6FB7A0098B6AD /* saturnringpattern.gif */; };
+		EC9086D021A6FB7A0098B6AD /* 2k_saturn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90865721A6FB7A0098B6AD /* 2k_saturn.jpg */; };
+		EC9086D121A6FB7A0098B6AD /* 2k_saturn.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865821A6FB7A0098B6AD /* 2k_saturn.jpg_normal.png */; };
+		EC9086D221A6FB7A0098B6AD /* 2k_saturn.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865921A6FB7A0098B6AD /* 2k_saturn.jpg_ambient.png */; };
+		EC9086D321A6FB7A0098B6AD /* 2k_saturn.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865A21A6FB7A0098B6AD /* 2k_saturn.jpg_specular.png */; };
+		EC9086D421A6FB7A0098B6AD /* 2k_saturn.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865B21A6FB7A0098B6AD /* 2k_saturn.jpg_displacement.png */; };
+		EC9086D521A6FB7A0098B6AD /* 2k_saturn_ring_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90865C21A6FB7A0098B6AD /* 2k_saturn_ring_alpha.png */; };
+		EC9086D621A6FB7A0098B6AD /* saturnringcolor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90865D21A6FB7A0098B6AD /* saturnringcolor.jpg */; };
+		EC9086D721A6FB7A0098B6AD /* 8k_saturn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90865F21A6FB7A0098B6AD /* 8k_saturn.jpg */; };
+		EC9086D821A6FB7A0098B6AD /* 8k_saturn.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866021A6FB7A0098B6AD /* 8k_saturn.jpg_displacement.png */; };
+		EC9086D921A6FB7A0098B6AD /* 8k_saturn.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866121A6FB7A0098B6AD /* 8k_saturn.jpg_ambient.png */; };
+		EC9086DA21A6FB7A0098B6AD /* 8k_saturn.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866221A6FB7A0098B6AD /* 8k_saturn.jpg_normal.png */; };
+		EC9086DB21A6FB7A0098B6AD /* 8k_saturn.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866321A6FB7A0098B6AD /* 8k_saturn.jpg_specular.png */; };
+		EC9086DC21A6FB7A0098B6AD /* 8k_saturn_ring_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866421A6FB7A0098B6AD /* 8k_saturn_ring_alpha.png */; };
+		EC9086DD21A6FB7A0098B6AD /* 2k_jupiter.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866721A6FB7A0098B6AD /* 2k_jupiter.jpg_ambient.png */; };
+		EC9086DE21A6FB7A0098B6AD /* 2k_jupiter.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866821A6FB7A0098B6AD /* 2k_jupiter.jpg_normal.png */; };
+		EC9086DF21A6FB7A0098B6AD /* 2k_jupiter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90866921A6FB7A0098B6AD /* 2k_jupiter.jpg */; };
+		EC9086E021A6FB7A0098B6AD /* 2k_jupiter.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866A21A6FB7A0098B6AD /* 2k_jupiter.jpg_displacement.png */; };
+		EC9086E121A6FB7A0098B6AD /* 2k_jupiter.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866B21A6FB7A0098B6AD /* 2k_jupiter.jpg_specular.png */; };
+		EC9086E221A6FB7A0098B6AD /* 8k_jupiter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90866D21A6FB7A0098B6AD /* 8k_jupiter.jpg */; };
+		EC9086E321A6FB7A0098B6AD /* 8k_jupiter.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866E21A6FB7A0098B6AD /* 8k_jupiter.jpg_normal.png */; };
+		EC9086E421A6FB7A0098B6AD /* 8k_jupiter.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90866F21A6FB7A0098B6AD /* 8k_jupiter.jpg_specular.png */; };
+		EC9086E521A6FB7A0098B6AD /* 8k_jupiter.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90867021A6FB7A0098B6AD /* 8k_jupiter.jpg_ambient.png */; };
+		EC9086E621A6FB7A0098B6AD /* 8k_jupiter.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90867121A6FB7A0098B6AD /* 8k_jupiter.jpg_displacement.png */; };
+		EC9086E721A6FB7A0098B6AD /* 2k_stars_milky_way.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867421A6FB7A0098B6AD /* 2k_stars_milky_way.jpg */; };
+		EC9086E821A6FB7A0098B6AD /* 2k_stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867521A6FB7A0098B6AD /* 2k_stars.jpg */; };
+		EC9086E921A6FB7A0098B6AD /* 8k_stars_milky_way.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867721A6FB7A0098B6AD /* 8k_stars_milky_way.jpg */; };
+		EC9086EA21A6FB7A0098B6AD /* 8k_stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867821A6FB7A0098B6AD /* 8k_stars.jpg */; };
+		EC9086EB21A6FB7A0098B6AD /* 2k_earth_clouds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867B21A6FB7A0098B6AD /* 2k_earth_clouds.jpg */; };
+		EC9086EC21A6FB7A0098B6AD /* 2k_earth_daymap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867C21A6FB7A0098B6AD /* 2k_earth_daymap.jpg */; };
+		EC9086ED21A6FB7A0098B6AD /* 2k_earth_nightmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90867D21A6FB7A0098B6AD /* 2k_earth_nightmap.jpg */; };
+		EC9086EE21A6FB7A0098B6AD /* 2k_earth_normal_map.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EC90867E21A6FB7A0098B6AD /* 2k_earth_normal_map.tiff */; };
+		EC9086EF21A6FB7A0098B6AD /* 2k_earth_specular_map.tiff in Resources */ = {isa = PBXBuildFile; fileRef = EC90867F21A6FB7A0098B6AD /* 2k_earth_specular_map.tiff */; };
+		EC9086F021A6FB7A0098B6AD /* 8k_earth_specular_map.tif in Resources */ = {isa = PBXBuildFile; fileRef = EC90868121A6FB7A0098B6AD /* 8k_earth_specular_map.tif */; };
+		EC9086F121A6FB7A0098B6AD /* 8k_earth_clouds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90868221A6FB7A0098B6AD /* 8k_earth_clouds.jpg */; };
+		EC9086F221A6FB7A0098B6AD /* 8k_earth_nightmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90868321A6FB7A0098B6AD /* 8k_earth_nightmap.jpg */; };
+		EC9086F321A6FB7A0098B6AD /* 8k_earth_normal_map.tif in Resources */ = {isa = PBXBuildFile; fileRef = EC90868421A6FB7A0098B6AD /* 8k_earth_normal_map.tif */; };
+		EC9086F421A6FB7A0098B6AD /* 8k_earth_daymap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90868521A6FB7A0098B6AD /* 8k_earth_daymap.jpg */; };
+		EC9086F521A6FB7A0098B6AD /* uranusringtrans.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC90868721A6FB7A0098B6AD /* uranusringtrans.gif */; };
+		EC9086F621A6FB7A0098B6AD /* uranusringcolour.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90868821A6FB7A0098B6AD /* uranusringcolour.jpg */; };
+		EC9086F721A6FB7A0098B6AD /* 2k_uranus.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90868A21A6FB7A0098B6AD /* 2k_uranus.jpg_displacement.png */; };
+		EC9086F821A6FB7A0098B6AD /* 2k_uranus.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90868B21A6FB7A0098B6AD /* 2k_uranus.jpg_ambient.png */; };
+		EC9086F921A6FB7A0098B6AD /* 2k_uranus.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90868C21A6FB7A0098B6AD /* 2k_uranus.jpg_specular.png */; };
+		EC9086FA21A6FB7A0098B6AD /* 2k_uranus.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90868D21A6FB7A0098B6AD /* 2k_uranus.jpg_normal.png */; };
+		EC9086FB21A6FB7A0098B6AD /* 2k_uranus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90868E21A6FB7A0098B6AD /* 2k_uranus.jpg */; };
+		EC9086FC21A6FB7A0098B6AD /* 2k_mars.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869121A6FB7A0098B6AD /* 2k_mars.jpg_ambient.png */; };
+		EC9086FD21A6FB7A0098B6AD /* 2k_mars.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869221A6FB7A0098B6AD /* 2k_mars.jpg_specular.png */; };
+		EC9086FE21A6FB7A0098B6AD /* 2k_mars.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869321A6FB7A0098B6AD /* 2k_mars.jpg_displacement.png */; };
+		EC9086FF21A6FB7A0098B6AD /* 2k_mars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90869421A6FB7A0098B6AD /* 2k_mars.jpg */; };
+		EC90870021A6FB7A0098B6AD /* 2k_mars.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869521A6FB7A0098B6AD /* 2k_mars.jpg_normal.png */; };
+		EC90870121A6FB7A0098B6AD /* 8k_mars.jpg_ambient.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869721A6FB7A0098B6AD /* 8k_mars.jpg_ambient.png */; };
+		EC90870221A6FB7A0098B6AD /* 8k_mars.jpg_displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869821A6FB7A0098B6AD /* 8k_mars.jpg_displacement.png */; };
+		EC90870321A6FB7A0098B6AD /* 8k_mars.jpg_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869921A6FB7A0098B6AD /* 8k_mars.jpg_specular.png */; };
+		EC90870421A6FB7A0098B6AD /* 8k_mars.jpg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = EC90869A21A6FB7A0098B6AD /* 8k_mars.jpg_normal.png */; };
+		EC90870521A6FB7A0098B6AD /* 8k_mars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC90869B21A6FB7A0098B6AD /* 8k_mars.jpg */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -35,6 +141,112 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC90861521A6FB7A0098B6AD /* 2k_mercury.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mercury.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90861621A6FB7A0098B6AD /* 2k_mercury.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mercury.jpg_normal.png; sourceTree = "<group>"; };
+		EC90861721A6FB7A0098B6AD /* 2k_mercury.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_mercury.jpg; sourceTree = "<group>"; };
+		EC90861821A6FB7A0098B6AD /* 2k_mercury.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mercury.jpg_specular.png; sourceTree = "<group>"; };
+		EC90861921A6FB7A0098B6AD /* 2k_mercury.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mercury.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90861B21A6FB7A0098B6AD /* 8k_mercury.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mercury.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90861C21A6FB7A0098B6AD /* 8k_mercury.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mercury.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90861D21A6FB7A0098B6AD /* 8k_mercury.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mercury.jpg_specular.png; sourceTree = "<group>"; };
+		EC90861E21A6FB7A0098B6AD /* 8k_mercury.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mercury.jpg_normal.png; sourceTree = "<group>"; };
+		EC90861F21A6FB7A0098B6AD /* 8k_mercury.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_mercury.jpg; sourceTree = "<group>"; };
+		EC90862221A6FB7A0098B6AD /* 2k_sun.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_sun.jpg_specular.png; sourceTree = "<group>"; };
+		EC90862321A6FB7A0098B6AD /* 2k_sun.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_sun.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90862421A6FB7A0098B6AD /* 2k_sun.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_sun.jpg_normal.png; sourceTree = "<group>"; };
+		EC90862521A6FB7A0098B6AD /* 2k_sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_sun.jpg; sourceTree = "<group>"; };
+		EC90862621A6FB7A0098B6AD /* 2k_sun.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_sun.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90862821A6FB7A0098B6AD /* 8k_sun.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_sun.jpg_specular.png; sourceTree = "<group>"; };
+		EC90862921A6FB7A0098B6AD /* 8k_sun.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_sun.jpg_normal.png; sourceTree = "<group>"; };
+		EC90862A21A6FB7A0098B6AD /* 8k_sun.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_sun.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90862B21A6FB7A0098B6AD /* 8k_sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_sun.jpg; sourceTree = "<group>"; };
+		EC90862C21A6FB7A0098B6AD /* 8k_sun.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_sun.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90862F21A6FB7A0098B6AD /* 2k_venus_surface.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_venus_surface.jpg_specular.png; sourceTree = "<group>"; };
+		EC90863021A6FB7A0098B6AD /* 2k_venus_surface.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_venus_surface.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90863121A6FB7A0098B6AD /* 2k_venus_atmosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_venus_atmosphere.jpg; sourceTree = "<group>"; };
+		EC90863221A6FB7A0098B6AD /* 2k_venus_surface.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_venus_surface.jpg_normal.png; sourceTree = "<group>"; };
+		EC90863321A6FB7A0098B6AD /* 2k_venus_surface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_venus_surface.jpg; sourceTree = "<group>"; };
+		EC90863421A6FB7A0098B6AD /* 2k_venus_surface.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_venus_surface.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90863621A6FB7A0098B6AD /* 8k_venus_surface.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_surface.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90863721A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_atmosphere.jpg_specular.png; sourceTree = "<group>"; };
+		EC90863821A6FB7A0098B6AD /* 8k_venus_surface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_venus_surface.jpg; sourceTree = "<group>"; };
+		EC90863921A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_atmosphere.jpg_normal.png; sourceTree = "<group>"; };
+		EC90863A21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_venus_atmosphere.jpg; sourceTree = "<group>"; };
+		EC90863B21A6FB7A0098B6AD /* 8k_venus_surface.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_surface.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90863C21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_atmosphere.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90863D21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_atmosphere.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90863E21A6FB7A0098B6AD /* 8k_venus_surface.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_surface.jpg_specular.png; sourceTree = "<group>"; };
+		EC90863F21A6FB7A0098B6AD /* 8k_venus_surface.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_venus_surface.jpg_normal.png; sourceTree = "<group>"; };
+		EC90864221A6FB7A0098B6AD /* 2k_moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_moon.jpg; sourceTree = "<group>"; };
+		EC90864321A6FB7A0098B6AD /* 2k_moon.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_moon.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90864421A6FB7A0098B6AD /* 2k_moon.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_moon.jpg_normal.png; sourceTree = "<group>"; };
+		EC90864521A6FB7A0098B6AD /* 2k_moon.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_moon.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90864621A6FB7A0098B6AD /* 2k_moon.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_moon.jpg_specular.png; sourceTree = "<group>"; };
+		EC90864821A6FB7A0098B6AD /* 8k_moon.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_moon.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90864921A6FB7A0098B6AD /* 8k_moon.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_moon.jpg_normal.png; sourceTree = "<group>"; };
+		EC90864A21A6FB7A0098B6AD /* 8k_moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_moon.jpg; sourceTree = "<group>"; };
+		EC90864B21A6FB7A0098B6AD /* 8k_moon.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_moon.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90864C21A6FB7A0098B6AD /* 8k_moon.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_moon.jpg_specular.png; sourceTree = "<group>"; };
+		EC90864F21A6FB7A0098B6AD /* 2k_neptune.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_neptune.jpg_normal.png; sourceTree = "<group>"; };
+		EC90865021A6FB7A0098B6AD /* 2k_neptune.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_neptune.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90865121A6FB7A0098B6AD /* 2k_neptune.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_neptune.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90865221A6FB7A0098B6AD /* 2k_neptune.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_neptune.jpg_specular.png; sourceTree = "<group>"; };
+		EC90865321A6FB7A0098B6AD /* 2k_neptune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_neptune.jpg; sourceTree = "<group>"; };
+		EC90865521A6FB7A0098B6AD /* saturnringpattern.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = saturnringpattern.gif; sourceTree = "<group>"; };
+		EC90865721A6FB7A0098B6AD /* 2k_saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_saturn.jpg; sourceTree = "<group>"; };
+		EC90865821A6FB7A0098B6AD /* 2k_saturn.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_saturn.jpg_normal.png; sourceTree = "<group>"; };
+		EC90865921A6FB7A0098B6AD /* 2k_saturn.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_saturn.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90865A21A6FB7A0098B6AD /* 2k_saturn.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_saturn.jpg_specular.png; sourceTree = "<group>"; };
+		EC90865B21A6FB7A0098B6AD /* 2k_saturn.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_saturn.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90865C21A6FB7A0098B6AD /* 2k_saturn_ring_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_saturn_ring_alpha.png; sourceTree = "<group>"; };
+		EC90865D21A6FB7A0098B6AD /* saturnringcolor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saturnringcolor.jpg; sourceTree = "<group>"; };
+		EC90865F21A6FB7A0098B6AD /* 8k_saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_saturn.jpg; sourceTree = "<group>"; };
+		EC90866021A6FB7A0098B6AD /* 8k_saturn.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_saturn.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90866121A6FB7A0098B6AD /* 8k_saturn.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_saturn.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90866221A6FB7A0098B6AD /* 8k_saturn.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_saturn.jpg_normal.png; sourceTree = "<group>"; };
+		EC90866321A6FB7A0098B6AD /* 8k_saturn.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_saturn.jpg_specular.png; sourceTree = "<group>"; };
+		EC90866421A6FB7A0098B6AD /* 8k_saturn_ring_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_saturn_ring_alpha.png; sourceTree = "<group>"; };
+		EC90866721A6FB7A0098B6AD /* 2k_jupiter.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_jupiter.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90866821A6FB7A0098B6AD /* 2k_jupiter.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_jupiter.jpg_normal.png; sourceTree = "<group>"; };
+		EC90866921A6FB7A0098B6AD /* 2k_jupiter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_jupiter.jpg; sourceTree = "<group>"; };
+		EC90866A21A6FB7A0098B6AD /* 2k_jupiter.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_jupiter.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90866B21A6FB7A0098B6AD /* 2k_jupiter.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_jupiter.jpg_specular.png; sourceTree = "<group>"; };
+		EC90866D21A6FB7A0098B6AD /* 8k_jupiter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_jupiter.jpg; sourceTree = "<group>"; };
+		EC90866E21A6FB7A0098B6AD /* 8k_jupiter.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_jupiter.jpg_normal.png; sourceTree = "<group>"; };
+		EC90866F21A6FB7A0098B6AD /* 8k_jupiter.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_jupiter.jpg_specular.png; sourceTree = "<group>"; };
+		EC90867021A6FB7A0098B6AD /* 8k_jupiter.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_jupiter.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90867121A6FB7A0098B6AD /* 8k_jupiter.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_jupiter.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90867421A6FB7A0098B6AD /* 2k_stars_milky_way.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_stars_milky_way.jpg; sourceTree = "<group>"; };
+		EC90867521A6FB7A0098B6AD /* 2k_stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_stars.jpg; sourceTree = "<group>"; };
+		EC90867721A6FB7A0098B6AD /* 8k_stars_milky_way.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_stars_milky_way.jpg; sourceTree = "<group>"; };
+		EC90867821A6FB7A0098B6AD /* 8k_stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_stars.jpg; sourceTree = "<group>"; };
+		EC90867B21A6FB7A0098B6AD /* 2k_earth_clouds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_earth_clouds.jpg; sourceTree = "<group>"; };
+		EC90867C21A6FB7A0098B6AD /* 2k_earth_daymap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_earth_daymap.jpg; sourceTree = "<group>"; };
+		EC90867D21A6FB7A0098B6AD /* 2k_earth_nightmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_earth_nightmap.jpg; sourceTree = "<group>"; };
+		EC90867E21A6FB7A0098B6AD /* 2k_earth_normal_map.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2k_earth_normal_map.tiff; sourceTree = "<group>"; };
+		EC90867F21A6FB7A0098B6AD /* 2k_earth_specular_map.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2k_earth_specular_map.tiff; sourceTree = "<group>"; };
+		EC90868121A6FB7A0098B6AD /* 8k_earth_specular_map.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 8k_earth_specular_map.tif; sourceTree = "<group>"; };
+		EC90868221A6FB7A0098B6AD /* 8k_earth_clouds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_earth_clouds.jpg; sourceTree = "<group>"; };
+		EC90868321A6FB7A0098B6AD /* 8k_earth_nightmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_earth_nightmap.jpg; sourceTree = "<group>"; };
+		EC90868421A6FB7A0098B6AD /* 8k_earth_normal_map.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 8k_earth_normal_map.tif; sourceTree = "<group>"; };
+		EC90868521A6FB7A0098B6AD /* 8k_earth_daymap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_earth_daymap.jpg; sourceTree = "<group>"; };
+		EC90868721A6FB7A0098B6AD /* uranusringtrans.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = uranusringtrans.gif; sourceTree = "<group>"; };
+		EC90868821A6FB7A0098B6AD /* uranusringcolour.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uranusringcolour.jpg; sourceTree = "<group>"; };
+		EC90868A21A6FB7A0098B6AD /* 2k_uranus.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_uranus.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90868B21A6FB7A0098B6AD /* 2k_uranus.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_uranus.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90868C21A6FB7A0098B6AD /* 2k_uranus.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_uranus.jpg_specular.png; sourceTree = "<group>"; };
+		EC90868D21A6FB7A0098B6AD /* 2k_uranus.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_uranus.jpg_normal.png; sourceTree = "<group>"; };
+		EC90868E21A6FB7A0098B6AD /* 2k_uranus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_uranus.jpg; sourceTree = "<group>"; };
+		EC90869121A6FB7A0098B6AD /* 2k_mars.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mars.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90869221A6FB7A0098B6AD /* 2k_mars.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mars.jpg_specular.png; sourceTree = "<group>"; };
+		EC90869321A6FB7A0098B6AD /* 2k_mars.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mars.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90869421A6FB7A0098B6AD /* 2k_mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2k_mars.jpg; sourceTree = "<group>"; };
+		EC90869521A6FB7A0098B6AD /* 2k_mars.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2k_mars.jpg_normal.png; sourceTree = "<group>"; };
+		EC90869721A6FB7A0098B6AD /* 8k_mars.jpg_ambient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mars.jpg_ambient.png; sourceTree = "<group>"; };
+		EC90869821A6FB7A0098B6AD /* 8k_mars.jpg_displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mars.jpg_displacement.png; sourceTree = "<group>"; };
+		EC90869921A6FB7A0098B6AD /* 8k_mars.jpg_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mars.jpg_specular.png; sourceTree = "<group>"; };
+		EC90869A21A6FB7A0098B6AD /* 8k_mars.jpg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8k_mars.jpg_normal.png; sourceTree = "<group>"; };
+		EC90869B21A6FB7A0098B6AD /* 8k_mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k_mars.jpg; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +288,371 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC90861221A6FB7A0098B6AD /* Textura de Planetas */ = {
+			isa = PBXGroup;
+			children = (
+				EC90861321A6FB7A0098B6AD /* Mercury */,
+				EC90862021A6FB7A0098B6AD /* Sun */,
+				EC90862D21A6FB7A0098B6AD /* Venus */,
+				EC90864021A6FB7A0098B6AD /* Moon */,
+				EC90864D21A6FB7A0098B6AD /* Neptune */,
+				EC90865421A6FB7A0098B6AD /* Saturn */,
+				EC90866521A6FB7A0098B6AD /* Jupiter */,
+				EC90867221A6FB7A0098B6AD /* Star Milky Way */,
+				EC90867921A6FB7A0098B6AD /* Earth */,
+				EC90868621A6FB7A0098B6AD /* Uranus */,
+				EC90868F21A6FB7A0098B6AD /* Mars */,
+			);
+			path = "Textura de Planetas";
+			sourceTree = "<group>";
+		};
+		EC90861321A6FB7A0098B6AD /* Mercury */ = {
+			isa = PBXGroup;
+			children = (
+				EC90861421A6FB7A0098B6AD /* 2K */,
+				EC90861A21A6FB7A0098B6AD /* 8K */,
+			);
+			path = Mercury;
+			sourceTree = "<group>";
+		};
+		EC90861421A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90861521A6FB7A0098B6AD /* 2k_mercury.jpg_ambient.png */,
+				EC90861621A6FB7A0098B6AD /* 2k_mercury.jpg_normal.png */,
+				EC90861721A6FB7A0098B6AD /* 2k_mercury.jpg */,
+				EC90861821A6FB7A0098B6AD /* 2k_mercury.jpg_specular.png */,
+				EC90861921A6FB7A0098B6AD /* 2k_mercury.jpg_displacement.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90861A21A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90861B21A6FB7A0098B6AD /* 8k_mercury.jpg_displacement.png */,
+				EC90861C21A6FB7A0098B6AD /* 8k_mercury.jpg_ambient.png */,
+				EC90861D21A6FB7A0098B6AD /* 8k_mercury.jpg_specular.png */,
+				EC90861E21A6FB7A0098B6AD /* 8k_mercury.jpg_normal.png */,
+				EC90861F21A6FB7A0098B6AD /* 8k_mercury.jpg */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90862021A6FB7A0098B6AD /* Sun */ = {
+			isa = PBXGroup;
+			children = (
+				EC90862121A6FB7A0098B6AD /* 2K */,
+				EC90862721A6FB7A0098B6AD /* 8K */,
+			);
+			path = Sun;
+			sourceTree = "<group>";
+		};
+		EC90862121A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90862221A6FB7A0098B6AD /* 2k_sun.jpg_specular.png */,
+				EC90862321A6FB7A0098B6AD /* 2k_sun.jpg_ambient.png */,
+				EC90862421A6FB7A0098B6AD /* 2k_sun.jpg_normal.png */,
+				EC90862521A6FB7A0098B6AD /* 2k_sun.jpg */,
+				EC90862621A6FB7A0098B6AD /* 2k_sun.jpg_displacement.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90862721A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90862821A6FB7A0098B6AD /* 8k_sun.jpg_specular.png */,
+				EC90862921A6FB7A0098B6AD /* 8k_sun.jpg_normal.png */,
+				EC90862A21A6FB7A0098B6AD /* 8k_sun.jpg_ambient.png */,
+				EC90862B21A6FB7A0098B6AD /* 8k_sun.jpg */,
+				EC90862C21A6FB7A0098B6AD /* 8k_sun.jpg_displacement.png */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90862D21A6FB7A0098B6AD /* Venus */ = {
+			isa = PBXGroup;
+			children = (
+				EC90862E21A6FB7A0098B6AD /* 2K */,
+				EC90863521A6FB7A0098B6AD /* 8K */,
+			);
+			path = Venus;
+			sourceTree = "<group>";
+		};
+		EC90862E21A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90862F21A6FB7A0098B6AD /* 2k_venus_surface.jpg_specular.png */,
+				EC90863021A6FB7A0098B6AD /* 2k_venus_surface.jpg_ambient.png */,
+				EC90863121A6FB7A0098B6AD /* 2k_venus_atmosphere.jpg */,
+				EC90863221A6FB7A0098B6AD /* 2k_venus_surface.jpg_normal.png */,
+				EC90863321A6FB7A0098B6AD /* 2k_venus_surface.jpg */,
+				EC90863421A6FB7A0098B6AD /* 2k_venus_surface.jpg_displacement.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90863521A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90863621A6FB7A0098B6AD /* 8k_venus_surface.jpg_ambient.png */,
+				EC90863721A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_specular.png */,
+				EC90863821A6FB7A0098B6AD /* 8k_venus_surface.jpg */,
+				EC90863921A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_normal.png */,
+				EC90863A21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg */,
+				EC90863B21A6FB7A0098B6AD /* 8k_venus_surface.jpg_displacement.png */,
+				EC90863C21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_ambient.png */,
+				EC90863D21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_displacement.png */,
+				EC90863E21A6FB7A0098B6AD /* 8k_venus_surface.jpg_specular.png */,
+				EC90863F21A6FB7A0098B6AD /* 8k_venus_surface.jpg_normal.png */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90864021A6FB7A0098B6AD /* Moon */ = {
+			isa = PBXGroup;
+			children = (
+				EC90864121A6FB7A0098B6AD /* 2K */,
+				EC90864721A6FB7A0098B6AD /* 8K */,
+			);
+			path = Moon;
+			sourceTree = "<group>";
+		};
+		EC90864121A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90864221A6FB7A0098B6AD /* 2k_moon.jpg */,
+				EC90864321A6FB7A0098B6AD /* 2k_moon.jpg_ambient.png */,
+				EC90864421A6FB7A0098B6AD /* 2k_moon.jpg_normal.png */,
+				EC90864521A6FB7A0098B6AD /* 2k_moon.jpg_displacement.png */,
+				EC90864621A6FB7A0098B6AD /* 2k_moon.jpg_specular.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90864721A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90864821A6FB7A0098B6AD /* 8k_moon.jpg_ambient.png */,
+				EC90864921A6FB7A0098B6AD /* 8k_moon.jpg_normal.png */,
+				EC90864A21A6FB7A0098B6AD /* 8k_moon.jpg */,
+				EC90864B21A6FB7A0098B6AD /* 8k_moon.jpg_displacement.png */,
+				EC90864C21A6FB7A0098B6AD /* 8k_moon.jpg_specular.png */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90864D21A6FB7A0098B6AD /* Neptune */ = {
+			isa = PBXGroup;
+			children = (
+				EC90864E21A6FB7A0098B6AD /* 2K */,
+			);
+			path = Neptune;
+			sourceTree = "<group>";
+		};
+		EC90864E21A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90864F21A6FB7A0098B6AD /* 2k_neptune.jpg_normal.png */,
+				EC90865021A6FB7A0098B6AD /* 2k_neptune.jpg_displacement.png */,
+				EC90865121A6FB7A0098B6AD /* 2k_neptune.jpg_ambient.png */,
+				EC90865221A6FB7A0098B6AD /* 2k_neptune.jpg_specular.png */,
+				EC90865321A6FB7A0098B6AD /* 2k_neptune.jpg */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90865421A6FB7A0098B6AD /* Saturn */ = {
+			isa = PBXGroup;
+			children = (
+				EC90865521A6FB7A0098B6AD /* saturnringpattern.gif */,
+				EC90865621A6FB7A0098B6AD /* 2K */,
+				EC90865D21A6FB7A0098B6AD /* saturnringcolor.jpg */,
+				EC90865E21A6FB7A0098B6AD /* 8K */,
+			);
+			path = Saturn;
+			sourceTree = "<group>";
+		};
+		EC90865621A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90865721A6FB7A0098B6AD /* 2k_saturn.jpg */,
+				EC90865821A6FB7A0098B6AD /* 2k_saturn.jpg_normal.png */,
+				EC90865921A6FB7A0098B6AD /* 2k_saturn.jpg_ambient.png */,
+				EC90865A21A6FB7A0098B6AD /* 2k_saturn.jpg_specular.png */,
+				EC90865B21A6FB7A0098B6AD /* 2k_saturn.jpg_displacement.png */,
+				EC90865C21A6FB7A0098B6AD /* 2k_saturn_ring_alpha.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90865E21A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90865F21A6FB7A0098B6AD /* 8k_saturn.jpg */,
+				EC90866021A6FB7A0098B6AD /* 8k_saturn.jpg_displacement.png */,
+				EC90866121A6FB7A0098B6AD /* 8k_saturn.jpg_ambient.png */,
+				EC90866221A6FB7A0098B6AD /* 8k_saturn.jpg_normal.png */,
+				EC90866321A6FB7A0098B6AD /* 8k_saturn.jpg_specular.png */,
+				EC90866421A6FB7A0098B6AD /* 8k_saturn_ring_alpha.png */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90866521A6FB7A0098B6AD /* Jupiter */ = {
+			isa = PBXGroup;
+			children = (
+				EC90866621A6FB7A0098B6AD /* 2K */,
+				EC90866C21A6FB7A0098B6AD /* 8K */,
+			);
+			path = Jupiter;
+			sourceTree = "<group>";
+		};
+		EC90866621A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90866721A6FB7A0098B6AD /* 2k_jupiter.jpg_ambient.png */,
+				EC90866821A6FB7A0098B6AD /* 2k_jupiter.jpg_normal.png */,
+				EC90866921A6FB7A0098B6AD /* 2k_jupiter.jpg */,
+				EC90866A21A6FB7A0098B6AD /* 2k_jupiter.jpg_displacement.png */,
+				EC90866B21A6FB7A0098B6AD /* 2k_jupiter.jpg_specular.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90866C21A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90866D21A6FB7A0098B6AD /* 8k_jupiter.jpg */,
+				EC90866E21A6FB7A0098B6AD /* 8k_jupiter.jpg_normal.png */,
+				EC90866F21A6FB7A0098B6AD /* 8k_jupiter.jpg_specular.png */,
+				EC90867021A6FB7A0098B6AD /* 8k_jupiter.jpg_ambient.png */,
+				EC90867121A6FB7A0098B6AD /* 8k_jupiter.jpg_displacement.png */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90867221A6FB7A0098B6AD /* Star Milky Way */ = {
+			isa = PBXGroup;
+			children = (
+				EC90867321A6FB7A0098B6AD /* 2K */,
+				EC90867621A6FB7A0098B6AD /* 8K */,
+			);
+			path = "Star Milky Way";
+			sourceTree = "<group>";
+		};
+		EC90867321A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90867421A6FB7A0098B6AD /* 2k_stars_milky_way.jpg */,
+				EC90867521A6FB7A0098B6AD /* 2k_stars.jpg */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90867621A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90867721A6FB7A0098B6AD /* 8k_stars_milky_way.jpg */,
+				EC90867821A6FB7A0098B6AD /* 8k_stars.jpg */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90867921A6FB7A0098B6AD /* Earth */ = {
+			isa = PBXGroup;
+			children = (
+				EC90867A21A6FB7A0098B6AD /* 2K */,
+				EC90868021A6FB7A0098B6AD /* 8K */,
+			);
+			path = Earth;
+			sourceTree = "<group>";
+		};
+		EC90867A21A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90867B21A6FB7A0098B6AD /* 2k_earth_clouds.jpg */,
+				EC90867C21A6FB7A0098B6AD /* 2k_earth_daymap.jpg */,
+				EC90867D21A6FB7A0098B6AD /* 2k_earth_nightmap.jpg */,
+				EC90867E21A6FB7A0098B6AD /* 2k_earth_normal_map.tiff */,
+				EC90867F21A6FB7A0098B6AD /* 2k_earth_specular_map.tiff */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90868021A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90868121A6FB7A0098B6AD /* 8k_earth_specular_map.tif */,
+				EC90868221A6FB7A0098B6AD /* 8k_earth_clouds.jpg */,
+				EC90868321A6FB7A0098B6AD /* 8k_earth_nightmap.jpg */,
+				EC90868421A6FB7A0098B6AD /* 8k_earth_normal_map.tif */,
+				EC90868521A6FB7A0098B6AD /* 8k_earth_daymap.jpg */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
+		EC90868621A6FB7A0098B6AD /* Uranus */ = {
+			isa = PBXGroup;
+			children = (
+				EC90868721A6FB7A0098B6AD /* uranusringtrans.gif */,
+				EC90868821A6FB7A0098B6AD /* uranusringcolour.jpg */,
+				EC90868921A6FB7A0098B6AD /* 2K */,
+			);
+			path = Uranus;
+			sourceTree = "<group>";
+		};
+		EC90868921A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90868A21A6FB7A0098B6AD /* 2k_uranus.jpg_displacement.png */,
+				EC90868B21A6FB7A0098B6AD /* 2k_uranus.jpg_ambient.png */,
+				EC90868C21A6FB7A0098B6AD /* 2k_uranus.jpg_specular.png */,
+				EC90868D21A6FB7A0098B6AD /* 2k_uranus.jpg_normal.png */,
+				EC90868E21A6FB7A0098B6AD /* 2k_uranus.jpg */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90868F21A6FB7A0098B6AD /* Mars */ = {
+			isa = PBXGroup;
+			children = (
+				EC90869021A6FB7A0098B6AD /* 2K */,
+				EC90869621A6FB7A0098B6AD /* 8K */,
+			);
+			path = Mars;
+			sourceTree = "<group>";
+		};
+		EC90869021A6FB7A0098B6AD /* 2K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90869121A6FB7A0098B6AD /* 2k_mars.jpg_ambient.png */,
+				EC90869221A6FB7A0098B6AD /* 2k_mars.jpg_specular.png */,
+				EC90869321A6FB7A0098B6AD /* 2k_mars.jpg_displacement.png */,
+				EC90869421A6FB7A0098B6AD /* 2k_mars.jpg */,
+				EC90869521A6FB7A0098B6AD /* 2k_mars.jpg_normal.png */,
+			);
+			path = 2K;
+			sourceTree = "<group>";
+		};
+		EC90869621A6FB7A0098B6AD /* 8K */ = {
+			isa = PBXGroup;
+			children = (
+				EC90869721A6FB7A0098B6AD /* 8k_mars.jpg_ambient.png */,
+				EC90869821A6FB7A0098B6AD /* 8k_mars.jpg_displacement.png */,
+				EC90869921A6FB7A0098B6AD /* 8k_mars.jpg_specular.png */,
+				EC90869A21A6FB7A0098B6AD /* 8k_mars.jpg_normal.png */,
+				EC90869B21A6FB7A0098B6AD /* 8k_mars.jpg */,
+			);
+			path = 8K;
+			sourceTree = "<group>";
+		};
 		FCF158E02199B9620035DF53 = {
 			isa = PBXGroup;
 			children = (
+				EC90861221A6FB7A0098B6AD /* Textura de Planetas */,
 				FCF158EB2199B9630035DF53 /* DeepSpace */,
 				FCF159032199B9670035DF53 /* DeepSpaceTests */,
 				FCF1590E2199B9670035DF53 /* DeepSpaceUITests */,
@@ -232,9 +806,115 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9086E421A6FB7A0098B6AD /* 8k_jupiter.jpg_specular.png in Resources */,
+				EC9086BE21A6FB7A0098B6AD /* 8k_venus_surface.jpg_specular.png in Resources */,
+				EC90869E21A6FB7A0098B6AD /* 2k_mercury.jpg in Resources */,
+				EC9086C521A6FB7A0098B6AD /* 8k_moon.jpg_ambient.png in Resources */,
+				EC9086E821A6FB7A0098B6AD /* 2k_stars.jpg in Resources */,
+				EC9086B921A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_normal.png in Resources */,
+				EC9086C221A6FB7A0098B6AD /* 2k_moon.jpg_normal.png in Resources */,
+				EC9086C321A6FB7A0098B6AD /* 2k_moon.jpg_displacement.png in Resources */,
+				EC9086A821A6FB7A0098B6AD /* 2k_sun.jpg_normal.png in Resources */,
+				EC9086B021A6FB7A0098B6AD /* 2k_venus_surface.jpg_specular.png in Resources */,
 				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
+				EC9086FC21A6FB7A0098B6AD /* 2k_mars.jpg_ambient.png in Resources */,
+				EC9086FD21A6FB7A0098B6AD /* 2k_mars.jpg_specular.png in Resources */,
+				EC90869F21A6FB7A0098B6AD /* 2k_mercury.jpg_specular.png in Resources */,
+				EC9086C121A6FB7A0098B6AD /* 2k_moon.jpg_ambient.png in Resources */,
+				EC9086E721A6FB7A0098B6AD /* 2k_stars_milky_way.jpg in Resources */,
+				EC9086A921A6FB7A0098B6AD /* 2k_sun.jpg in Resources */,
+				EC9086BD21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_displacement.png in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
+				EC9086F921A6FB7A0098B6AD /* 2k_uranus.jpg_specular.png in Resources */,
+				EC9086DF21A6FB7A0098B6AD /* 2k_jupiter.jpg in Resources */,
+				EC9086D621A6FB7A0098B6AD /* saturnringcolor.jpg in Resources */,
+				EC9086AB21A6FB7A0098B6AD /* 8k_sun.jpg_specular.png in Resources */,
+				EC9086B421A6FB7A0098B6AD /* 2k_venus_surface.jpg in Resources */,
+				EC9086CE21A6FB7A0098B6AD /* 2k_neptune.jpg in Resources */,
+				EC9086A421A6FB7A0098B6AD /* 8k_mercury.jpg_normal.png in Resources */,
+				EC9086AA21A6FB7A0098B6AD /* 2k_sun.jpg_displacement.png in Resources */,
+				EC9086AF21A6FB7A0098B6AD /* 8k_sun.jpg_displacement.png in Resources */,
+				EC9086A221A6FB7A0098B6AD /* 8k_mercury.jpg_ambient.png in Resources */,
+				EC9086E621A6FB7A0098B6AD /* 8k_jupiter.jpg_displacement.png in Resources */,
+				EC90870321A6FB7A0098B6AD /* 8k_mars.jpg_specular.png in Resources */,
+				EC9086DC21A6FB7A0098B6AD /* 8k_saturn_ring_alpha.png in Resources */,
+				EC90870121A6FB7A0098B6AD /* 8k_mars.jpg_ambient.png in Resources */,
+				EC9086E021A6FB7A0098B6AD /* 2k_jupiter.jpg_displacement.png in Resources */,
+				EC9086CB21A6FB7A0098B6AD /* 2k_neptune.jpg_displacement.png in Resources */,
+				EC9086A021A6FB7A0098B6AD /* 2k_mercury.jpg_displacement.png in Resources */,
+				EC9086C621A6FB7A0098B6AD /* 8k_moon.jpg_normal.png in Resources */,
+				EC9086FF21A6FB7A0098B6AD /* 2k_mars.jpg in Resources */,
+				EC9086F321A6FB7A0098B6AD /* 8k_earth_normal_map.tif in Resources */,
+				EC9086DA21A6FB7A0098B6AD /* 8k_saturn.jpg_normal.png in Resources */,
+				EC9086FE21A6FB7A0098B6AD /* 2k_mars.jpg_displacement.png in Resources */,
+				EC9086B721A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_specular.png in Resources */,
+				EC9086FA21A6FB7A0098B6AD /* 2k_uranus.jpg_normal.png in Resources */,
+				EC9086DE21A6FB7A0098B6AD /* 2k_jupiter.jpg_normal.png in Resources */,
+				EC9086F721A6FB7A0098B6AD /* 2k_uranus.jpg_displacement.png in Resources */,
+				EC9086F121A6FB7A0098B6AD /* 8k_earth_clouds.jpg in Resources */,
+				EC9086EB21A6FB7A0098B6AD /* 2k_earth_clouds.jpg in Resources */,
+				EC9086AD21A6FB7A0098B6AD /* 8k_sun.jpg_ambient.png in Resources */,
+				EC90870221A6FB7A0098B6AD /* 8k_mars.jpg_displacement.png in Resources */,
+				EC9086B321A6FB7A0098B6AD /* 2k_venus_surface.jpg_normal.png in Resources */,
+				EC9086E521A6FB7A0098B6AD /* 8k_jupiter.jpg_ambient.png in Resources */,
+				EC9086BF21A6FB7A0098B6AD /* 8k_venus_surface.jpg_normal.png in Resources */,
+				EC9086D921A6FB7A0098B6AD /* 8k_saturn.jpg_ambient.png in Resources */,
+				EC90870421A6FB7A0098B6AD /* 8k_mars.jpg_normal.png in Resources */,
+				EC9086BC21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg_ambient.png in Resources */,
+				EC9086AC21A6FB7A0098B6AD /* 8k_sun.jpg_normal.png in Resources */,
+				EC9086F021A6FB7A0098B6AD /* 8k_earth_specular_map.tif in Resources */,
+				EC9086C021A6FB7A0098B6AD /* 2k_moon.jpg in Resources */,
+				EC9086B121A6FB7A0098B6AD /* 2k_venus_surface.jpg_ambient.png in Resources */,
+				EC9086A121A6FB7A0098B6AD /* 8k_mercury.jpg_displacement.png in Resources */,
+				EC9086D221A6FB7A0098B6AD /* 2k_saturn.jpg_ambient.png in Resources */,
+				EC9086CD21A6FB7A0098B6AD /* 2k_neptune.jpg_specular.png in Resources */,
+				EC9086EF21A6FB7A0098B6AD /* 2k_earth_specular_map.tiff in Resources */,
+				EC9086A721A6FB7A0098B6AD /* 2k_sun.jpg_ambient.png in Resources */,
+				EC9086B221A6FB7A0098B6AD /* 2k_venus_atmosphere.jpg in Resources */,
+				EC9086C821A6FB7A0098B6AD /* 8k_moon.jpg_displacement.png in Resources */,
+				EC9086ED21A6FB7A0098B6AD /* 2k_earth_nightmap.jpg in Resources */,
+				EC9086D521A6FB7A0098B6AD /* 2k_saturn_ring_alpha.png in Resources */,
+				EC9086E121A6FB7A0098B6AD /* 2k_jupiter.jpg_specular.png in Resources */,
+				EC9086DB21A6FB7A0098B6AD /* 8k_saturn.jpg_specular.png in Resources */,
+				EC9086B521A6FB7A0098B6AD /* 2k_venus_surface.jpg_displacement.png in Resources */,
+				EC9086EA21A6FB7A0098B6AD /* 8k_stars.jpg in Resources */,
+				EC9086CF21A6FB7A0098B6AD /* saturnringpattern.gif in Resources */,
+				EC9086D121A6FB7A0098B6AD /* 2k_saturn.jpg_normal.png in Resources */,
+				EC9086DD21A6FB7A0098B6AD /* 2k_jupiter.jpg_ambient.png in Resources */,
+				EC9086FB21A6FB7A0098B6AD /* 2k_uranus.jpg in Resources */,
+				EC9086D421A6FB7A0098B6AD /* 2k_saturn.jpg_displacement.png in Resources */,
+				EC9086D721A6FB7A0098B6AD /* 8k_saturn.jpg in Resources */,
+				EC9086F221A6FB7A0098B6AD /* 8k_earth_nightmap.jpg in Resources */,
+				EC9086EC21A6FB7A0098B6AD /* 2k_earth_daymap.jpg in Resources */,
+				EC9086E221A6FB7A0098B6AD /* 8k_jupiter.jpg in Resources */,
+				EC9086EE21A6FB7A0098B6AD /* 2k_earth_normal_map.tiff in Resources */,
+				EC9086C721A6FB7A0098B6AD /* 8k_moon.jpg in Resources */,
+				EC9086F421A6FB7A0098B6AD /* 8k_earth_daymap.jpg in Resources */,
+				EC9086CA21A6FB7A0098B6AD /* 2k_neptune.jpg_normal.png in Resources */,
+				EC9086CC21A6FB7A0098B6AD /* 2k_neptune.jpg_ambient.png in Resources */,
+				EC9086E921A6FB7A0098B6AD /* 8k_stars_milky_way.jpg in Resources */,
+				EC9086BA21A6FB7A0098B6AD /* 8k_venus_atmosphere.jpg in Resources */,
+				EC9086C421A6FB7A0098B6AD /* 2k_moon.jpg_specular.png in Resources */,
+				EC9086A521A6FB7A0098B6AD /* 8k_mercury.jpg in Resources */,
+				EC9086D021A6FB7A0098B6AD /* 2k_saturn.jpg in Resources */,
+				EC90870521A6FB7A0098B6AD /* 8k_mars.jpg in Resources */,
+				EC9086A621A6FB7A0098B6AD /* 2k_sun.jpg_specular.png in Resources */,
+				EC90869C21A6FB7A0098B6AD /* 2k_mercury.jpg_ambient.png in Resources */,
+				EC9086BB21A6FB7A0098B6AD /* 8k_venus_surface.jpg_displacement.png in Resources */,
+				EC9086D821A6FB7A0098B6AD /* 8k_saturn.jpg_displacement.png in Resources */,
+				EC9086F821A6FB7A0098B6AD /* 2k_uranus.jpg_ambient.png in Resources */,
+				EC9086A321A6FB7A0098B6AD /* 8k_mercury.jpg_specular.png in Resources */,
+				EC9086B621A6FB7A0098B6AD /* 8k_venus_surface.jpg_ambient.png in Resources */,
+				EC9086AE21A6FB7A0098B6AD /* 8k_sun.jpg in Resources */,
+				EC9086C921A6FB7A0098B6AD /* 8k_moon.jpg_specular.png in Resources */,
+				EC9086F621A6FB7A0098B6AD /* uranusringcolour.jpg in Resources */,
+				EC90869D21A6FB7A0098B6AD /* 2k_mercury.jpg_normal.png in Resources */,
+				EC9086B821A6FB7A0098B6AD /* 8k_venus_surface.jpg in Resources */,
+				EC9086E321A6FB7A0098B6AD /* 8k_jupiter.jpg_normal.png in Resources */,
+				EC9086F521A6FB7A0098B6AD /* uranusringtrans.gif in Resources */,
+				EC9086D321A6FB7A0098B6AD /* 2k_saturn.jpg_specular.png in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
+				EC90870021A6FB7A0098B6AD /* 2k_mars.jpg_normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
