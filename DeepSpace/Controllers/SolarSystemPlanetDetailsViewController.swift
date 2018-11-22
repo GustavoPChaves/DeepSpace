@@ -23,8 +23,6 @@ class SolarSystemPlanetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.titleView = 
-        
         self.planetDetailsTableView.dataSource = self
         self.planetDetailsTableView.delegate = self
         

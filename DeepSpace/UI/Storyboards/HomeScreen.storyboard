@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAj-cG-gEg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,21 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Deep Space-->
+        <!--Home Screen View Controller-->
         <scene sceneID="TUy-JC-jJB">
             <objects>
-                <viewController id="I9Q-P4-u6X" sceneMemberID="viewController">
+                <viewController id="I9Q-P4-u6X" customClass="HomeScreenViewController" customModule="DeepSpace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceH-Dt-Gwr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zsh-uG-xGr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Deep Space" id="i9J-7m-8AE"/>
+                    <navigationItem key="navigationItem" id="i9J-7m-8AE"/>
+                    <connections>
+                        <segue destination="OWU-c2-zmk" kind="show" identifier="Teste" id="mso-RI-ctD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyh-c3-AO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="100"/>
+            <point key="canvasLocation" x="1669.5999999999999" y="99.400299850074973"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rju-7j-dZ4">
+            <objects>
+                <viewController id="OWU-c2-zmk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Csj-fu-RA1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="R4a-VK-7Qs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ux9-Ic-Hpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="100"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ev2-r4-OPP">
@@ -48,8 +66,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ek-Wv-Yu0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="nra-9t-yZt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0BI-r1-vA3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0BI-r1-vA3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

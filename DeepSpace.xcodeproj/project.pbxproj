@@ -15,6 +15,14 @@
 		3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C88921A4821900619919 /* OtherPlanetsTableViewCell.swift */; };
 		3C17C88C21A4821A00619919 /* OtherPlanetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C88A21A4821A00619919 /* OtherPlanetsTableViewCell.xib */; };
 		3C17C88E21A5C8F100619919 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C88D21A5C8F100619919 /* HomeScreen.storyboard */; };
+		3C17C89121A5CB7300619919 /* HomeScreenNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C89021A5CB7300619919 /* HomeScreenNavigationBarView.xib */; };
+		3C17C89321A5CBF700619919 /* HomeScreenNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89221A5CBF700619919 /* HomeScreenNavigationBarView.swift */; };
+		3C17C89521A5CF8500619919 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89421A5CF8500619919 /* HomeScreenViewController.swift */; };
+		3C17C89921A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89721A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift */; };
+		3C17C89A21A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17C89821A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib */; };
+		3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */; };
+		3C17C89E21A6D4D100619919 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89D21A6D4D000619919 /* UIColorExtension.swift */; };
+		3C17C8A121A6D71100619919 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A021A6D71100619919 /* UIViewExtension.swift */; };
 		3C1E132F219AFC9F0048B34A /* GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1326219AFC9F0048B34A /* GET.swift */; };
 		3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1328219AFC9F0048B34A /* NasaMedia.swift */; };
 		3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1329219AFC9F0048B34A /* NasaTechport.swift */; };
@@ -69,6 +77,14 @@
 		3C17C88921A4821900619919 /* OtherPlanetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPlanetsTableViewCell.swift; sourceTree = "<group>"; };
 		3C17C88A21A4821A00619919 /* OtherPlanetsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPlanetsTableViewCell.xib; sourceTree = "<group>"; };
 		3C17C88D21A5C8F100619919 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
+		3C17C89021A5CB7300619919 /* HomeScreenNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenNavigationBarView.xib; sourceTree = "<group>"; };
+		3C17C89221A5CBF700619919 /* HomeScreenNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenNavigationBarView.swift; sourceTree = "<group>"; };
+		3C17C89421A5CF8500619919 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		3C17C89721A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3C17C89821A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuOptionsCollectionViewCell.xib; sourceTree = "<group>"; };
+		3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		3C17C89D21A6D4D000619919 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		3C17C8A021A6D71100619919 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		3C1E1326219AFC9F0048B34A /* GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET.swift; sourceTree = "<group>"; };
 		3C1E1328219AFC9F0048B34A /* NasaMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaMedia.swift; sourceTree = "<group>"; };
 		3C1E1329219AFC9F0048B34A /* NasaTechport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaTechport.swift; sourceTree = "<group>"; };
@@ -131,6 +147,7 @@
 		3C17C87821A433B700619919 /* Collection View Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3C17C89621A5D37D00619919 /* Menu Options Cell */,
 				3C17C87921A433C300619919 /* Another Planet Cell */,
 			);
 			path = "Collection View Cell";
@@ -149,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				3C17C87F21A44A7400619919 /* SolarSystemPlanetExtension.swift */,
+				3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */,
+				3C17C89D21A6D4D000619919 /* UIColorExtension.swift */,
+				3C17C8A021A6D71100619919 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,11 +211,22 @@
 			path = "Other Planets";
 			sourceTree = "<group>";
 		};
-		3C17C88F21A5CA8E00619919 /* New Group */ = {
+		3C17C88F21A5CA8E00619919 /* Custom Navigation View */ = {
 			isa = PBXGroup;
 			children = (
+				3C17C89021A5CB7300619919 /* HomeScreenNavigationBarView.xib */,
+				3C17C89221A5CBF700619919 /* HomeScreenNavigationBarView.swift */,
 			);
-			path = "New Group";
+			path = "Custom Navigation View";
+			sourceTree = "<group>";
+		};
+		3C17C89621A5D37D00619919 /* Menu Options Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3C17C89721A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift */,
+				3C17C89821A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib */,
+			);
+			path = "Menu Options Cell";
 			sourceTree = "<group>";
 		};
 		3C1E1324219AFC9F0048B34A /* Web */ = {
@@ -242,10 +273,10 @@
 		3C1E1340219C89D90048B34A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3C17C88F21A5CA8E00619919 /* New Group */,
 				3C17C88721A4525F00619919 /* Storyboards */,
 				3C17C88121A450E100619919 /* Table View Cell */,
 				3C17C87821A433B700619919 /* Collection View Cell */,
+				3C17C88F21A5CA8E00619919 /* Custom Navigation View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -263,6 +294,7 @@
 			children = (
 				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 				3C2DFD2521A2F10E009D54C1 /* SolarSystemPlanetDetailsViewController.swift */,
+				3C17C89421A5CF8500619919 /* HomeScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -489,8 +521,10 @@
 				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
 				3C17C87D21A433FF00619919 /* AnotherPlanetCollectionViewCell.xib in Resources */,
 				3C17C88C21A4821A00619919 /* OtherPlanetsTableViewCell.xib in Resources */,
+				3C17C89121A5CB7300619919 /* HomeScreenNavigationBarView.xib in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
 				3C2DFD2421A2F0E3009D54C1 /* SolarSystemPlanetDetails.storyboard in Resources */,
+				3C17C89A21A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib in Resources */,
 				3C17C88E21A5C8F100619919 /* HomeScreen.storyboard in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
 				3C17C88621A4512100619919 /* PlanetyPropertyDetailsTableViewCell.xib in Resources */,
@@ -518,14 +552,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C17C8A121A6D71100619919 /* UIViewExtension.swift in Sources */,
 				3C1E1345219F20D90048B34A /* MinorPlanetAPI.swift in Sources */,
+				3C17C89921A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift in Sources */,
 				3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */,
 				3C1E133D219C49C00048B34A /* APOD.swift in Sources */,
 				3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */,
 				3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */,
 				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
+				3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */,
 				3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */,
 				3C1E133A219C42830048B34A /* PlanetStatus.swift in Sources */,
+				3C17C89321A5CBF700619919 /* HomeScreenNavigationBarView.swift in Sources */,
 				3C1E134F219FC3D60048B34A /* SolarSystemAPI.swift in Sources */,
 				3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */,
 				3C17C88021A44A7400619919 /* SolarSystemPlanetExtension.swift in Sources */,
@@ -534,8 +572,10 @@
 				3C1E134A219FC3390048B34A /* SolarSystemPlanet.swift in Sources */,
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
 				3C1E1336219B011E0048B34A /* NasaExoplanet.swift in Sources */,
+				3C17C89521A5CF8500619919 /* HomeScreenViewController.swift in Sources */,
 				3C1E1338219B0A260048B34A /* Exoplanet.swift in Sources */,
 				3C1E133F219C5B9C0048B34A /* ExoplanetHostStar.swift in Sources */,
+				3C17C89E21A6D4D100619919 /* UIColorExtension.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 				3C1E1347219F3FCF0048B34A /* MinorPlanet.swift in Sources */,
 				3C17C88521A4512100619919 /* PlanetyPropertyDetailsTableViewCell.swift in Sources */,
