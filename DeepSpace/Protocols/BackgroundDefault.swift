@@ -10,12 +10,12 @@ import Foundation
 import SceneKit
 import CoreMotion
 
-protocol MenusViews {
+protocol BackgroundDefault {
     var motionManager: CMMotionManager{get set}
     func setBackground(myScene: SCNView)
 }
 
-extension MenusViews{
+extension BackgroundDefault{
     func setBackground(myScene: SCNView){
         
         myScene.isUserInteractionEnabled = false
