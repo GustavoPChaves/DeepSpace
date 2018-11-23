@@ -53,6 +53,8 @@ class LibraryViewController: UIViewController {
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        activityIndicator.isHidden = true
+        self.view.addSubview(activityIndicator)
         
     }
     
@@ -98,7 +100,7 @@ class LibraryViewController: UIViewController {
         case 1:
             if apods.count < 31 {
                 if apods.isEmpty {
-                    self.view.addSubview(activityIndicator)
+                    activityIndicator.isHidden = false
                     activityIndicator.startAnimating()
                 }
                 
