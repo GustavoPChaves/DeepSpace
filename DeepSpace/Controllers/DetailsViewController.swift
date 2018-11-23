@@ -172,6 +172,19 @@ extension DetailsViewController : UICollectionViewDataSource, UICollectionViewDe
         cell?.layer.cornerRadius = 13
         cell?.planetImage.backgroundColor = UIColor.black
         
+        cell?.contentView.layer.cornerRadius = 13
+        cell?.contentView.layer.borderWidth = 1.0
+        cell?.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell?.contentView.layer.masksToBounds = true
+        
+        cell?.layer.shadowColor = UIColor.black.cgColor
+        cell?.layer.shadowOffset = CGSize(width: 1, height: 2)
+        cell?.layer.shadowRadius = 0
+        cell?.layer.shadowOpacity = 0.5
+        cell?.layer.masksToBounds = false
+        cell?.layer.shadowPath = UIBezierPath(roundedRect: cell!.bounds, cornerRadius: cell!.contentView.layer.cornerRadius).cgPath
+        cell?.layer.backgroundColor = UIColor.clear.cgColor
+        
         return cell!
     }
     
