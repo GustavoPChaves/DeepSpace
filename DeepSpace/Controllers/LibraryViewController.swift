@@ -116,7 +116,7 @@ class LibraryViewController: UIViewController {
                 self.contentCollectionView.reloadData()
             }
         default:
-            break
+            self.contentCollectionView.reloadData()
         }
         
     }

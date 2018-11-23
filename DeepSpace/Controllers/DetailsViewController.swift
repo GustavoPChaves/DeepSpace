@@ -59,6 +59,9 @@ class DetailsViewController: UIViewController {
             self.planetImageView.contentMode = .scaleAspectFill
         }
         
+        detailsTableView.rowHeight = UITableView.automaticDimension
+        detailsTableView.estimatedRowHeight = 50
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,21 +134,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
-            if let propertiesArray = presentedModel?.toArray() {
-                let topLabelString = propertiesArray[indexPath.row].property
-                let topLabelFont = UIFont.systemFont(ofSize: 16)
-                let topLabelHeight = topLabelString.heightOfString(usingFont: topLabelFont)
-                
-                let bottomLabelString = propertiesArray[indexPath.row].value
-                let bottomLabelFont = UIFont.systemFont(ofSize: 18)
-                let bottomLabelHeight = bottomLabelString.heightOfString(usingFont: bottomLabelFont)
-                
-                let overallHeight = topLabelHeight + bottomLabelHeight + 8
-                return overallHeight
-                
-            } else {
-                return 50
-            }
+            return UITableView.automaticDimension
         } else {
             return cellSize!.height + 16
         }

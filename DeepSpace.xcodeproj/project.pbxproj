@@ -23,7 +23,6 @@
 		3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */; };
 		3C17C89E21A6D4D100619919 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C89D21A6D4D000619919 /* UIColorExtension.swift */; };
 		3C17C8A121A6D71100619919 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A021A6D71100619919 /* UIViewExtension.swift */; };
-		3C17C8A421A6FB2500619919 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A321A6FB2500619919 /* CustomCollectionViewLayout.swift */; };
 		3C17C8A621A70CAA00619919 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A521A70CAA00619919 /* StringExtension.swift */; };
 		3C17C8A821A741E700619919 /* ConvertibleToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A721A741E700619919 /* ConvertibleToArray.swift */; };
 		3C17C8AA21A74B7400619919 /* APODExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17C8A921A74B7400619919 /* APODExtension.swift */; };
@@ -91,7 +90,6 @@
 		3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		3C17C89D21A6D4D000619919 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3C17C8A021A6D71100619919 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		3C17C8A321A6FB2500619919 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		3C17C8A521A70CAA00619919 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3C17C8A721A741E700619919 /* ConvertibleToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertibleToArray.swift; sourceTree = "<group>"; };
 		3C17C8A921A74B7400619919 /* APODExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODExtension.swift; sourceTree = "<group>"; };
@@ -241,14 +239,6 @@
 			path = "Menu Options Cell";
 			sourceTree = "<group>";
 		};
-		3C17C8A221A6FAC900619919 /* Collection View Layout */ = {
-			isa = PBXGroup;
-			children = (
-				3C17C8A321A6FB2500619919 /* CustomCollectionViewLayout.swift */,
-			);
-			path = "Collection View Layout";
-			sourceTree = "<group>";
-		};
 		3C17C8AB21A7729000619919 /* Library View Controller extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				3C17C88721A4525F00619919 /* Storyboards */,
-				3C17C8A221A6FAC900619919 /* Collection View Layout */,
 				3C17C88121A450E100619919 /* Table View Cell */,
 				3C17C87821A433B700619919 /* Collection View Cell */,
 				3C17C88F21A5CA8E00619919 /* Custom Navigation View */,
@@ -644,7 +633,6 @@
 				3C17C88521A4512100619919 /* PlanetPropertyDetailsTableViewCell.swift in Sources */,
 				3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */,
 				3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */,
-				3C17C8A421A6FB2500619919 /* CustomCollectionViewLayout.swift in Sources */,
 				3C17C87C21A433FF00619919 /* PlanetCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
