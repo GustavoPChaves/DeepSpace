@@ -28,6 +28,7 @@
 		FCF47A6021A5853400CE2963 /* CollectionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF47A5F21A5853400CE2963 /* CollectionTestViewController.swift */; };
 		FCF47A6221A590BF00CE2963 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF47A6121A590BE00CE2963 /* CustomCollectionViewCell.swift */; };
 		FCF9057F219AF68900D0F607 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9057E219AF68900D0F607 /* Get.swift */; };
+		FCFCD5B221A83554004B1F39 /* FadePushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCD5B121A83554004B1F39 /* FadePushAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		FCF47A5F21A5853400CE2963 /* CollectionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestViewController.swift; sourceTree = "<group>"; };
 		FCF47A6121A590BE00CE2963 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCF9057E219AF68900D0F607 /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
+		FCFCD5B121A83554004B1F39 /* FadePushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePushAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FCF47A5C21A584A200CE2963 /* CustonTransitionManager.swift */,
+				FCFCD5B121A83554004B1F39 /* FadePushAnimator.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
 				FCF9057F219AF68900D0F607 /* Get.swift in Sources */,
 				FCF47A6021A5853400CE2963 /* CollectionTestViewController.swift in Sources */,
+				FCFCD5B221A83554004B1F39 /* FadePushAnimator.swift in Sources */,
 				FCF47A6221A590BF00CE2963 /* CustomCollectionViewCell.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */,

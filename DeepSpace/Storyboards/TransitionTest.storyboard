@@ -55,7 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="myCollection" destination="XQP-yx-eNy" id="APU-JQ-BZa"/>
-                        <segue destination="FY4-oc-qdw" kind="show" id="hL4-bi-pPf"/>
+                        <segue destination="FY4-oc-qdw" kind="show" identifier="next" id="wo8-l0-N5e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qd3-RL-ssB" userLabel="First Responder" sceneMemberID="firstResponder"/>
