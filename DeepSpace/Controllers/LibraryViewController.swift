@@ -10,6 +10,8 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     
+    var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var contentCollectionView: UICollectionView!
     var navigationBarView: HomeScreenNavigationBarView!
     var gradientLayer: CAGradientLayer!
@@ -26,7 +28,7 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(gradientColors)
+        activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
         
         navigationBarView = HomeScreenNavigationBarView(frame: self.navigationController!.navigationBar.frame)
         navigationBarView.titleLabel.text = "Deep Space"
@@ -48,6 +50,9 @@ class LibraryViewController: UIViewController {
         
         contentCollectionView.dataSource = self
         contentCollectionView.delegate = self
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         
     }
     
@@ -92,11 +97,17 @@ class LibraryViewController: UIViewController {
             self.contentCollectionView.reloadData()
         case 1:
             if apods.count < 31 {
+                if apods.isEmpty {
+                    self.view.addSubview(activityIndicator)
+                    activityIndicator.startAnimating()
+                }
+                
                 NasaAPOD.getAPODsOfTheMonth(hd: false) { apod in
                     DispatchQueue.main.async {
                         let isAlreadyInArray = self.apods.contains { $0.title == apod.title }
                         if !isAlreadyInArray { self.apods.append(apod) }
                         self.contentCollectionView.reloadData()
+                        self.activityIndicator.stopAnimating()
                     }
                 }
             } else {
