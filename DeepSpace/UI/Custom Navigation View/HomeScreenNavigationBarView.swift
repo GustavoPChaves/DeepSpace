@@ -10,9 +10,13 @@ import UIKit
 
 class HomeScreenNavigationBarView: UIView {
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var menuCollectionView: UICollectionView!
+    
+    override var intrinsicContentSize: CGSize {
+        return UIView.layoutFittingExpandedSize
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +31,9 @@ class HomeScreenNavigationBarView: UIView {
     public func commonInit() {
         Bundle.main.loadNibNamed("HomeScreenNavigationBarView", owner: self, options: nil)
         self.addSubview(contentView)
+        
+        self.contentView.contentMode = .scaleAspectFill
+        self.contentView.clipsToBounds = true
     }
     
     func setCollectionViewDataSourceDelegate

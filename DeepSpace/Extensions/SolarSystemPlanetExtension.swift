@@ -6,7 +6,7 @@
 //  Copyright © 2018 Adriel Freire. All rights reserved.
 //
 
-extension SolarSystemPlanet {
+extension SolarSystemPlanet : ConvertibleToArray {
     public func toArray() -> [(property: String, value: String)] {
         let nameProperty = (property: "Name", value: self.name!)
         let diameterProperty = (property: "Diameter", value: "\(self.diameter!) x 10ˆ3 km")

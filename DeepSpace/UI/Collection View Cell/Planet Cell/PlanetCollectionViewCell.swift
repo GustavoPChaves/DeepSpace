@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnotherPlanetCollectionViewCell: UICollectionViewCell {
+class PlanetCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var planetImage: UIImageView!
     @IBOutlet weak var planetNameLabel: UILabel!

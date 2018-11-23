@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlanetyPropertyDetailsTableViewCell: UITableViewCell {
+class PlanetPropertyDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var propertyLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!

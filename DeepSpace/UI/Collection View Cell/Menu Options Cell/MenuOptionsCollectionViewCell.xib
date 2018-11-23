@@ -12,18 +12,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="optionCell" id="gTV-IL-0wX" customClass="MenuOptionsCollectionViewCell" customModule="DeepSpace" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-Io-NhY">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuT-69-jVP">
-                        <rect key="frame" x="98.5" y="55.5" width="43.5" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuT-69-jVP">
+                        <rect key="frame" x="8" y="8" width="63" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -31,20 +31,22 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="EDz-Io-NhY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EYz-VD-OI4"/>
-                <constraint firstItem="EDz-Io-NhY" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="F5Z-Uz-kY7"/>
-                <constraint firstItem="EDz-Io-NhY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Jq1-LY-ljR"/>
-                <constraint firstItem="tuT-69-jVP" firstAttribute="centerX" secondItem="EDz-Io-NhY" secondAttribute="centerX" id="lkq-Sc-f5m"/>
-                <constraint firstItem="EDz-Io-NhY" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" id="xUV-7X-S5F"/>
-                <constraint firstItem="tuT-69-jVP" firstAttribute="centerY" secondItem="EDz-Io-NhY" secondAttribute="centerY" id="xg3-7d-Fsq"/>
+                <constraint firstItem="EDz-Io-NhY" firstAttribute="height" secondItem="tuT-69-jVP" secondAttribute="height" constant="16" id="Gso-wg-xES"/>
+                <constraint firstItem="EDz-Io-NhY" firstAttribute="width" secondItem="tuT-69-jVP" secondAttribute="width" constant="16" id="I9y-oJ-Dpc"/>
+                <constraint firstItem="tuT-69-jVP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="NEk-U4-MNa"/>
+                <constraint firstAttribute="bottom" secondItem="tuT-69-jVP" secondAttribute="bottom" constant="8" id="g1N-ch-piQ"/>
+                <constraint firstAttribute="trailing" secondItem="tuT-69-jVP" secondAttribute="trailing" constant="8" id="gZX-TC-GdM"/>
+                <constraint firstItem="EDz-Io-NhY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ha8-Sh-wCc"/>
+                <constraint firstItem="tuT-69-jVP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="rhN-OL-sNX"/>
+                <constraint firstItem="EDz-Io-NhY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wEn-Fu-Lun"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="240" height="128"/>
+            <size key="customSize" width="79" height="48"/>
             <connections>
                 <outlet property="background" destination="EDz-Io-NhY" id="7Lg-ds-dHo"/>
                 <outlet property="optionTitleLabel" destination="tuT-69-jVP" id="DwO-CA-QVT"/>
             </connections>
-            <point key="canvasLocation" x="129.59999999999999" y="178.11094452773614"/>
+            <point key="canvasLocation" x="0.80000000000000004" y="142.1289355322339"/>
         </collectionViewCell>
     </objects>
 </document>

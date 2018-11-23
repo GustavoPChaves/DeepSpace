@@ -9,11 +9,23 @@
 import UIKit
 
 extension UINavigationBar {
-    func removeSubview(view: UIView) {
+    func removeSubview(_ view: UIView) {
         for subview in self.subviews {
             if subview == view {
                 subview.removeFromSuperview()
             }
         }
     }
+    
+    func transparent() {
+        self.setBackgroundImage(UIImage(), for: .default)
+        self.shadowImage = UIImage()
+        self.isTranslucent = true
+    }
+    
+    func removeTransparency() {
+        self.setBackgroundImage(nil, for: .default)
+        self.shadowImage = nil
+    }
+    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func setGradient(colors: [CGColor], angle: Float = 0) {
+    func setGradient(colors: [CGColor], angle: Float = 0) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         
         gradient.frame = bounds
@@ -38,6 +38,16 @@ extension UIView {
         gradient.startPoint = CGPoint(x: CGFloat(startPointX), y: CGFloat(startPointY))
         
         layer.insertSublayer(gradient, at: 0)
+        return gradient
+    }
+    
+    func removeGradient(layer: CAGradientLayer) {
+        for index in 0..<self.layer.sublayers!.count {
+            if self.layer.sublayers![index] == layer {
+                self.layer.sublayers?.remove(at: index)
+                break
+            }
+        }
     }
     
 }
