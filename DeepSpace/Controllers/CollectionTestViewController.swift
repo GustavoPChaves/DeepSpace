@@ -17,6 +17,7 @@ class CollectionTestViewController: UIViewController {
         myCollection.delegate = self
         myCollection.dataSource = self
         
+        
     }
     
 
@@ -78,6 +79,41 @@ extension CollectionTestViewController: UICollectionViewDelegate, UICollectionVi
         
     }
     
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let cell = myCollection.cellForItem(at: IndexPath(row: 2, section: 0))!
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+            cell.center.y = cell.center.y + 30
+        }) { (finished) in
+            
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let cell = myCollection.cellForItem(at: IndexPath(row: 2, section: 0))!
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+            cell.center.y = cell.center.y + 30
+        }) { (finished) in
+            
+        }
+        let cell2 = myCollection.cellForItem(at: IndexPath(row: 1, section: 0))!
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+            cell2.center.y = cell2.center.y + 30
+        }) { (finished) in
+            
+        }
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let cell = myCollection.cellForItem(at: IndexPath(row: 2, section: 0))!
+//        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+//            cell.center.y = cell.center.y + 30
+//        }) { (finished) in
+//
+//        }
+//    }
+//
+    
 }
 
 extension CollectionTestViewController: UIViewControllerTransitioningDelegate{
@@ -89,4 +125,7 @@ extension CollectionTestViewController: UIViewControllerTransitioningDelegate{
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadePushAnimator()
     }
+   
 }
+
+

@@ -20,7 +20,7 @@ extension MenusViews{
         
         myScene.isUserInteractionEnabled = false
         
-        guard let image = UIImage(named: "Background") else{
+        guard let image = UIImage(named: "Apod") else{
             fatalError("Failed to load background")
         }
         let background = SCNScene()
