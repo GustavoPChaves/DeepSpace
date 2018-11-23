@@ -21,8 +21,8 @@ class LibraryViewController: UIViewController {
     
     var selectedMenuOption = 0
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
-    var apod: APOD?
-
+    var apods: [APOD] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,10 +83,29 @@ class LibraryViewController: UIViewController {
             }
         }
         
-        self.contentCollectionView.reloadData()
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+        self.reloadContent()
+    }
+    
+    func reloadContent() {
+        switch selectedMenuOption {
+        case 0:
             self.contentCollectionView.reloadData()
+        case 1:
+            if apods.count < 31 {
+                NasaAPOD.getAPODsOfTheMonth(hd: false) { apod in
+                    DispatchQueue.main.async {
+                        let isAlreadyInArray = self.apods.contains { $0.title == apod.title }
+                        if !isAlreadyInArray { self.apods.append(apod) }
+                        self.contentCollectionView.reloadData()
+                    }
+                }
+            } else {
+                self.contentCollectionView.reloadData()
+            }
+        default:
+            break
         }
+        
     }
 
 }
@@ -98,7 +117,7 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
             case 0:
                 return allPlanets.count
             case 1:
-                return 1
+                return apods.count
             default:
                 return 0
             }
@@ -130,26 +149,6 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView === contentCollectionView {
-            switch selectedMenuOption {
-            case 0:
-                let screenSize = UIScreen.main.bounds.size
-                let cellWidth = (screenSize.width - 32 - 8)/2
-                return CGSize(width: cellWidth, height: 1.33 * cellWidth)
-            case 1:
-                let screenSize = UIScreen.main.bounds.size
-                let cellWidth = (screenSize.width - 32)
-                return CGSize(width: cellWidth, height: 1.33 * cellWidth)
-            default:
-                return CGSize.zero
-            }
-        } else {
-            let cellWidth = menuOptions[indexPath.item].widthOfString(usingFont: UIFont.systemFont(ofSize: 15)) + 16
-            return CGSize(width: cellWidth, height: 36.5)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView === contentCollectionView {
             let identifier = "details"
@@ -160,7 +159,7 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
             case 0:
                 sender = allPlanets[indexPath.row]
             case 1:
-                sender = apod
+                sender = apods[indexPath.row]
             default:
                 break
             }
@@ -170,6 +169,37 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
         } else {
             self.optionChanged(index: indexPath.item)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView === contentCollectionView {
+            switch selectedMenuOption {
+            case 1:
+                let screenSize = UIScreen.main.bounds.size
+                let cellWidth = screenSize.width - 32
+                return CGSize(width: cellWidth, height: 1.33 * cellWidth)
+            default:
+                let screenSize = UIScreen.main.bounds.size
+                let cellWidth = (screenSize.width - 32 - 10)/2
+                return CGSize(width: cellWidth, height: 1.33 * cellWidth)
+            }
+        } else {
+            let cellWidth = menuOptions[indexPath.item].widthOfString(usingFont: UIFont.systemFont(ofSize: 15)) + 16
+            return CGSize(width: cellWidth, height: 36.5)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch selectedMenuOption {
+        case 1:
+            return 16
+        default:
+            return 10
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
 }

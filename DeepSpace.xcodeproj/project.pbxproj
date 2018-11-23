@@ -177,13 +177,10 @@
 		3C17C87E21A44A4300619919 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3C17C8B321A828A300619919 /* UIKit extensions */,
+				3C17C8B221A8288B00619919 /* Model To Array Implement extension */,
 				3C17C8AB21A7729000619919 /* Library View Controller extensions */,
-				3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */,
-				3C17C89D21A6D4D000619919 /* UIColorExtension.swift */,
-				3C17C8A021A6D71100619919 /* UIViewExtension.swift */,
-				3C17C87F21A44A7400619919 /* SolarSystemPlanetExtension.swift */,
-				3C17C8A521A70CAA00619919 /* StringExtension.swift */,
-				3C17C8A921A74B7400619919 /* APODExtension.swift */,
+				3C17C8B421A82A8900619919 /* Other extensions */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +256,33 @@
 				3C17C8AE21A773ED00619919 /* PrepareForSegueExtension.swift */,
 			);
 			path = "Library View Controller extensions";
+			sourceTree = "<group>";
+		};
+		3C17C8B221A8288B00619919 /* Model To Array Implement extension */ = {
+			isa = PBXGroup;
+			children = (
+				3C17C8A921A74B7400619919 /* APODExtension.swift */,
+				3C17C87F21A44A7400619919 /* SolarSystemPlanetExtension.swift */,
+			);
+			path = "Model To Array Implement extension";
+			sourceTree = "<group>";
+		};
+		3C17C8B321A828A300619919 /* UIKit extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C17C89D21A6D4D000619919 /* UIColorExtension.swift */,
+				3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */,
+				3C17C8A021A6D71100619919 /* UIViewExtension.swift */,
+			);
+			path = "UIKit extensions";
+			sourceTree = "<group>";
+		};
+		3C17C8B421A82A8900619919 /* Other extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C17C8A521A70CAA00619919 /* StringExtension.swift */,
+			);
+			path = "Other extensions";
 			sourceTree = "<group>";
 		};
 		3C1E1324219AFC9F0048B34A /* Web */ = {

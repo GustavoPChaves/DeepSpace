@@ -18,21 +18,21 @@ extension LibraryViewController {
         cell?.planetNameLabel.text = imageName
     }
     
-    func apodMenuOptionSelected(cell: PlanetCollectionViewCell?) {
-        if self.apod == nil {
-            NasaAPOD.request(hd: false) { apod in
-                DispatchQueue.main.sync {
-                    self.apod = apod
-                    cell?.planetImage.image = apod.image
-                    cell?.planetImage.contentMode = .scaleAspectFill
-                    cell?.planetNameLabel.text = apod.title
-                }
-            }
-        } else {
-            cell?.planetImage.image = self.apod?.image
-            cell?.planetImage.contentMode = .scaleAspectFill
-            cell?.planetNameLabel.text = "Astronomy Picture Of the Day:\n\(self.apod!.title!)"
-        }
+    func apodMenuOptionSelected(cell: PlanetCollectionViewCell?,
+                                indexPath: IndexPath) {
+        let apod = self.apods[indexPath.item]
+        cell?.planetImage.image = apod.image
+        cell?.planetImage.contentMode = .scaleAspectFill
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let apodDate = dateFormatter.date(from: apod.date!)
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let apodDateString = dateFormatter.string(from: apodDate!)
+        
+        cell?.planetNameLabel.text = "\(apod.title!)\n\(apodDateString)"
     }
     
     func buildCollectionViewContent(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,7 +47,8 @@ extension LibraryViewController {
             self.solarSystemMenuOptionSelected(cell: cell,
                                                indexPath: indexPath)
         case 1:
-            self.apodMenuOptionSelected(cell: cell)
+            self.apodMenuOptionSelected(cell: cell,
+                                        indexPath: indexPath)
         default:
             break
         }

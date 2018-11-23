@@ -21,9 +21,6 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
-    var planets : [SolarSystemBodies] = []
-    
     var presentedModel : ConvertibleToArray? {
         didSet {
             if presentedModel is APOD {
@@ -34,6 +31,8 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
+    var planets : [SolarSystemBodies] = []
     var cellSize : CGSize?
     
     override func viewDidLoad() {
@@ -77,11 +76,11 @@ class DetailsViewController: UIViewController {
         let imageViewHeight = self.planetImageView.frame.size.height
         
         UIView.animate(withDuration: 0.2) {
-            if scrollOffset > 0 {
+            if scrollOffset > 100 {
                 self.planetImageView.frame.origin.y = safeAreaY - imageViewHeight
                 self.detailsTableView.frame.origin.y = safeAreaY
                 self.detailsTableView.frame.size.height = self.view.frame.size.height - safeAreaY
-            } else {
+            } else if scrollOffset == 0 {
                 let tableY = safeAreaY + imageViewHeight
                 self.planetImageView.frame.origin.y = safeAreaY
                 self.detailsTableView.frame.origin.y = tableY

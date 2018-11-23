@@ -18,15 +18,44 @@ struct NasaAPOD : APIManager {
     ///
     /// - Parameters:
     ///   - hd: If the image which will be returned will be HD
+    ///   - date: The date of APOD
     ///   - completion: The handler of the API return
-    public static func request(hd: Bool = true, completion: @escaping (APOD) -> Void) {
+    public static func request(hd: Bool = true, date: Date = Date(timeIntervalSinceNow: 0), completion: @escaping (APOD) -> Void) {
         let hdString = hd ? "hd=true" : "hd=false"
-        GET.request(NasaAPOD.baseURL + hdString + "&" + NasaAPOD.key!) { data in
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = "date=\(dateFormatter.string(from: date))"
+        
+        GET.request(NasaAPOD.baseURL + hdString + "&\(NasaAPOD.key!)" + "&\(dateString)") { data in
             do {
                 let apod = try JSONDecoder().decode(APOD.self, from: data)
                 completion(apod)
             } catch {
                 print("There was a JSON parse error. Error description: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    /// Gets all Astronomy Picture of the Day Objects from the last 30 days, returning
+    /// one by one in the completion
+    ///
+    /// - Parameters:
+    ///   - hd: If the images which will be returned will be HD
+    ///   - completion: The handler of the API return
+    public static func getAPODsOfTheMonth(hd: Bool = true, completion: @escaping (APOD) -> Void) {
+        DispatchQueue.global().async {
+            let dayInSeconds = 60 * 60 * 24.0
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            for day in 0...30 {
+                let date = Date(timeIntervalSinceNow: -dayInSeconds * Double(day))
+                NasaAPOD.request(hd: hd, date: date) { apod in
+                    completion(apod)
+                    semaphore.signal()
+                }
+                semaphore.wait()
             }
         }
     }

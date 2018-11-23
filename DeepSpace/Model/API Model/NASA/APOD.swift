@@ -32,7 +32,7 @@ class APOD : Codable {
         case copyright
     }
     
-    public init(title: String, explanation: String, date: String, url: String, hdurl: String, mediaType: String, serviceVersion: String, copyright: String, image: UIImage?) {
+    public init(title: String?, explanation: String?, date: String?, url: String?, hdurl: String?, mediaType: String?, serviceVersion: String?, copyright: String?, image: UIImage?) {
         self.title = title
         self.explanation = explanation
         self.date = date
@@ -50,17 +50,20 @@ class APOD : Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         // Decoding process itself
-        let title = try container.decode(String.self, forKey: .title)
-        let explanation = try container.decode(String.self, forKey: .explanation)
-        let date = try container.decode(String.self, forKey: .date)
-        let url = try container.decode(String.self, forKey: .url)
-        let hdurl = try container.decode(String.self, forKey: .hdurl)
-        let mediaType = try container.decode(String.self, forKey: .mediaType)
-        let serviceVersion =  try container.decode(String.self, forKey: .serviceVersion)
-        let copyright = try container.decode(String.self, forKey: .copyright)
+        let title = try? container.decode(String.self, forKey: .title)
+        let explanation = try? container.decode(String.self, forKey: .explanation)
+        let date = try? container.decode(String.self, forKey: .date)
+        let url = try? container.decode(String.self, forKey: .url)
+        let hdurl = try? container.decode(String.self, forKey: .hdurl)
+        let mediaType = try? container.decode(String.self, forKey: .mediaType)
+        let serviceVersion =  try? container.decode(String.self, forKey: .serviceVersion)
+        let copyright = try? container.decode(String.self, forKey: .copyright)
         
         self.init(title: title, explanation: explanation, date: date, url: url, hdurl: hdurl, mediaType: mediaType, serviceVersion: serviceVersion, copyright: copyright, image: nil)
-        GET.request(url) { self.image = UIImage(data: $0) }
+        if mediaType != nil
+        && mediaType == "image" {
+            GET.request(url!) { self.image = UIImage(data: $0) }
+        }
         
     }
     
