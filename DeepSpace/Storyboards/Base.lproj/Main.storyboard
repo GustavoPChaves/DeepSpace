@@ -17,9 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niR-fu-fJb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="niR-fu-fJb" secondAttribute="bottom" id="asV-1V-NiG"/>
+                            <constraint firstItem="niR-fu-fJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cxA-nY-TsN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="niR-fu-fJb" secondAttribute="trailing" id="eNK-aX-vTV"/>
+                            <constraint firstItem="niR-fu-fJb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="maA-Vc-3HC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myScene" destination="niR-fu-fJb" id="APy-s2-7Om"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

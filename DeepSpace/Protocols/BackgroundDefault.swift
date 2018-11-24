@@ -20,20 +20,25 @@ extension BackgroundDefault{
         
         myScene.isUserInteractionEnabled = false
         
-        guard let image = UIImage(named: "Background") else{
+        guard let image = UIImage(named: "Apod") else{
             fatalError("Failed to load background")
         }
         let background = SCNScene()
         myScene.scene = background
         myScene.allowsCameraControl = true
         
-        let sphere = SCNSphere(radius: 20)
-        sphere.firstMaterial?.isDoubleSided = true
-        sphere.firstMaterial?.diffuse.contents = image
         
-        let sphereNode = SCNNode(geometry: sphere)
-        sphereNode.position = SCNVector3Make(0, 0, 0)
-        background.rootNode.addChildNode(sphereNode)
+        let plane = SCNPlane(width: 30, height: 30)
+        plane.firstMaterial?.diffuse.contents = image
+//        sphere.firstMaterial?.isDoubleSided = true
+        
+        
+        
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(0, 0, -20
+        )
+//        planeNode.rotation = SCNVector4Make(<#T##x: Float##Float#>, <#T##y: Float##Float#>, <#T##z: Float##Float#>, <#T##w: Float##Float#>)
+        background.rootNode.addChildNode(planeNode)
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
@@ -46,15 +51,17 @@ extension BackgroundDefault{
             fatalError("Device motion is not available")
         }
         
-        motionManager.deviceMotionUpdateInterval = 1/15
+        motionManager.deviceMotionUpdateInterval = 1/60
         motionManager.startDeviceMotionUpdates(to: .main) { (CMDeviceMotion, Error) in
-            
+
             guard let data = CMDeviceMotion else{
                 return
             }
             
-            let attitude = data.attitude
-            cameraNode.eulerAngles = SCNVector3Make(Float(attitude.roll - .pi/2), Float(attitude.yaw), Float(attitude.pitch))
+            let gravity = data.gravity
+            cameraNode.position = SCNVector3Make(Float(gravity.x) * -3, Float(gravity.y)*3, 0)
+
+            
         }
         
     }

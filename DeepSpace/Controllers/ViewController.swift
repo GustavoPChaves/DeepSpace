@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import SceneKit
+import CoreMotion
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, BackgroundDefault {
+    var motionManager: CMMotionManager = CMMotionManager()
+    
+    @IBOutlet weak var myScene: SCNView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        setBackground(myScene: myScene)
     }
     
 
