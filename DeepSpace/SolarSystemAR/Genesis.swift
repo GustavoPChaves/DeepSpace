@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SceneKit
 class Genesis {
   
     func createSolarSystem() -> [AstronomicalObject]{
@@ -116,6 +116,58 @@ class Genesis {
         return solarSystem
     }
     
+    func cretaPlanetNodeBase(astronomicalBodies: AstronomicalObject) -> SCNNode {
+        let planetNode = SCNNode()
+        planetNode.position = SCNVector3(astronomicalBodies.positionX,astronomicalBodies.positionY,astronomicalBodies.positionZ)
+       return planetNode
+    }
     
+    func createPlanetAR(astronomicalBodies: AstronomicalObject,scale: Float) -> SCNNode{
+        let wrapperNode = SCNNode()
+        
+        var numberTexture = 0;
+        if let virtualPlanet = SCNScene(named: astronomicalBodies.modelScn, inDirectory: "Models.scnassets", options: nil) {
+            for child in virtualPlanet.rootNode.childNodes{
+                let texturePlanet = SCNMaterial()
+                texturePlanet.diffuse.contents = UIImage(named: astronomicalBodies.textures[numberTexture])
+                if  numberTexture > 0 {
+                    let translation = SCNMatrix4MakeTranslation(0, -1, 0)
+                    let rotation = SCNMatrix4MakeRotation(Float.pi / 2, 0, 0, 1)
+                    let transform = SCNMatrix4Mult(translation, rotation)
+                    texturePlanet.diffuse.contentsTransform = transform
+                }
+                
+                child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+                child.geometry?.materials = [texturePlanet]
+                child.scale.x = numberTexture > 0 ? 0.6 : scale
+                child.scale.y = numberTexture > 0 ? 0.05 : scale
+                child.scale.z = numberTexture > 0 ? 0.6 : scale
+                child.eulerAngles.z =  astronomicalBodies.eulerAngle
+                
+                wrapperNode.addChildNode(child)
+                numberTexture+=1
+                
+            }
+        }else{
+            print("Não foi possivel criar o planeta")
+        }
+        
+        rotationAstronomicalBodies(astronomicalBodies: astronomicalBodies, node: wrapperNode)
+        return wrapperNode
+    }
     
+    func rotationAstronomicalBodies(astronomicalBodies: AstronomicalObject, node: SCNNode){
+        // y responsavel pela velocidade
+        if astronomicalBodies.obliquity != -8.912835{
+            let rotateOne = SCNAction.rotate(by: .pi, around: node.convertVector(SCNVector3(x: 1, y: astronomicalBodies.obliquity, z: 0), to: node.parent), duration: TimeInterval(astronomicalBodies.durationRotation))
+            let repeatForever = SCNAction.repeatForever(rotateOne)
+            let trasnlation = SCNAction.moveBy(x: 0.0, y: 0.0, z: 3, duration: 5.0)
+            node.runAction(repeatForever)
+            node.runAction(trasnlation)
+        }else{//uranus
+            let rotateOne = SCNAction.rotate(by: .pi, around: node.convertVector(SCNVector3(x: astronomicalBodies.obliquity, y: 1, z: 0), to: node.parent), duration: TimeInterval(astronomicalBodies.durationRotation))
+            let repeatForever = SCNAction.repeatForever(rotateOne)
+            node.runAction(repeatForever)
+        }
+    }
 }
