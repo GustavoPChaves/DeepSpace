@@ -90,12 +90,16 @@ class DetailsViewController: UIViewController {
     }
     
     func expandImage() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.title = "Image Details"
         headerImageExpandedScrollView.isHidden = false
         navigationItem.rightBarButtonItem = closeImageExpandedButton
         navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @objc func closeImage(_ sender: UIBarButtonItem) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Details"
         headerImageExpandedScrollView.isHidden = true
         navigationItem.rightBarButtonItem = nil
         detailsTableView.reloadRows(at: [IndexPath(row: 0, section: 0)],
