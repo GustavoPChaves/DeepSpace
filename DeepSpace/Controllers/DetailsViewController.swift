@@ -10,22 +10,19 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet weak var planetImageView: UIImageView!
     @IBOutlet weak var detailsTableView: UITableView!
+    var activityIndicator: UIActivityIndicatorView!
     
-    var image = UIImage(named: "picture.png") {
-        didSet {
-            if let imageView = self.planetImageView {
-                imageView.image = image
-            }
-        }
-    }
+    @IBOutlet weak var headerImageExpandedScrollView: UIScrollView!
+    var headerImageExpandedImageView: UIImageView!
+    var closeImageExpandedButton: UIBarButtonItem!
     
+    var image = UIImage(named: "picture.png")
     var presentedModel : ConvertibleToArray? {
         didSet {
-            if presentedModel is APOD {
-                if let imageView = self.planetImageView {
-                    imageView.contentMode = .scaleAspectFill
+            if let activityIndicator = activityIndicator {
+                if activityIndicator.isAnimating {
+                    activityIndicator.stopAnimating()
                 }
             }
         }
@@ -44,28 +41,61 @@ class DetailsViewController: UIViewController {
         let quarterOfScreenWidth = UIScreen.main.bounds.size.width/4
         cellSize = CGSize(width: quarterOfScreenWidth, height: 1.33 * quarterOfScreenWidth)
         
+        let imageHeaderXIB = UINib(nibName: "ImageHeaderTableViewCell", bundle: Bundle.main)
+        self.detailsTableView.register(imageHeaderXIB, forCellReuseIdentifier: "imageHeader")
+        
         let planetDetailsXIB = UINib(nibName: "PlanetPropertyDetailsTableViewCell", bundle: Bundle.main)
         self.detailsTableView.register(planetDetailsXIB, forCellReuseIdentifier: "planetDetails")
         
         let otherPlanetsXIB = UINib(nibName: "OtherPlanetsTableViewCell", bundle: Bundle.main)
         self.detailsTableView.register(otherPlanetsXIB, forCellReuseIdentifier: "otherPlanets")
         
-        self.planetImageView.image = image
-        if image != UIImage(named: "picture.png") {
-            self.planetImageView.backgroundColor = UIColor.black
-        }
-
-        if presentedModel is APOD {
-            self.planetImageView.contentMode = .scaleAspectFill
-        }
-        
         detailsTableView.rowHeight = UITableView.automaticDimension
         detailsTableView.estimatedRowHeight = 50
         
+        headerImageExpandedScrollView.backgroundColor = UIColor.black
+        headerImageExpandedScrollView.isHidden = true
+        headerImageExpandedScrollView.maximumZoomScale = 15
+        headerImageExpandedScrollView.minimumZoomScale = 0.0001
+        headerImageExpandedScrollView.delegate = self
+        
+        headerImageExpandedImageView = UIImageView(frame: self.view.bounds)
+        headerImageExpandedImageView.contentMode = .scaleAspectFit
+        headerImageExpandedImageView.backgroundColor = UIColor.black
+        headerImageExpandedImageView.image = image
+        
+        headerImageExpandedScrollView.addSubview(headerImageExpandedImageView)
+        view.addSubview(headerImageExpandedScrollView)
+        
+        closeImageExpandedButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeImage(_:)))
+        
+        activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        activityIndicator.style = .whiteLarge
+        activityIndicator.hidesWhenStopped = true
+        self.view.addSubview(activityIndicator)
+        
+        if presentedModel == nil {
+            activityIndicator.startAnimating()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+    }
+    
+    func expandImage() {
+        headerImageExpandedScrollView.isHidden = false
+        navigationItem.rightBarButtonItem = closeImageExpandedButton
+    }
+    
+    @objc func closeImage(_ sender: UIBarButtonItem) {
+        headerImageExpandedScrollView.isHidden = true
+        navigationItem.rightBarButtonItem = nil
+        detailsTableView.reloadRows(at: [IndexPath(row: 0, section: 0)],
+                                    with: .none)
     }
     
     func isTheCellWithCollectionView(tableViewRow: Int) -> Bool {
@@ -73,31 +103,36 @@ class DetailsViewController: UIViewController {
             && !planets.isEmpty
     }
     
-    func collapseImageOnScroll(_ scrollView: UIScrollView) {
-        let safeAreaY = (self.navigationController?.navigationBar.frame.size.height ?? 0) + UIApplication.shared.statusBarFrame.size.height
-        let scrollOffset = scrollView.contentOffset.y
-        let imageViewHeight = self.planetImageView.frame.size.height
-        
-        UIView.animate(withDuration: 0.2) {
-            let tableY = -scrollOffset + imageViewHeight
-            self.planetImageView.frame.origin.y = -scrollOffset
-            self.detailsTableView.frame.origin.y = tableY
-            self.detailsTableView.frame.size.height = self.view.frame.size.height - (safeAreaY + tableY)
-        }
-    }
-    
 }
 
 extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
+        var count = 1
         if !planets.isEmpty { count += 1 }
         if let propertiesArray = self.presentedModel?.toArray() { count += propertiesArray.count }
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
+        if indexPath.row == 0 {
+            var cell = self.detailsTableView.dequeueReusableCell(withIdentifier: "imageHeader", for: indexPath) as? ImageHeaderTableViewCell
+            
+            if cell == nil {
+                cell = ImageHeaderTableViewCell()
+            }
+            
+            cell?.headerImageView.image = self.image
+            self.headerImageExpandedImageView.image = self.image
+            
+            if self.image != UIImage(named: "picture.png") {
+                cell?.headerImageView.backgroundColor = UIColor.black
+                if presentedModel is APOD {
+                    cell?.headerImageView.contentMode = .scaleAspectFill
+                }
+            }
+            return cell!
+            
+        } else if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
             var cell = self.detailsTableView.dequeueReusableCell(withIdentifier: "planetDetails", for: indexPath) as? PlanetPropertyDetailsTableViewCell
             
             if cell == nil {
@@ -105,8 +140,8 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             }
             
             if let propertiesArray = presentedModel?.toArray() {
-                cell?.propertyLabel.text = propertiesArray[indexPath.row].property
-                cell?.valueLabel.text = propertiesArray[indexPath.row].value
+                cell?.propertyLabel.text = propertiesArray[indexPath.row - 1].property
+                cell?.valueLabel.text = propertiesArray[indexPath.row - 1].value
             }
             
             return cell!
@@ -127,21 +162,27 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
+        if indexPath.row == 0 {
+            return self.view.bounds.height * 0.27
+        } else if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
             return UITableView.automaticDimension
         } else {
             return cellSize!.height + 16
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let location = scrollView.panGestureRecognizer.location(in: self.detailsTableView)
-        let indexPath = self.detailsTableView.indexPathForRow(at: location)
-        
-        let lastRowIndex = self.detailsTableView.numberOfRows(inSection: 0) - 1
-        if indexPath?.row == lastRowIndex { return }
-        
-        self.collapseImageOnScroll(scrollView)
+    func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return indexPath.row == 0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.expandImage()
+        }
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return headerImageExpandedImageView
     }
     
 }
@@ -189,24 +230,24 @@ extension DetailsViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let planet = planets[indexPath.item]
         self.detailsTableView.contentOffset.y = 0.0
+        self.activityIndicator.startAnimating()
+        
         SolarSystemAPI.getBody(planet) { planetObject in
             DispatchQueue.main.sync {
                 self.planets = self.allPlanets.filter { $0 != planet }
                 self.presentedModel = planetObject
-                self.detailsTableView.reloadData()
                 
                 let imageName = planet.rawValue.replacingOccurrences(of: "/", with: "")
                 if let image = UIImage(named: "\(imageName).jpg") {
                     self.image = image
-                    self.planetImageView.image = image
-                    self.planetImageView.backgroundColor = UIColor.black
                 } else {
                     self.image = UIImage(named: "picture.png")
-                    self.planetImageView.image = self.image
-                    self.planetImageView.backgroundColor = UIColor.lightGray
                 }
                 
                 self.detailsTableView.reloadData()
+                if self.activityIndicator.isAnimating {
+                    self.activityIndicator.stopAnimating()
+                }
             }
         }
     }

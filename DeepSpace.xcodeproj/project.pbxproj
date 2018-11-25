@@ -47,6 +47,8 @@
 		3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */; };
 		3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */; };
 		3C2DFD2421A2F0E3009D54C1 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */; };
+		3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */; };
+		3C88615821AAFEB400E69031 /* ImageHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -114,6 +116,8 @@
 		3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemBodies.swift; sourceTree = "<group>"; };
 		3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitType.swift; sourceTree = "<group>"; };
 		3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		3C17C88121A450E100619919 /* Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3C88615421AAFE9200E69031 /* Image Header */,
 				3C17C88821A4820000619919 /* Other Planets */,
 				3C17C88221A450F300619919 /* Planet Property Details */,
 			);
@@ -409,6 +414,15 @@
 			path = Exoplanet;
 			sourceTree = "<group>";
 		};
+		3C88615421AAFE9200E69031 /* Image Header */ = {
+			isa = PBXGroup;
+			children = (
+				3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */,
+				3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */,
+			);
+			path = "Image Header";
+			sourceTree = "<group>";
+		};
 		FCF158E02199B9620035DF53 = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +587,7 @@
 				3C2DFD2421A2F0E3009D54C1 /* Details.storyboard in Resources */,
 				3C17C89A21A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib in Resources */,
 				3C17C88E21A5C8F100619919 /* Library.storyboard in Resources */,
+				3C88615821AAFEB400E69031 /* ImageHeaderTableViewCell.xib in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
 				3C17C88621A4512100619919 /* PlanetPropertyDetailsTableViewCell.xib in Resources */,
 			);
@@ -631,6 +646,7 @@
 				3C17C8AF21A773ED00619919 /* PrepareForSegueExtension.swift in Sources */,
 				3C1E1347219F3FCF0048B34A /* MinorPlanet.swift in Sources */,
 				3C17C88521A4512100619919 /* PlanetPropertyDetailsTableViewCell.swift in Sources */,
+				3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */,
 				3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */,
 				3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */,
 				3C17C87C21A433FF00619919 /* PlanetCollectionViewCell.swift in Sources */,

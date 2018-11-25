@@ -20,12 +20,24 @@ extension UINavigationBar {
     func transparent() {
         self.setBackgroundImage(UIImage(), for: .default)
         self.shadowImage = UIImage()
-        self.isTranslucent = true
     }
     
     func removeTransparency() {
         self.setBackgroundImage(nil, for: .default)
         self.shadowImage = nil
+    }
+    
+    func getNavigationBarFonts() -> [UIFont] {
+        var fonts = [UIFont]()
+        for subview in self.subviews {
+            if !subview.subviews.isEmpty
+                && subview.subviews[0].isKind(of: UILabel.self) {
+                let label = subview.subviews[0] as! UILabel
+                fonts.append(label.font)
+            }
+        }
+        
+        return fonts
     }
     
 }

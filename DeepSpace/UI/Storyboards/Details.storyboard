@@ -17,33 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="xRR-zV-P3G">
-                                <rect key="frame" x="0.0" y="20" width="375" height="180"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-XK-2NE">
-                                <rect key="frame" x="0.0" y="208" width="359" height="459"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="1vN-N9-JJX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-XK-2NE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NVL-XK-2NE" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="2cL-mY-Sic"/>
-                            <constraint firstItem="xRR-zV-P3G" firstAttribute="width" secondItem="TTm-Fy-Qb2" secondAttribute="width" id="6LD-GI-siI"/>
-                            <constraint firstItem="xRR-zV-P3G" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="EhY-a8-sCM"/>
-                            <constraint firstItem="xRR-zV-P3G" firstAttribute="height" secondItem="TTm-Fy-Qb2" secondAttribute="height" multiplier="0.27" id="IET-FF-EKx"/>
-                            <constraint firstItem="NVL-XK-2NE" firstAttribute="trailing" secondItem="cot-5Y-sU0" secondAttribute="trailing" constant="-16" id="MGV-1l-31G"/>
-                            <constraint firstItem="NVL-XK-2NE" firstAttribute="top" secondItem="xRR-zV-P3G" secondAttribute="bottom" constant="8" id="Tg9-OB-tVd"/>
-                            <constraint firstItem="NVL-XK-2NE" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="ZpG-nY-GE4"/>
-                            <constraint firstItem="xRR-zV-P3G" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="ns2-6m-xKB"/>
+                            <constraint firstItem="NVL-XK-2NE" firstAttribute="trailing" secondItem="cot-5Y-sU0" secondAttribute="trailing" id="0Vp-OJ-mKO"/>
+                            <constraint firstItem="NVL-XK-2NE" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="6h8-Ox-biT"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="6iS-hK-GIh"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="8js-FK-bRr"/>
+                            <constraint firstItem="NVL-XK-2NE" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="TRY-6U-5A9"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="trailing" secondItem="cot-5Y-sU0" secondAttribute="trailing" id="VZg-Gc-Dan"/>
+                            <constraint firstItem="NVL-XK-2NE" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="ei0-kg-skJ"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="width" secondItem="cot-5Y-sU0" secondAttribute="width" id="k5M-K8-kqx"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="height" secondItem="cot-5Y-sU0" secondAttribute="height" id="u1s-xp-XaC"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="xpt-jg-Q8f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cot-5Y-sU0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="8kk-dW-StX"/>
                     <connections>
                         <outlet property="detailsTableView" destination="NVL-XK-2NE" id="B0R-mf-Plx"/>
-                        <outlet property="planetImageView" destination="xRR-zV-P3G" id="hmR-hx-ah6"/>
+                        <outlet property="headerImageExpandedScrollView" destination="1vN-N9-JJX" id="5IS-Kd-7fr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ru-xZ-S9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,7 +52,4 @@
             <point key="canvasLocation" x="1927.2" y="38.23088455772114"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="picture" width="409.60000610351562" height="409.60000610351562"/>
-    </resources>
 </document>

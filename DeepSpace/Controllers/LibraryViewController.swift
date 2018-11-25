@@ -11,6 +11,7 @@ import UIKit
 class LibraryViewController: UIViewController {
     
     var activityIndicator: UIActivityIndicatorView!
+    var navigationBarLargeTitleFont: UIFont?
     
     @IBOutlet weak var contentCollectionView: UICollectionView!
     var navigationBarView: HomeScreenNavigationBarView!
@@ -32,6 +33,13 @@ class LibraryViewController: UIViewController {
         super.viewDidLoad()
         
         activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
+        activityIndicator.style = .whiteLarge
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        activityIndicator.isHidden = true
+        self.view.addSubview(activityIndicator)
+        
+        navigationBarLargeTitleFont = self.navigationController?.navigationBar.getNavigationBarFonts()[0]
         
         let imageView = UIImageView(frame: self.view.bounds)
         imageView.contentMode = .scaleAspectFill
@@ -42,14 +50,15 @@ class LibraryViewController: UIViewController {
         
         navigationBarView = HomeScreenNavigationBarView(frame: self.navigationController!.navigationBar.frame)
         navigationBarView.titleLabel.text = "Deep Space"
-        
+        navigationBarView.titleLabel.font = navigationBarLargeTitleFont
+        self.navigationItem.title = nil
+    
         let menuOptionCellXIB = UINib(nibName: "MenuOptionsCollectionViewCell", bundle: Bundle.main)
         navigationBarView.menuCollectionView.register(menuOptionCellXIB, forCellWithReuseIdentifier: "optionCell")
         
         navigationBarView.setCollectionViewDataSourceDelegate(dataSourceDelegate: self)
+        navigationBarView.menuCollectionView.contentInset = contentCollectionView.contentInset
         navigationBarView.contentView.frame = self.navigationController!.navigationBar.frame
-        navigationBarView.frame.origin.y -= 40
-        
         
         navigationBarView.contentView.backgroundColor = UIColor.clear
         navigationBarView.menuCollectionView.backgroundColor = UIColor.clear
@@ -62,16 +71,20 @@ class LibraryViewController: UIViewController {
         contentCollectionView.dataSource = self
         contentCollectionView.delegate = self
         
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
-        activityIndicator.isHidden = true
-        self.view.addSubview(activityIndicator)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        navigationBarView.frame.origin.y = 0
+        navigationBarView.frame.origin.y -= navigationController!.navigationBar.frame.minY
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.addCustomNavigationBarView()
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.clear]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.clear]
     }
     
     func addCustomNavigationBarView() {
@@ -85,9 +98,11 @@ class LibraryViewController: UIViewController {
     }
     
     func optionChanged(index: Int) {
-        
-        let removedGradientCell = self.navigationBarView.menuCollectionView.visibleCells[self.selectedMenuOption] as? MenuOptionsCollectionViewCell
-        let addedGradientCell = self.navigationBarView.menuCollectionView.visibleCells[index] as? MenuOptionsCollectionViewCell
+        let removedIndexPath = IndexPath(item: selectedMenuOption, section: 0)
+        let addedIndexPath = IndexPath(item: index, section: 0)
+    
+        let removedGradientCell = self.navigationBarView.menuCollectionView.cellForItem(at: removedIndexPath) as? MenuOptionsCollectionViewCell
+        let addedGradientCell = self.navigationBarView.menuCollectionView.cellForItem(at: addedIndexPath) as? MenuOptionsCollectionViewCell
         
         removedGradientCell?.background.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         addedGradientCell?.background.backgroundColor = UIColor.clear
@@ -190,7 +205,6 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
             }
             
             self.performSegue(withIdentifier: identifier, sender: sender)
-            
         } else {
             self.optionChanged(index: indexPath.item)
         }
@@ -238,21 +252,18 @@ extension LibraryViewController : UIScrollViewDelegate {
             let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
             let isGoingDown = (translationInY > 0) ? false : true
 
-            UIView.animate(withDuration: 0.5) {
-                if isGoingDown && !self.navigationBarHasBeenCollapsed {
-                    self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-                    self.navigationBarView.titleLabel.textAlignment = .center
-                    self.navigationItem.prompt = nil
-                    self.navigationBarHasBeenCollapsed = true
-                } else if !isGoingDown
-                    && self.navigationBarHasBeenCollapsed
-                    && scrollView.contentOffset.y < 17 {
-                    self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-                    self.navigationBarView.titleLabel.textAlignment = .left
-                    self.navigationItem.prompt = " "
-                    self.navigationBarHasBeenCollapsed = false
-                }
-                
+            if isGoingDown && !self.navigationBarHasBeenCollapsed {
+                self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+                self.navigationBarView.titleLabel.textAlignment = .center
+                self.navigationItem.prompt = nil
+                self.navigationBarHasBeenCollapsed = true
+            } else if !isGoingDown
+                && self.navigationBarHasBeenCollapsed
+                && scrollView.contentOffset.y < 17 {
+                self.navigationBarView.titleLabel.font = self.navigationBarLargeTitleFont!
+                self.navigationBarView.titleLabel.textAlignment = .left
+                self.navigationItem.prompt = " "
+                self.navigationBarHasBeenCollapsed = false
             }
             
             
