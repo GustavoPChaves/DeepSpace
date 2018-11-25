@@ -21,4 +21,15 @@ class FuncionsAuxiliaries {
         }
         return 0.0
     }
+    static func getNameAlltextures(nameObject: String) -> [String] {
+        //rename let texture for name origin scnkit
+        var textures = [String]()
+        let difusse = nameObject
+        let ambient = "\(nameObject)+ambient"
+        let displacemente =  "\(nameObject)+displacement"
+        let normal =  "\(nameObject)+normal"
+        let specular =  "\(nameObject)+specular"
+        textures.append(contentsOf: [difusse,ambient,displacemente,normal,specular])
+        return textures
+    }
 }
