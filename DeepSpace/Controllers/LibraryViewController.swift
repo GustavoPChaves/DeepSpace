@@ -87,6 +87,15 @@ class LibraryViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.clear]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func addCustomNavigationBarView() {
         self.navigationController?.navigationBar.addSubview(self.navigationBarView)
         self.navigationController?.navigationBar.transparent()

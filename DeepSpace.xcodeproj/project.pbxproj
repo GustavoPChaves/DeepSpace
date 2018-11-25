@@ -49,6 +49,8 @@
 		3C2DFD2421A2F0E3009D54C1 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */; };
 		3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */; };
 		3C88615821AAFEB400E69031 /* ImageHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */; };
+		3C88615A21AB4E5A00E69031 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615921AB4E5A00E69031 /* UIApplicationExtension.swift */; };
+		3C88615C21AB4ECA00E69031 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615B21AB4ECA00E69031 /* UINavigationControllerExtension.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -118,6 +120,8 @@
 		3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		3C88615921AB4E5A00E69031 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		3C88615B21AB4ECA00E69031 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,9 +269,11 @@
 		3C17C8B321A828A300619919 /* UIKit extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3C88615921AB4E5A00E69031 /* UIApplicationExtension.swift */,
 				3C17C89D21A6D4D000619919 /* UIColorExtension.swift */,
 				3C17C89B21A6D28000619919 /* UINavigationBarExtension.swift */,
 				3C17C8A021A6D71100619919 /* UIViewExtension.swift */,
+				3C88615B21AB4ECA00E69031 /* UINavigationControllerExtension.swift */,
 			);
 			path = "UIKit extensions";
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 				3C17C8A621A70CAA00619919 /* StringExtension.swift in Sources */,
 				3C1E133D219C49C00048B34A /* APOD.swift in Sources */,
 				3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */,
+				3C88615A21AB4E5A00E69031 /* UIApplicationExtension.swift in Sources */,
 				3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */,
 				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
 				3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */,
@@ -648,6 +655,7 @@
 				3C17C88521A4512100619919 /* PlanetPropertyDetailsTableViewCell.swift in Sources */,
 				3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */,
 				3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */,
+				3C88615C21AB4ECA00E69031 /* UINavigationControllerExtension.swift in Sources */,
 				3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */,
 				3C17C87C21A433FF00619919 /* PlanetCollectionViewCell.swift in Sources */,
 			);
