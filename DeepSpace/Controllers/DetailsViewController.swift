@@ -134,11 +134,11 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             var cell = self.detailsTableView.dequeueReusableCell(withIdentifier: "imageHeader", for: indexPath) as? ImageHeaderTableViewCell
-            
+
             if cell == nil {
                 cell = ImageHeaderTableViewCell()
             }
-            
+
             cell?.headerImageView.image = self.image
             self.headerImageExpandedImageView.image = self.image
             
@@ -148,6 +148,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                     cell?.headerImageView.contentMode = .scaleAspectFill
                 }
             }
+            
             return cell!
             
         } else if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
@@ -179,18 +180,18 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row == 0
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return self.view.bounds.height * 0.27
+            return self.view.bounds.height * 0.3
         } else if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
             return UITableView.automaticDimension
         } else {
             return cellSize!.height + 16
         }
-    }
-    
-    func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return indexPath.row == 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
