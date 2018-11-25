@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="25C-OH-9rN">
-                    <rect key="frame" x="0.0" y="60" width="375" height="36"/>
+                    <rect key="frame" x="0.0" y="68" width="375" height="36"/>
                     <color key="backgroundColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.97647064920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="y4T-MK-7ZZ"/>
@@ -50,7 +50,7 @@
                 <constraint firstItem="25C-OH-9rN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="D8m-Um-rrp"/>
                 <constraint firstItem="uo5-mx-4Qy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Zky-4u-pCk"/>
                 <constraint firstItem="uo5-mx-4Qy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="hNh-vD-0Jg"/>
-                <constraint firstItem="25C-OH-9rN" firstAttribute="top" secondItem="uo5-mx-4Qy" secondAttribute="bottom" constant="8" id="niN-wH-Aw6"/>
+                <constraint firstItem="25C-OH-9rN" firstAttribute="top" secondItem="uo5-mx-4Qy" secondAttribute="bottom" constant="16" id="niN-wH-Aw6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="25C-OH-9rN" secondAttribute="trailing" id="o9q-V5-yah"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
