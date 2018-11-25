@@ -235,42 +235,21 @@ extension LibraryViewController : UIScrollViewDelegate {
         let indexPath = self.contentCollectionView.indexPathForItem(at: location)
         
         if indexPath != nil {
-//            let topContentConstraintConstant: CGFloat = 4
-//            let collapsedNavBarHeight: CGFloat = 44
-//            let expandedNavBarHeight: CGFloat = 91
-//            let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
-//
-//            let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
-//            let isGoingDown = (translationInY > 0) ? false : true
-//            let isExpandingNavBar = (!isGoingDown && navBarHeight < expandedNavBarHeight && navBarHeight != collapsedNavBarHeight) ? true : false
+            let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
+            let isGoingDown = (translationInY > 0) ? false : true
 
-            UIView.animate(withDuration: 0.1) {
-//                if isGoingDown && !self.navigationBarHasBeenCollapsed {
-//                    self.navigationBarView.frame.size.height -= (expandedNavBarHeight - topContentConstraintConstant - collapsedNavBarHeight)
-//                    self.navigationBarView.titleLabel.isHidden = true
-//                    self.navigationBarHasBeenCollapsed = true
-//                } else if isExpandingNavBar && self.navigationBarHasBeenCollapsed {
-//                    let currentNavBarOffset = (navBarHeight - collapsedNavBarHeight)
-//                    self.navigationBarView.frame.size.height += currentNavBarOffset - self.lastNavigationBarOffset
-//                    self.navigationBarView.titleLabel.isHidden = false
-//                    self.lastNavigationBarOffset = currentNavBarOffset
-//
-//                    if navBarHeight >= expandedNavBarHeight - 30 {
-//                        print("entrou")
-//                        self.navigationBarHasBeenCollapsed = false
-//                        self.lastNavigationBarOffset = 0
-//                        self.navigationBarView.frame.size.height += topContentConstraintConstant
-//                    }
-//                }
+            UIView.animate(withDuration: 0.5) {
                 if isGoingDown && !self.navigationBarHasBeenCollapsed {
-                    self.navigationBarView.menuCollectionView.frame.origin.y = self.navigationBarView.titleLabel.frame.origin.y
-                    self.navigationBarView.titleLabel.isHidden = true
+                    self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+                    self.navigationBarView.titleLabel.textAlignment = .center
+                    self.navigationItem.prompt = nil
                     self.navigationBarHasBeenCollapsed = true
                 } else if !isGoingDown
                     && self.navigationBarHasBeenCollapsed
-                    && scrollView.contentOffset.y < 47 {
-                    self.navigationBarView.menuCollectionView.frame.origin.y += self.navigationBarView.titleLabel.frame.height + 16
-                    self.navigationBarView.titleLabel.isHidden = false
+                    && scrollView.contentOffset.y < 17 {
+                    self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+                    self.navigationBarView.titleLabel.textAlignment = .left
+                    self.navigationItem.prompt = " "
                     self.navigationBarHasBeenCollapsed = false
                 }
                 

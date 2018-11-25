@@ -21,17 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-mx-4Qy">
-                    <rect key="frame" x="16" y="36" width="343" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-mx-4Qy">
+                    <rect key="frame" x="16" y="32" width="343" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="reR-B9-etQ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="reR-B9-etQ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="25C-OH-9rN">
-                    <rect key="frame" x="0.0" y="72" width="375" height="36"/>
+                    <rect key="frame" x="0.0" y="60" width="375" height="36"/>
                     <color key="backgroundColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.97647064920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="y4T-MK-7ZZ"/>
@@ -49,8 +49,8 @@
                 <constraint firstAttribute="trailing" secondItem="uo5-mx-4Qy" secondAttribute="trailing" constant="16" id="6vk-Ou-MWA"/>
                 <constraint firstItem="25C-OH-9rN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="D8m-Um-rrp"/>
                 <constraint firstItem="uo5-mx-4Qy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Zky-4u-pCk"/>
-                <constraint firstItem="uo5-mx-4Qy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="hNh-vD-0Jg"/>
-                <constraint firstItem="25C-OH-9rN" firstAttribute="top" secondItem="uo5-mx-4Qy" secondAttribute="bottom" constant="16" id="niN-wH-Aw6"/>
+                <constraint firstItem="uo5-mx-4Qy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="hNh-vD-0Jg"/>
+                <constraint firstItem="25C-OH-9rN" firstAttribute="top" secondItem="uo5-mx-4Qy" secondAttribute="bottom" constant="8" id="niN-wH-Aw6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="25C-OH-9rN" secondAttribute="trailing" id="o9q-V5-yah"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
