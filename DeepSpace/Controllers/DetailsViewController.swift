@@ -79,16 +79,10 @@ class DetailsViewController: UIViewController {
         let imageViewHeight = self.planetImageView.frame.size.height
         
         UIView.animate(withDuration: 0.2) {
-            if scrollOffset > 100 {
-                self.planetImageView.frame.origin.y = safeAreaY - imageViewHeight
-                self.detailsTableView.frame.origin.y = safeAreaY
-                self.detailsTableView.frame.size.height = self.view.frame.size.height - safeAreaY
-            } else if scrollOffset == 0 {
-                let tableY = safeAreaY + imageViewHeight
-                self.planetImageView.frame.origin.y = safeAreaY
-                self.detailsTableView.frame.origin.y = tableY
-                self.detailsTableView.frame.size.height = self.view.frame.size.height - tableY
-            }
+            let tableY = -scrollOffset + imageViewHeight
+            self.planetImageView.frame.origin.y = -scrollOffset
+            self.detailsTableView.frame.origin.y = tableY
+            self.detailsTableView.frame.size.height = self.view.frame.size.height - (safeAreaY + tableY)
         }
     }
     

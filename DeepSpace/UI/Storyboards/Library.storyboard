@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1SK-0l-aP4">
-                                <rect key="frame" x="0.0" y="98" width="375" height="520"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dTZ-Jx-01Y">
                                     <size key="itemSize" width="50" height="50"/>
@@ -38,7 +38,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zsh-uG-xGr"/>
                     </view>
-                    <navigationItem key="navigationItem" prompt=" " id="i9J-7m-8AE"/>
+                    <navigationItem key="navigationItem" id="i9J-7m-8AE"/>
                     <connections>
                         <outlet property="contentCollectionView" destination="1SK-0l-aP4" id="hkr-gB-Hre"/>
                         <segue destination="Q5Y-Cf-h62" kind="show" identifier="details" id="MTK-ky-Bos"/>
@@ -62,6 +62,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tAj-cG-gEg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ilH-07-wuf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -76,12 +77,11 @@
         <!--Navigation Controller-->
         <scene sceneID="Eve-jR-5mg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UPJ-48-VuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ek-Wv-Yu0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="nra-9t-yZt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0BI-r1-vA3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0BI-r1-vA3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -89,6 +89,7 @@
                         <segue destination="I9Q-P4-u6X" kind="relationship" relationship="rootViewController" id="Bh8-xd-7l8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPJ-48-VuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="694" y="100"/>
         </scene>

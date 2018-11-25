@@ -25,10 +25,20 @@ class LibraryViewController: UIViewController {
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
     var apods: [APOD] = []
     
+    var navigationBarHasBeenCollapsed = false
+    var lastNavigationBarOffset: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
+        
+        let imageView = UIImageView(frame: self.view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "universe.jpg")
+        
+        self.view.insertSubview(imageView, at: 0)
         
         navigationBarView = HomeScreenNavigationBarView(frame: self.navigationController!.navigationBar.frame)
         navigationBarView.titleLabel.text = "Deep Space"
@@ -39,6 +49,7 @@ class LibraryViewController: UIViewController {
         navigationBarView.setCollectionViewDataSourceDelegate(dataSourceDelegate: self)
         navigationBarView.contentView.frame = self.navigationController!.navigationBar.frame
         navigationBarView.frame.origin.y -= 40
+        
         
         navigationBarView.contentView.backgroundColor = UIColor.clear
         navigationBarView.menuCollectionView.backgroundColor = UIColor.clear
@@ -96,6 +107,7 @@ class LibraryViewController: UIViewController {
     func reloadContent() {
         switch selectedMenuOption {
         case 0:
+            if activityIndicator.isAnimating { activityIndicator.stopAnimating() }
             self.contentCollectionView.reloadData()
         case 1:
             if apods.count < 31 {
@@ -215,4 +227,56 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
         return 10
     }
     
+}
+
+extension LibraryViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let location = scrollView.panGestureRecognizer.location(in: self.contentCollectionView)
+        let indexPath = self.contentCollectionView.indexPathForItem(at: location)
+        
+        if indexPath != nil {
+//            let topContentConstraintConstant: CGFloat = 4
+//            let collapsedNavBarHeight: CGFloat = 44
+//            let expandedNavBarHeight: CGFloat = 91
+//            let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
+//
+//            let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
+//            let isGoingDown = (translationInY > 0) ? false : true
+//            let isExpandingNavBar = (!isGoingDown && navBarHeight < expandedNavBarHeight && navBarHeight != collapsedNavBarHeight) ? true : false
+
+            UIView.animate(withDuration: 0.1) {
+//                if isGoingDown && !self.navigationBarHasBeenCollapsed {
+//                    self.navigationBarView.frame.size.height -= (expandedNavBarHeight - topContentConstraintConstant - collapsedNavBarHeight)
+//                    self.navigationBarView.titleLabel.isHidden = true
+//                    self.navigationBarHasBeenCollapsed = true
+//                } else if isExpandingNavBar && self.navigationBarHasBeenCollapsed {
+//                    let currentNavBarOffset = (navBarHeight - collapsedNavBarHeight)
+//                    self.navigationBarView.frame.size.height += currentNavBarOffset - self.lastNavigationBarOffset
+//                    self.navigationBarView.titleLabel.isHidden = false
+//                    self.lastNavigationBarOffset = currentNavBarOffset
+//
+//                    if navBarHeight >= expandedNavBarHeight - 30 {
+//                        print("entrou")
+//                        self.navigationBarHasBeenCollapsed = false
+//                        self.lastNavigationBarOffset = 0
+//                        self.navigationBarView.frame.size.height += topContentConstraintConstant
+//                    }
+//                }
+                if isGoingDown && !self.navigationBarHasBeenCollapsed {
+                    self.navigationBarView.menuCollectionView.frame.origin.y = self.navigationBarView.titleLabel.frame.origin.y
+                    self.navigationBarView.titleLabel.isHidden = true
+                    self.navigationBarHasBeenCollapsed = true
+                } else if !isGoingDown
+                    && self.navigationBarHasBeenCollapsed
+                    && scrollView.contentOffset.y < 47 {
+                    self.navigationBarView.menuCollectionView.frame.origin.y += self.navigationBarView.titleLabel.frame.height + 16
+                    self.navigationBarView.titleLabel.isHidden = false
+                    self.navigationBarHasBeenCollapsed = false
+                }
+                
+            }
+            
+            
+        }
+    }
 }
