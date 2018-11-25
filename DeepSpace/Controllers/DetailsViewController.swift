@@ -56,11 +56,14 @@ class DetailsViewController: UIViewController {
         headerImageExpandedScrollView.backgroundColor = UIColor.black
         headerImageExpandedScrollView.isHidden = true
         headerImageExpandedScrollView.maximumZoomScale = 15
-        headerImageExpandedScrollView.minimumZoomScale = 0.0001
+        headerImageExpandedScrollView.minimumZoomScale = 1
         headerImageExpandedScrollView.delegate = self
+        headerImageExpandedScrollView.clipsToBounds = true
+        headerImageExpandedScrollView.contentSize = self.view.bounds.size
         
         headerImageExpandedImageView = UIImageView(frame: self.view.bounds)
         headerImageExpandedImageView.contentMode = .scaleAspectFit
+        headerImageExpandedImageView.clipsToBounds = false
         headerImageExpandedImageView.backgroundColor = UIColor.black
         headerImageExpandedImageView.image = image
         
@@ -89,6 +92,7 @@ class DetailsViewController: UIViewController {
     func expandImage() {
         headerImageExpandedScrollView.isHidden = false
         navigationItem.rightBarButtonItem = closeImageExpandedButton
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @objc func closeImage(_ sender: UIBarButtonItem) {
@@ -96,6 +100,7 @@ class DetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = nil
         detailsTableView.reloadRows(at: [IndexPath(row: 0, section: 0)],
                                     with: .none)
+        navigationItem.setHidesBackButton(false, animated: true)
     }
     
     func isTheCellWithCollectionView(tableViewRow: Int) -> Bool {
