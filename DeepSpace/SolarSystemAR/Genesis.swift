@@ -12,7 +12,7 @@ class Genesis {
   
     func createSolarSystem() -> [AstronomicalObject]{
         var solarSystem: [AstronomicalObject] = []
-                
+
         let sun = AstronomicalObject.init(scale: 0.35,
                                           textures: "8k_sun",
                                           modelScn: "genericPlanet.scn",
@@ -102,60 +102,58 @@ class Genesis {
                                               eulerAngle: 23.27,
                                               durationRotation: 3.33)
 
-        solarSystem.append(sun)
-        solarSystem.append(mercury)
-        solarSystem.append(venus)
-        solarSystem.append(earth)
-        solarSystem.append(moon)
-        solarSystem.append(mars)
-        solarSystem.append(jupiter)
-        solarSystem.append(uranus)
-        solarSystem.append(saturn)
-        solarSystem.append(neptune)
+        solarSystem.append(contentsOf: [sun,mercury,venus,earth,moon,mars,jupiter,uranus,saturn,neptune])
         
         return solarSystem
     }
-    
+    //Create Note base for outhes nodes, for exemple Sun and earth
     func cretaPlanetNodeBase(astronomicalBodies: AstronomicalObject) -> SCNNode {
         let planetNode = SCNNode()
         planetNode.position = SCNVector3(astronomicalBodies.positionX,astronomicalBodies.positionY,astronomicalBodies.positionZ)
        return planetNode
     }
     
-    func createPlanetAR(astronomicalBodies: AstronomicalObject,scale: Float) -> SCNNode{
+    func createPlanetAR(astronomicalBodies: AstronomicalObject) -> SCNNode{
         let wrapperNode = SCNNode()
-        
-        var numberTexture = 0;
+        var numberObjectsInModel = 0;
         if let virtualPlanet = SCNScene(named: astronomicalBodies.modelScn, inDirectory: "Models.scnassets", options: nil) {
             for child in virtualPlanet.rootNode.childNodes{
-                let texturePlanet = SCNMaterial()
-                texturePlanet.diffuse.contents = UIImage(named: astronomicalBodies.textures[numberTexture])
-                if  numberTexture > 0 {
-                    let translation = SCNMatrix4MakeTranslation(0, -1, 0)
-                    let rotation = SCNMatrix4MakeRotation(Float.pi / 2, 0, 0, 1)
-                    let transform = SCNMatrix4Mult(translation, rotation)
-                    texturePlanet.diffuse.contentsTransform = transform
-                }
-                
                 child.geometry?.firstMaterial?.lightingModel = .physicallyBased
-                child.geometry?.materials = [texturePlanet]
-                child.scale.x = numberTexture > 0 ? 0.6 : scale
-                child.scale.y = numberTexture > 0 ? 0.05 : scale
-                child.scale.z = numberTexture > 0 ? 0.6 : scale
+                child.geometry?.materials = [setTexture(textures: astronomicalBodies.textures)]
+                child.scale.x = numberObjectsInModel > 0 ? 0.6 : astronomicalBodies.scale
+                child.scale.y = numberObjectsInModel > 0 ? 0.05 : astronomicalBodies.scale
+                child.scale.z = numberObjectsInModel > 0 ? 0.6 : astronomicalBodies.scale
                 child.eulerAngles.z =  astronomicalBodies.eulerAngle
-                
                 wrapperNode.addChildNode(child)
-                numberTexture+=1
-                
+                numberObjectsInModel+=1
             }
         }else{
-            print("Não foi possivel criar o planeta")
+            print("No possible create planet, model or 3d Scn not found")
         }
         
         rotationAstronomicalBodies(astronomicalBodies: astronomicalBodies, node: wrapperNode)
         return wrapperNode
     }
     
+    func setTexture(textures: [String]) -> SCNMaterial{
+        let texturePlanet = SCNMaterial()
+        if textures.count > 1{
+            texturePlanet.diffuse.contents = UIImage(named: textures[0])
+            texturePlanet.normal.contents = UIImage(named: textures[1])
+            texturePlanet.ambientOcclusion.contents = UIImage(named: textures[2])
+            texturePlanet.displacement.contents = UIImage(named: textures[3])
+            texturePlanet.emission.contents =  UIImage(named: textures[3])
+        }else{
+            //Case plantes with rings rotation texture
+            texturePlanet.diffuse.contents = UIImage(named: textures[0])
+            let translation = SCNMatrix4MakeTranslation(0, -1, 0)
+            let rotation = SCNMatrix4MakeRotation(Float.pi / 2, 0, 0, 1)
+            let transform = SCNMatrix4Mult(translation, rotation)
+            texturePlanet.diffuse.contentsTransform = transform
+        }
+        return texturePlanet
+        
+    }
     func rotationAstronomicalBodies(astronomicalBodies: AstronomicalObject, node: SCNNode){
         // y responsavel pela velocidade
         if astronomicalBodies.obliquity != -8.912835{
