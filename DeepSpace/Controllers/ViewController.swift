@@ -11,6 +11,8 @@ import SceneKit
 import CoreMotion
 
 class ViewController: UIViewController, BackgroundDefault {
+
+    
     var motionManager: CMMotionManager = CMMotionManager()
     
     @IBOutlet weak var myScene: SCNView!

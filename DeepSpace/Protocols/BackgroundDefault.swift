@@ -12,17 +12,26 @@ import CoreMotion
 
 protocol BackgroundDefault {
     var motionManager: CMMotionManager{get set}
-    func setBackground(myScene: SCNView)
+    func setBackground(myScene: SCNView, imageData: Data?)
 }
 
 extension BackgroundDefault{
-    func setBackground(myScene: SCNView){
+    func setBackground(myScene: SCNView, imageData: Data? = nil){
+        
+        var image: UIImage
+        if let imageData = imageData{
+            image = UIImage(data: imageData)!
+            
+        }else{
+            image = UIImage(named: "Apod")!
+        }
+        
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         myScene.isUserInteractionEnabled = false
         
-        guard let image = UIImage(named: "Apod") else{
-            fatalError("Failed to load background")
-        }
+        
         let background = SCNScene()
         myScene.scene = background
         myScene.allowsCameraControl = true
@@ -65,4 +74,5 @@ extension BackgroundDefault{
         }
         
     }
+    
 }
