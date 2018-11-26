@@ -17,7 +17,7 @@ protocol BackgroundDefault {
 
 extension BackgroundDefault{
     func setBackground(myScene: SCNView, imageData: Data? = nil){
-        
+        print("")
         var image: UIImage
         if let imageData = imageData{
             image = UIImage(data: imageData)!
