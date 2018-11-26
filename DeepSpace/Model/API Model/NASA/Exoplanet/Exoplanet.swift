@@ -66,25 +66,25 @@ struct Exoplanet : Codable {
         
     }
     
-    public init(name: String,
-                reflink: String,
-                discoveryMethod: String,
-                numberOfMoonsInPlanetarySystem: Int,
-                numberOfPlanetsInPlanetarySystem: Int,
-                orbitPeriod: Double,
-                timeOfPeriastron: Double,
-                bestMassJupiterUnits: Double,
-                bestMassEarthUnits: Double,
-                radiusJupiterUnits: Double,
-                radiusEarthUnits: Double,
-                radiusSunUnits: Double,
-                density: Double,
-                declinationDegrees: Double,
+    public init(name: String?,
+                reflink: String?,
+                discoveryMethod: String?,
+                numberOfMoonsInPlanetarySystem: Int?,
+                numberOfPlanetsInPlanetarySystem: Int?,
+                orbitPeriod: Double?,
+                timeOfPeriastron: Double?,
+                bestMassJupiterUnits: Double?,
+                bestMassEarthUnits: Double?,
+                radiusJupiterUnits: Double?,
+                radiusEarthUnits: Double?,
+                radiusSunUnits: Double?,
+                density: Double?,
+                declinationDegrees: Double?,
                 status: PlanetStatus,
-                yearOfDiscovery: Int,
-                publishDate: String,
-                lastUpdated: String,
-                hostStar: ExoplanetHostStar) {
+                yearOfDiscovery: Int?,
+                publishDate: String?,
+                lastUpdated: String?,
+                hostStar: ExoplanetHostStar?) {
         
         self.name = name
         self.reflink = reflink
@@ -111,25 +111,25 @@ struct Exoplanet : Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        let name = try container.decode(String.self, forKey: .name)
-        let reflink = try container.decode(String.self, forKey: .reflink)
-        let discoveryMethod = try container.decode(String.self, forKey: .discoveryMethod)
-        let numberOfMoonsInPlanetarySystem = try container.decode(Int.self, forKey: .numberOfMoonsInPlanetarySystem)
-        let numberOfPlanetsInPlanetarySystem = try container.decode(Int.self, forKey: .numberOfPlanetsInPlanetarySystem)
-        let orbitPeriod = try container.decode(Double.self, forKey: .orbitPeriod)
-        let timeOfPeriastron = try container.decode(Double.self, forKey: .timeOfPeriastron)
-        let bestMassJupiterUnits = try container.decode(Double.self, forKey: .bestMassJupiterUnits)
-        let bestMassEarthUnits = try container.decode(Double.self, forKey: .bestMassEarthUnits)
-        let radiusJupiterUnits = try container.decode(Double.self, forKey: .radiusJupiterUnits)
-        let radiusEarthUnits = try container.decode(Double.self, forKey: .radiusEarthUnits)
-        let radiusSunUnits = try container.decode(Double.self, forKey: .radiusSunUnits)
-        let density = try container.decode(Double.self, forKey: .density)
-        let declinationDegrees = try container.decode(Double.self, forKey: .declinationDegrees)
+        let name = try? container.decode(String.self, forKey: .name)
+        let reflink = try? container.decode(String.self, forKey: .reflink)
+        let discoveryMethod = try? container.decode(String.self, forKey: .discoveryMethod)
+        let numberOfMoonsInPlanetarySystem = try? container.decode(Int.self, forKey: .numberOfMoonsInPlanetarySystem)
+        let numberOfPlanetsInPlanetarySystem = try? container.decode(Int.self, forKey: .numberOfPlanetsInPlanetarySystem)
+        let orbitPeriod = try? container.decode(Double.self, forKey: .orbitPeriod)
+        let timeOfPeriastron = try? container.decode(Double.self, forKey: .timeOfPeriastron)
+        let bestMassJupiterUnits = try? container.decode(Double.self, forKey: .bestMassJupiterUnits)
+        let bestMassEarthUnits = try? container.decode(Double.self, forKey: .bestMassEarthUnits)
+        let radiusJupiterUnits = try? container.decode(Double.self, forKey: .radiusJupiterUnits)
+        let radiusEarthUnits = try? container.decode(Double.self, forKey: .radiusEarthUnits)
+        let radiusSunUnits = try? container.decode(Double.self, forKey: .radiusSunUnits)
+        let density = try? container.decode(Double.self, forKey: .density)
+        let declinationDegrees = try? container.decode(Double.self, forKey: .declinationDegrees)
         let status = try container.decode(PlanetStatus.self, forKey: .status)
-        let yearOfDiscovery = try container.decode(Int.self, forKey: .yearOfDiscovery)
-        let publishDate = try container.decode(String.self, forKey: .publishDate)
-        let lastUpdated = try container.decode(String.self, forKey: .lastUpdated)
-        let hostStar = try ExoplanetHostStar(from: decoder)
+        let yearOfDiscovery = try? container.decode(Int.self, forKey: .yearOfDiscovery)
+        let publishDate = try? container.decode(String.self, forKey: .publishDate)
+        let lastUpdated = try? container.decode(String.self, forKey: .lastUpdated)
+        let hostStar = try? ExoplanetHostStar(from: decoder)
         
         self.init(name: name,
                   reflink: reflink,

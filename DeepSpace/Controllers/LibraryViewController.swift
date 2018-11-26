@@ -20,14 +20,19 @@ class LibraryViewController: UIViewController {
     var gradientColors = [UIColor(rgb: 0x0088FF).cgColor,
                           UIColor(rgb: 0x9911AA).cgColor]
     
-    var menuOptions = ["Solar System", "APOD", "Minor Planets", "Exoplanets"]
-    
     var selectedMenuOption = 0
-    let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
-    var apods: [APOD] = []
-    
     var navigationBarHasBeenCollapsed = false
     var lastNavigationBarOffset: CGFloat = 0
+    
+    var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets"]
+    let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
+    var apods: [APOD] = []
+    var exoplanets: [Exoplanet] = []
+    var minorPlanets: [MinorPlanet] = []
+    
+    var apodsIsRequesting = false
+    var exoplanetsIsRequesting = false
+    var minorPlanetsIsRequesting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +112,13 @@ class LibraryViewController: UIViewController {
     }
     
     func optionChanged(index: Int) {
+        if selectedMenuOption == index {
+            UIView.animate(withDuration: 0.6) {
+                self.contentCollectionView.contentOffset.y = 0
+            }
+            return
+        }
+        
         let removedIndexPath = IndexPath(item: selectedMenuOption, section: 0)
         let addedIndexPath = IndexPath(item: index, section: 0)
     
@@ -129,32 +141,94 @@ class LibraryViewController: UIViewController {
     }
     
     func reloadContent() {
+        self.contentCollectionView.reloadData()
+        
         switch selectedMenuOption {
         case 0:
-            if activityIndicator.isAnimating { activityIndicator.stopAnimating() }
-            self.contentCollectionView.reloadData()
+            activityIndicator.stopAnimating()
         case 1:
-            if apods.count < 31 {
-                if apods.isEmpty {
-                    activityIndicator.isHidden = false
-                    activityIndicator.startAnimating()
-                }
-                
-                NasaAPOD.getAPODsOfTheMonth(hd: false) { apod in
-                    DispatchQueue.main.async {
-                        let isAlreadyInArray = self.apods.contains { $0.title == apod.title }
-                        if !isAlreadyInArray { self.apods.append(apod) }
-                        self.contentCollectionView.reloadData()
-                        self.activityIndicator.stopAnimating()
-                    }
-                }
-            } else {
-                self.contentCollectionView.reloadData()
-            }
+            self.loadAPODContent()
+        case 2:
+            self.loadExoplanetsContent()
+        case 3:
+            self.loadMinorPlanetsContent()
         default:
-            self.contentCollectionView.reloadData()
+            break
         }
         
+    }
+    
+    func loadAPODContent() {
+        if apodsIsRequesting {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !apodsIsRequesting
+            && apods.isEmpty {
+            activityIndicator.startAnimating()
+            self.apodsIsRequesting = true
+            NasaAPOD.getAPODsOfTheMonth(hd: false) { apod in
+                DispatchQueue.main.async {
+                    let isAlreadyInArray = self.apods.contains { $0.title == apod.title }
+                    if !isAlreadyInArray { self.apods.append(apod) }
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.apodsIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
+    }
+    
+    func loadExoplanetsContent() {
+        if exoplanetsIsRequesting {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !exoplanetsIsRequesting
+            && exoplanets.isEmpty {
+            activityIndicator.startAnimating()
+            self.exoplanetsIsRequesting = true
+            NasaExoplanet.getExoplanetExtendedData { exoplanets in
+                DispatchQueue.main.async {
+                    self.exoplanets = exoplanets
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.exoplanetsIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
+    }
+    
+    func loadMinorPlanetsContent() {
+        if minorPlanetsIsRequesting {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !minorPlanetsIsRequesting
+            && minorPlanets.isEmpty {
+            activityIndicator.startAnimating()
+            self.minorPlanetsIsRequesting = true
+            MinorPlanetAPI.fetch { minorPlanets in
+                DispatchQueue.main.async {
+                    self.minorPlanets = minorPlanets
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.minorPlanetsIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
     }
 
 }
@@ -167,6 +241,10 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
                 return allPlanets.count
             case 1:
                 return apods.count
+            case 2:
+                return exoplanets.count
+            case 3:
+                return minorPlanets.count
             default:
                 return 0
             }
@@ -206,14 +284,19 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
             
             switch selectedMenuOption {
             case 0:
-                sender = allPlanets[indexPath.row]
+                sender = allPlanets[indexPath.item]
             case 1:
-                sender = apods[indexPath.row]
+                sender = apods[indexPath.item]
+            case 2:
+                sender = exoplanets[indexPath.item]
+            case 3:
+                sender = minorPlanets[indexPath.item]
             default:
                 break
             }
             
             self.performSegue(withIdentifier: identifier, sender: sender)
+            
         } else {
             self.optionChanged(index: indexPath.item)
         }

@@ -21,9 +21,7 @@ class DetailsViewController: UIViewController {
     var presentedModel : ConvertibleToArray? {
         didSet {
             if let activityIndicator = activityIndicator {
-                if activityIndicator.isAnimating {
-                    activityIndicator.stopAnimating()
-                }
+                activityIndicator.stopAnimating()
             }
         }
     }

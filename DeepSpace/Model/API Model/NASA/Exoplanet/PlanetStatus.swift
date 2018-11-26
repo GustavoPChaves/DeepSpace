@@ -19,4 +19,18 @@ public enum PlanetStatus : Int, Codable {
     case announced = 1
     case submitted = 2
     case accepted = 3
+    
+    static func toString(status: PlanetStatus) -> String {
+        switch status {
+        case .retracted:
+            return "Retracted"
+        case .announced:
+            return "Announced"
+        case .submitted:
+            return "Submitted"
+        case .accepted:
+            return "Accepted"
+        }
+    }
+    
 }

@@ -49,6 +49,15 @@ extension LibraryViewController {
         }
     }
     
+    func genericDetailsPrepareForSegue(toViewController destination: DetailsViewController?,
+                                         withSender sender: ConvertibleToArray) {
+        destination?.presentedModel = sender
+        
+        if let tableView = destination?.detailsTableView {
+            tableView.reloadData()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "details" {
             let destination = segue.destination as? DetailsViewController
@@ -56,6 +65,10 @@ extension LibraryViewController {
                 self.solarSystemDetailsPrepareForSegue(toViewController: destination, withSender: sender)
             } else if let sender = sender as? APOD {
                 self.apodDetailsPrepareForSegue(toViewController: destination, withSender: sender)
+            } else if let sender = sender as? Exoplanet {
+                self.genericDetailsPrepareForSegue(toViewController: destination, withSender: sender)
+            } else if let sender = sender as? MinorPlanet {
+                self.genericDetailsPrepareForSegue(toViewController: destination, withSender: sender)
             }
         }
     }

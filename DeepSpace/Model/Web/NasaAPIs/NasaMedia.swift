@@ -53,8 +53,11 @@ struct NasaMedia : APIManager {
         var mediaTypesEndpoint = ""
         if !mediaTypes.isEmpty {
             mediaTypesEndpoint += "&media_type="
-            for mediaType in mediaTypes {
-                mediaTypesEndpoint += mediaType.rawValue
+            for index in 0..<mediaTypes.count {
+                mediaTypesEndpoint += mediaTypes[index].rawValue
+                if index != mediaTypes.count - 1 {
+                    mediaTypesEndpoint += ","
+                }
             }
         }
         
