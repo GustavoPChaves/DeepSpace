@@ -16,8 +16,10 @@ protocol BackgroundDefault {
 }
 
 extension BackgroundDefault{
+    
     func setBackground(myScene: SCNView, imageData: Data? = nil){
-        print("")
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+        
         var image: UIImage
         if let imageData = imageData{
             image = UIImage(data: imageData)!
@@ -26,8 +28,7 @@ extension BackgroundDefault{
             image = UIImage(named: "Apod")!
         }
         
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        
         
         myScene.isUserInteractionEnabled = false
         
