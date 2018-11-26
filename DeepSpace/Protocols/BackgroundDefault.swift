@@ -69,7 +69,9 @@ extension BackgroundDefault{
             }
             
             let gravity = data.gravity
-            cameraNode.position = SCNVector3Make(Float(gravity.x) * -3, Float(gravity.y)*3, 0)
+
+            
+            cameraNode.position = SCNVector3Make(Float(gravity.x) * 3, Float(gravity.z)*3, 0)
 
             
         }
