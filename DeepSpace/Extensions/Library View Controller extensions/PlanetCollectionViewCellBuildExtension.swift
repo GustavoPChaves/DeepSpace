@@ -45,7 +45,7 @@ extension LibraryViewController {
                                       indexPath: IndexPath) {
         cell?.planetImage.image = UIImage(named: "picture.png")
         cell?.planetImage.contentMode = .scaleAspectFit
-        cell?.planetImage.backgroundColor = UIColor.lightGray
+        cell?.planetImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         cell?.planetNameLabel.text = exoplanets[indexPath.item].name
     }
     
@@ -53,26 +53,8 @@ extension LibraryViewController {
                        indexPath: IndexPath) {
         cell?.planetImage.image = UIImage(named: "picture.png")
         cell?.planetImage.contentMode = .scaleAspectFit
-        cell?.planetImage.backgroundColor = UIColor.lightGray
+        cell?.planetImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         cell?.planetNameLabel.text = minorPlanets[indexPath.item].name
-        
-        if cell?.planetImage.image == UIImage(named: "picture.png") {
-            NasaMedia.search(search: minorPlanets[indexPath.item].name!, mediaTypes: [.image]) { results in
-                let collection = results["collection"] as! [String:Any]
-                let items = collection["items"] as! [[String:Any]]
-                let links = items.first?["links"] as? [[String:Any]]
-                let link = links?.first?["href"] as? String
-                guard let linkUnwrapped = link else { return }
-                
-                GET.request(linkUnwrapped) { data in
-                    DispatchQueue.main.async {
-                        cell?.planetImage.image = UIImage(data: data)
-                        cell?.planetImage.contentMode = .scaleAspectFill
-                    }
-                }
-            }
-        }
-        
     }
     
     func buildCollectionViewContent(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -87,8 +69,8 @@ extension LibraryViewController {
         cell?.contentView.layer.borderColor = UIColor.clear.cgColor
         cell?.contentView.layer.masksToBounds = true
         
-        cell?.layer.shadowColor = UIColor.black.cgColor
-        cell?.layer.shadowOffset = CGSize(width: 1, height: 2)
+        cell?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        cell?.layer.shadowOffset = CGSize(width: 0, height: 5)
         cell?.layer.shadowRadius = 0
         cell?.layer.shadowOpacity = 0.5
         cell?.layer.masksToBounds = false
@@ -115,7 +97,7 @@ extension LibraryViewController {
         if cell?.planetImage.image == nil {
             cell?.planetImage.image = UIImage(named: "picture.png")
             cell?.planetImage.contentMode = .scaleAspectFit
-            cell?.planetImage.backgroundColor = UIColor.lightGray
+            cell?.planetImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
         
         return cell!

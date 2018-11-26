@@ -53,6 +53,8 @@
 		3C88615C21AB4ECA00E69031 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615B21AB4ECA00E69031 /* UINavigationControllerExtension.swift */; };
 		3CAE188C21AB80E8000ACE1F /* ExoplanetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE188B21AB80E8000ACE1F /* ExoplanetExtension.swift */; };
 		3CAE188E21AB9699000ACE1F /* MinorPlanetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */; };
+		3CAE189021AC1969000ACE1F /* ExoplanetHostStarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */; };
+		3CAE189221AC3D83000ACE1F /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -126,6 +128,8 @@
 		3C88615B21AB4ECA00E69031 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		3CAE188B21AB80E8000ACE1F /* ExoplanetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoplanetExtension.swift; sourceTree = "<group>"; };
 		3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorPlanetExtension.swift; sourceTree = "<group>"; };
+		3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoplanetHostStarExtension.swift; sourceTree = "<group>"; };
+		3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				3C17C8A921A74B7400619919 /* APODExtension.swift */,
 				3C17C87F21A44A7400619919 /* SolarSystemPlanetExtension.swift */,
 				3CAE188B21AB80E8000ACE1F /* ExoplanetExtension.swift */,
+				3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */,
 				3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */,
 			);
 			path = "Model To Array Implement extension";
@@ -338,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				3C17C88721A4525F00619919 /* Storyboards */,
+				3CAE189321AC48D8000ACE1F /* Custom Views */,
 				3C17C88121A450E100619919 /* Table View Cell */,
 				3C17C87821A433B700619919 /* Collection View Cell */,
 				3C17C88F21A5CA8E00619919 /* Custom Navigation View */,
@@ -433,6 +439,14 @@
 				3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */,
 			);
 			path = "Image Header";
+			sourceTree = "<group>";
+		};
+		3CAE189321AC48D8000ACE1F /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		FCF158E02199B9620035DF53 = {
@@ -638,6 +652,7 @@
 				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
 				3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */,
 				3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */,
+				3CAE189221AC3D83000ACE1F /* CustomActivityIndicatorView.swift in Sources */,
 				3C17C8B121A8244D00619919 /* DetailsViewController.swift in Sources */,
 				3C1E133A219C42830048B34A /* PlanetStatus.swift in Sources */,
 				3C17C89321A5CBF700619919 /* HomeScreenNavigationBarView.swift in Sources */,
@@ -666,6 +681,7 @@
 				3C88615C21AB4ECA00E69031 /* UINavigationControllerExtension.swift in Sources */,
 				3C17C88B21A4821A00619919 /* OtherPlanetsTableViewCell.swift in Sources */,
 				3C17C87C21A433FF00619919 /* PlanetCollectionViewCell.swift in Sources */,
+				3CAE189021AC1969000ACE1F /* ExoplanetHostStarExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

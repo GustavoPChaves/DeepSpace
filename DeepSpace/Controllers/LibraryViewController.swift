@@ -10,19 +10,23 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     
-    var activityIndicator: UIActivityIndicatorView!
+    lazy private var activityIndicator : CustomActivityIndicatorView! = {
+        let image : UIImage = UIImage(named: "Loading.png")!
+        return CustomActivityIndicatorView(image: image, superview: self.view)
+    }()
+    
     var navigationBarLargeTitleFont: UIFont?
     
     @IBOutlet weak var contentCollectionView: UICollectionView!
-    var navigationBarView: HomeScreenNavigationBarView!
+    @IBOutlet weak var navigationBarView: HomeScreenNavigationBarView!
+    @IBOutlet weak var gradientLayerNavigationBar: UIView!
+    
     var gradientLayer: CAGradientLayer!
     
     var gradientColors = [UIColor(rgb: 0x0088FF).cgColor,
                           UIColor(rgb: 0x9911AA).cgColor]
     
     var selectedMenuOption = 0
-    var navigationBarHasBeenCollapsed = false
-    var lastNavigationBarOffset: CGFloat = 0
     
     var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets"]
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
@@ -37,11 +41,7 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
-        activityIndicator.style = .whiteLarge
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
-        activityIndicator.isHidden = true
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(activityIndicator)
         
         navigationBarLargeTitleFont = self.navigationController?.navigationBar.getNavigationBarFonts()[0]
@@ -53,7 +53,6 @@ class LibraryViewController: UIViewController {
         
         self.view.insertSubview(imageView, at: 0)
         
-        navigationBarView = HomeScreenNavigationBarView(frame: self.navigationController!.navigationBar.frame)
         navigationBarView.titleLabel.text = "Deep Space"
         navigationBarView.titleLabel.font = navigationBarLargeTitleFont
         self.navigationItem.title = nil
@@ -63,12 +62,16 @@ class LibraryViewController: UIViewController {
         
         navigationBarView.setCollectionViewDataSourceDelegate(dataSourceDelegate: self)
         navigationBarView.menuCollectionView.contentInset = contentCollectionView.contentInset
-        navigationBarView.contentView.frame = self.navigationController!.navigationBar.frame
         
         navigationBarView.contentView.backgroundColor = UIColor.clear
         navigationBarView.menuCollectionView.backgroundColor = UIColor.clear
         navigationBarView.backgroundColor = UIColor.clear
         self.contentCollectionView.backgroundColor = UIColor.clear
+        
+        self.gradientLayerNavigationBar.backgroundColor = UIColor.clear
+        let _ = self.gradientLayerNavigationBar.setGradient(colors: [UIColor(red: 0, green: 0, blue: 0, alpha: 0.75).cgColor,
+                                                            UIColor.clear.cgColor])
+        self.view.bringSubviewToFront(self.contentCollectionView)
         
         let planetXIB = UINib(nibName: "PlanetCollectionViewCell", bundle: Bundle.main)
         contentCollectionView.register(planetXIB, forCellWithReuseIdentifier: "planetThumb")
@@ -81,13 +84,11 @@ class LibraryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         navigationBarView.frame.origin.y = 0
-        navigationBarView.frame.origin.y -= navigationController!.navigationBar.frame.minY
+        navigationBarView.frame.size.height = navigationBarView.getContentHeight()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.addCustomNavigationBarView()
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.clear]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.clear]
     }
@@ -95,6 +96,7 @@ class LibraryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -159,7 +161,7 @@ class LibraryViewController: UIViewController {
     }
     
     func loadAPODContent() {
-        if apodsIsRequesting {
+        if apodsIsRequesting || apods.isEmpty {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
@@ -184,7 +186,7 @@ class LibraryViewController: UIViewController {
     }
     
     func loadExoplanetsContent() {
-        if exoplanetsIsRequesting {
+        if exoplanetsIsRequesting || exoplanets.isEmpty {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
@@ -208,7 +210,7 @@ class LibraryViewController: UIViewController {
     }
     
     func loadMinorPlanetsContent() {
-        if minorPlanetsIsRequesting {
+        if minorPlanetsIsRequesting || minorPlanets.isEmpty {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
@@ -280,7 +282,6 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
         if collectionView === contentCollectionView {
             let identifier = "details"
             var sender : Any? = nil
-            self.removeCustomNavigationBarView()
             
             switch selectedMenuOption {
             case 0:
@@ -344,18 +345,16 @@ extension LibraryViewController : UIScrollViewDelegate {
             let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
             let isGoingDown = (translationInY > 0) ? false : true
 
-            if isGoingDown && !self.navigationBarHasBeenCollapsed {
-                self.navigationBarView.titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-                self.navigationBarView.titleLabel.textAlignment = .center
-                self.navigationItem.prompt = nil
-                self.navigationBarHasBeenCollapsed = true
+            if isGoingDown && self.navigationBarView.isExpanded {
+                self.navigationBarView.collapse()
+                let navBarSize = self.navigationBarView.getContentHeight()
+                self.gradientLayerNavigationBar.frame.origin.y = navBarSize
             } else if !isGoingDown
-                && self.navigationBarHasBeenCollapsed
-                && scrollView.contentOffset.y < 17 {
-                self.navigationBarView.titleLabel.font = self.navigationBarLargeTitleFont!
-                self.navigationBarView.titleLabel.textAlignment = .left
-                self.navigationItem.prompt = " "
-                self.navigationBarHasBeenCollapsed = false
+                && !self.navigationBarView.isExpanded
+                && scrollView.contentOffset.y < 30 {
+                self.navigationBarView.expand(font: self.navigationBarLargeTitleFont!)
+                let navBarSize = self.navigationBarView.getContentHeight()
+                self.gradientLayerNavigationBar.frame.origin.y = navBarSize
             }
             
             

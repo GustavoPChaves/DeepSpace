@@ -33,4 +33,31 @@ public enum OrbitType : Int, Codable {
     case hildas = 8
     case jupiterTrojans = 9
     case distantObjects = 10
+    
+    static func toString(orbitType: OrbitType) -> String {
+        switch orbitType {
+        case unclassified:
+            return "Unclassified"
+        case atiras:
+            return "Atiras"
+        case atens:
+            return "Atens"
+        case apollos:
+            return "Apollos"
+        case amors:
+            return "Amors"
+        case marsCrossers:
+            return "Mars Crossers"
+        case hungarias:
+            return "Hungarias"
+        case phocaeas:
+            return "Phocaeas"
+        case hildas:
+            return "Hildas"
+        case jupiterTrojans:
+            return "Jupiter Trojans"
+        case distantObjects:
+            return "Distant Objects"
+        }
+    }
 }

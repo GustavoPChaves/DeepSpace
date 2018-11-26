@@ -11,11 +11,14 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     @IBOutlet weak var detailsTableView: UITableView!
-    var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var headerImageExpandedScrollView: UIScrollView!
     var headerImageExpandedImageView: UIImageView!
     var closeImageExpandedButton: UIBarButtonItem!
+    
+    lazy private var activityIndicator : CustomActivityIndicatorView! = {
+        let image : UIImage = UIImage(named: "Loading.png")!
+        return CustomActivityIndicatorView(image: image, superview: self.view)
+    }()
     
     var image = UIImage(named: "picture.png")
     var presentedModel : ConvertibleToArray? {
@@ -50,6 +53,14 @@ class DetailsViewController: UIViewController {
         
         detailsTableView.rowHeight = UITableView.automaticDimension
         detailsTableView.estimatedRowHeight = 50
+        detailsTableView.backgroundColor = UIColor.clear
+        
+        let imageView = UIImageView(frame: self.view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "universe.jpg")
+        
+        self.view.insertSubview(imageView, at: 0)
         
         headerImageExpandedScrollView.backgroundColor = UIColor.black
         headerImageExpandedScrollView.isHidden = true
@@ -70,10 +81,7 @@ class DetailsViewController: UIViewController {
         
         closeImageExpandedButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeImage(_:)))
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.bounds)
-        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
-        activityIndicator.style = .whiteLarge
-        activityIndicator.hidesWhenStopped = true
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(activityIndicator)
         
         if presentedModel == nil {
@@ -84,6 +92,7 @@ class DetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -92,8 +101,8 @@ class DetailsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
     func expandImage() {
@@ -117,6 +126,11 @@ class DetailsViewController: UIViewController {
     func isTheCellWithCollectionView(tableViewRow: Int) -> Bool {
         return (tableViewRow == self.detailsTableView.numberOfRows(inSection: 0) - 1)
             && !planets.isEmpty
+    }
+    
+    @objc func openLinkInSafari(_ link: String) {
+        let url = URL(string: link)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
 }
@@ -157,8 +171,18 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             }
             
             if let propertiesArray = presentedModel?.toArray() {
-                cell?.propertyLabel.text = propertiesArray[indexPath.row - 1].property
-                cell?.valueLabel.text = propertiesArray[indexPath.row - 1].value
+                let property = propertiesArray[indexPath.row - 1].property
+                cell?.propertyLabel.text = property
+                
+                let value = propertiesArray[indexPath.row - 1].value
+                cell?.valueLabel.text = value
+                
+                if property == "Link" {
+                    cell?.valueLabel.textColor = UIColor.blue
+                } else {
+                    cell?.valueLabel.textColor = UIColor.black
+                }
+                
             }
             
             return cell!
@@ -179,7 +203,13 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.row == 0
+        if indexPath.row == 0 {
+            return true
+        }
+        
+        let modelArray = presentedModel!.toArray()
+        let model = modelArray[indexPath.row - 1]
+        return model.property == "Link"
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -195,7 +225,19 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.expandImage()
+            tableView.reloadRows(at: [indexPath], with: .none)
+            return
         }
+        
+        let modelArray = presentedModel!.toArray()
+        let model = modelArray[indexPath.row - 1]
+        
+        if model.property == "Link"
+        || model.value.starts(with: "http://") {
+            self.openLinkInSafari(model.value)
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+        
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

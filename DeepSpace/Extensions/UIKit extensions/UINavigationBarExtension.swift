@@ -40,4 +40,16 @@ extension UINavigationBar {
         return fonts
     }
     
+    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+        var barHeight: CGFloat = 44
+        
+        if size.height == 91 {
+            barHeight = size.height
+        }
+        
+        let newSize: CGSize = CGSize(width: self.frame.width, height: barHeight)
+        return newSize
+        
+    }
+    
 }
