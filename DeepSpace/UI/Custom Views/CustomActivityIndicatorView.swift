@@ -22,17 +22,16 @@ class CustomActivityIndicatorView: UIView {
     
     // MARK - Init
     
-    init(image: UIImage, superview: UIView) {
+    init(image: UIImage) {
         let frame : CGRect = CGRect(x: 0.0, y: 0.0, width: 64, height: 64)
 
-        super.init(frame: superview.bounds)
+        super.init(frame: frame)
 
         layerView.frame = frame
         animationLayer.frame = frame
         animationLayer.contents = image.cgImage
         animationLayer.masksToBounds = true
         
-        layerView.center = superview.center
         self.layerView.layer.addSublayer(animationLayer)
         self.addSubview(layerView)
         
@@ -43,6 +42,19 @@ class CustomActivityIndicatorView: UIView {
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func positionate(inOriginY originY: CGFloat? = nil, inCenter center: CGPoint, withSize size: CGSize? = nil) {
+        layerView.center = center
+        
+        if let originY = originY {
+            frame.origin.y = originY
+            layerView.frame.origin.y = originY
+        }
+        
+        if let size = size {
+            self.frame.size = size
+        }
     }
     
     // MARK - Func

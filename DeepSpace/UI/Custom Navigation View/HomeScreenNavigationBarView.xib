@@ -24,19 +24,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-mx-4Qy">
-                    <rect key="frame" x="16" y="16" width="343" height="30"/>
+                    <rect key="frame" x="16" y="16" width="343" height="36"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="qio-rU-XZC"/>
+                        <constraint firstAttribute="height" constant="36" id="qio-rU-XZC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="25C-OH-9rN">
-                    <rect key="frame" x="0.0" y="62" width="375" height="36.5"/>
+                    <rect key="frame" x="0.0" y="68" width="375" height="36"/>
                     <color key="backgroundColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.97647064920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="36.5" id="odr-C1-rfb"/>
+                        <constraint firstAttribute="height" constant="36" id="odr-C1-rfb"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h9R-SX-vJK">
                         <size key="itemSize" width="50" height="36"/>

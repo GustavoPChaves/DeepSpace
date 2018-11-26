@@ -62,6 +62,7 @@ class HomeScreenNavigationBarView: UIView {
     
     func getContentHeight() -> CGFloat {
         return titleLabelTopConstraint.constant
+            + titleLabel.frame.minY
             + titleLabel.frame.height
             + middleConstraint.constant
             + menuCollectionView.frame.height

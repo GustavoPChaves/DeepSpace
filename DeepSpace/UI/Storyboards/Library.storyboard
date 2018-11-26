@@ -17,59 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-pB-Smq" customClass="HomeScreenNavigationBarView" customModule="DeepSpace" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="179.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1SK-0l-aP4">
-                                <rect key="frame" x="0.0" y="163.5" width="375" height="454.5"/>
+                                <rect key="frame" x="0.0" y="199.5" width="375" height="418.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dTZ-Jx-01Y">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                                    <inset key="sectionInset" minX="16" minY="32" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlm-vL-rSp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="179.5"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-pB-Smq" customClass="HomeScreenNavigationBarView" customModule="DeepSpace" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bAt-6G-T1X">
-                                        <rect key="frame" x="0.0" y="143.5" width="375" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="0T9-f0-72j"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="bAt-6G-T1X" firstAttribute="leading" secondItem="mlm-vL-rSp" secondAttribute="leading" id="Fpb-QH-b7z"/>
-                                    <constraint firstItem="1DL-pB-Smq" firstAttribute="top" secondItem="mlm-vL-rSp" secondAttribute="top" id="JnQ-RP-eJ6"/>
-                                    <constraint firstItem="bAt-6G-T1X" firstAttribute="top" secondItem="1DL-pB-Smq" secondAttribute="bottom" id="Q4k-Lr-D4N"/>
-                                    <constraint firstAttribute="trailing" secondItem="bAt-6G-T1X" secondAttribute="trailing" id="fhz-ol-0O8"/>
-                                    <constraint firstItem="1DL-pB-Smq" firstAttribute="leading" secondItem="mlm-vL-rSp" secondAttribute="leading" id="gpO-r7-QPF"/>
-                                    <constraint firstAttribute="trailing" secondItem="1DL-pB-Smq" secondAttribute="trailing" id="q6p-vm-oJM"/>
-                                    <constraint firstAttribute="bottom" secondItem="bAt-6G-T1X" secondAttribute="bottom" id="zXt-4N-14d"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mlm-vL-rSp" firstAttribute="top" secondItem="zsh-uG-xGr" secondAttribute="top" id="5MB-QA-mZt"/>
-                            <constraint firstItem="1SK-0l-aP4" firstAttribute="trailing" secondItem="zsh-uG-xGr" secondAttribute="trailing" id="NVI-fB-gXl"/>
-                            <constraint firstItem="mlm-vL-rSp" firstAttribute="leading" secondItem="zsh-uG-xGr" secondAttribute="leading" id="RVd-83-Ux9"/>
-                            <constraint firstItem="mlm-vL-rSp" firstAttribute="height" secondItem="zsh-uG-xGr" secondAttribute="height" multiplier="0.3" id="U8A-Hv-p88"/>
-                            <constraint firstItem="1SK-0l-aP4" firstAttribute="top" secondItem="1DL-pB-Smq" secondAttribute="bottom" id="Wyn-6K-iM3"/>
-                            <constraint firstItem="1SK-0l-aP4" firstAttribute="leading" secondItem="zsh-uG-xGr" secondAttribute="leading" id="ZZE-Ou-YBG"/>
-                            <constraint firstItem="1SK-0l-aP4" firstAttribute="bottom" secondItem="zsh-uG-xGr" secondAttribute="bottom" id="dle-ka-bva"/>
-                            <constraint firstItem="mlm-vL-rSp" firstAttribute="trailing" secondItem="zsh-uG-xGr" secondAttribute="trailing" id="nxD-1g-K3l"/>
+                            <constraint firstItem="1SK-0l-aP4" firstAttribute="trailing" secondItem="zsh-uG-xGr" secondAttribute="trailing" id="ICR-x8-OlQ"/>
+                            <constraint firstItem="1SK-0l-aP4" firstAttribute="leading" secondItem="zsh-uG-xGr" secondAttribute="leading" id="ISJ-Cf-nAc"/>
+                            <constraint firstItem="1SK-0l-aP4" firstAttribute="bottom" secondItem="zsh-uG-xGr" secondAttribute="bottom" id="KS8-EM-07a"/>
+                            <constraint firstItem="1DL-pB-Smq" firstAttribute="height" secondItem="zsh-uG-xGr" secondAttribute="height" multiplier="0.3" id="Os5-LZ-2ER"/>
+                            <constraint firstItem="1DL-pB-Smq" firstAttribute="leading" secondItem="zsh-uG-xGr" secondAttribute="leading" id="OyQ-3W-XxP"/>
+                            <constraint firstItem="1SK-0l-aP4" firstAttribute="top" secondItem="1DL-pB-Smq" secondAttribute="bottom" id="Wcl-XU-kAL"/>
+                            <constraint firstItem="1DL-pB-Smq" firstAttribute="top" secondItem="zsh-uG-xGr" secondAttribute="top" id="lR6-se-f6G"/>
+                            <constraint firstItem="1DL-pB-Smq" firstAttribute="trailing" secondItem="zsh-uG-xGr" secondAttribute="trailing" id="rAe-U3-Yef"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zsh-uG-xGr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Gambiarra" prompt=" " id="i9J-7m-8AE"/>
                     <connections>
                         <outlet property="contentCollectionView" destination="1SK-0l-aP4" id="hkr-gB-Hre"/>
-                        <outlet property="gradientLayerNavigationBar" destination="bAt-6G-T1X" id="hkb-Kf-UKP"/>
                         <outlet property="navigationBarView" destination="1DL-pB-Smq" id="QVk-pJ-z51"/>
                         <segue destination="Q5Y-Cf-h62" kind="show" identifier="details" id="MTK-ky-Bos"/>
                     </connections>

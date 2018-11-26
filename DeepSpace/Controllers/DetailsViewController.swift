@@ -17,7 +17,7 @@ class DetailsViewController: UIViewController {
     
     lazy private var activityIndicator : CustomActivityIndicatorView! = {
         let image : UIImage = UIImage(named: "Loading.png")!
-        return CustomActivityIndicatorView(image: image, superview: self.view)
+        return CustomActivityIndicatorView(image: image)
     }()
     
     var image = UIImage(named: "picture.png")
@@ -87,6 +87,12 @@ class DetailsViewController: UIViewController {
         if presentedModel == nil {
             activityIndicator.startAnimating()
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        activityIndicator.positionate(inCenter: view.center,
+                                      withSize: view.frame.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {

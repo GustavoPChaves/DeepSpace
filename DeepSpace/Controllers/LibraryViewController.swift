@@ -12,14 +12,14 @@ class LibraryViewController: UIViewController {
     
     lazy private var activityIndicator : CustomActivityIndicatorView! = {
         let image : UIImage = UIImage(named: "Loading.png")!
-        return CustomActivityIndicatorView(image: image, superview: self.view)
+        return CustomActivityIndicatorView(image: image)
     }()
     
     var navigationBarLargeTitleFont: UIFont?
     
     @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var navigationBarView: HomeScreenNavigationBarView!
-    @IBOutlet weak var gradientLayerNavigationBar: UIView!
+    var gradientLayerNavigationBar: UIView!
     
     var gradientLayer: CAGradientLayer!
     
@@ -68,9 +68,12 @@ class LibraryViewController: UIViewController {
         navigationBarView.backgroundColor = UIColor.clear
         self.contentCollectionView.backgroundColor = UIColor.clear
         
-        self.gradientLayerNavigationBar.backgroundColor = UIColor.clear
+        gradientLayerNavigationBar = UIView(frame: navigationBarView.menuCollectionView.frame)
+        gradientLayerNavigationBar.frame.origin.y = navigationBarView.getContentHeight()
+        gradientLayerNavigationBar.backgroundColor = UIColor.clear
         let _ = self.gradientLayerNavigationBar.setGradient(colors: [UIColor(red: 0, green: 0, blue: 0, alpha: 0.75).cgColor,
                                                             UIColor.clear.cgColor])
+        self.view.addSubview(gradientLayerNavigationBar)
         self.view.bringSubviewToFront(self.contentCollectionView)
         
         let planetXIB = UINib(nibName: "PlanetCollectionViewCell", bundle: Bundle.main)
@@ -84,7 +87,16 @@ class LibraryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         navigationBarView.frame.origin.y = 0
-        navigationBarView.frame.size.height = navigationBarView.getContentHeight()
+        
+        let navBarHeight = navigationBarView.getContentHeight()
+        navigationBarView.frame.size.height = navBarHeight
+        gradientLayerNavigationBar.frame.origin.y = navBarHeight
+        contentCollectionView.frame.origin.y = navBarHeight
+        contentCollectionView.frame.size.height = self.view.frame.height - navBarHeight
+        
+        activityIndicator.positionate(inOriginY: navBarHeight,
+                                      inCenter: contentCollectionView.center,
+                                      withSize: contentCollectionView.frame.size)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -345,18 +357,15 @@ extension LibraryViewController : UIScrollViewDelegate {
             let translationInY = scrollView.panGestureRecognizer.translation(in: self.contentCollectionView).y
             let isGoingDown = (translationInY > 0) ? false : true
 
-            if isGoingDown && self.navigationBarView.isExpanded {
-                self.navigationBarView.collapse()
-                let navBarSize = self.navigationBarView.getContentHeight()
-                self.gradientLayerNavigationBar.frame.origin.y = navBarSize
-            } else if !isGoingDown
-                && !self.navigationBarView.isExpanded
-                && scrollView.contentOffset.y < 30 {
-                self.navigationBarView.expand(font: self.navigationBarLargeTitleFont!)
-                let navBarSize = self.navigationBarView.getContentHeight()
-                self.gradientLayerNavigationBar.frame.origin.y = navBarSize
+            UIView.animate(withDuration: 0.3) {
+                if isGoingDown && self.navigationBarView.isExpanded {
+                    self.navigationBarView.collapse()
+                } else if !isGoingDown
+                    && !self.navigationBarView.isExpanded
+                    && scrollView.contentOffset.y < 30 {
+                    self.navigationBarView.expand(font: self.navigationBarLargeTitleFont!)
+                }
             }
-            
             
         }
     }
