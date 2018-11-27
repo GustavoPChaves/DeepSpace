@@ -25,11 +25,8 @@ class FuncionsAuxiliaries {
         //rename let texture for name origin scnkit
         var textures = [String]()
         let difusse = nameObject
-        let ambient = "\(nameObject)+ambient"
-        let displacemente =  "\(nameObject)+displacement"
-        let normal =  "\(nameObject)+normal"
-        let specular =  "\(nameObject)+specular"
-        textures.append(contentsOf: [difusse,ambient,displacemente,normal,specular])
+        let normal =  "\(nameObject)+.jpg_normal"
+        textures.append(contentsOf: [difusse,normal])
         return textures
     }
 }

@@ -13,6 +13,7 @@
 		2BF9C59321A59F4E00B7E450 /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */; };
 		2BF9C59521A5A4AE00B7E450 /* FuncionsAuxiliaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */; };
 		2BFFD4EC21AAEF82001F7805 /* Genesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFFD4EB21AAEF82001F7805 /* Genesis.swift */; };
+		2BFFD4EE21AB068C001F7805 /* RealDatas in Resources */ = {isa = PBXBuildFile; fileRef = 2BFFD4ED21AB068C001F7805 /* RealDatas */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionsAuxiliaries.swift; sourceTree = "<group>"; };
 		2BFFD4EB21AAEF82001F7805 /* Genesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genesis.swift; sourceTree = "<group>"; };
+		2BFFD4ED21AB068C001F7805 /* RealDatas */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealDatas; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				2BF9C59221A59F4E00B7E450 /* AstronomicalObject.swift */,
 				2BF9C59421A5A4AE00B7E450 /* FuncionsAuxiliaries.swift */,
 				2BFFD4EB21AAEF82001F7805 /* Genesis.swift */,
+				2BFFD4ED21AB068C001F7805 /* RealDatas */,
 			);
 			path = SolarSystemAR;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				FCF158FA2199B9670035DF53 /* LaunchScreen.storyboard in Resources */,
 				2B04823121A42B9A008B17CF /* ExperienceAR.storyboard in Resources */,
+				2BFFD4EE21AB068C001F7805 /* RealDatas in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
 				2B04823321A42DDE008B17CF /* Models.scnassets in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
