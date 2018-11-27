@@ -71,8 +71,9 @@ extension LibraryViewController {
                     cell?.planetImage.contentMode = .scaleAspectFill
                 }
             }
-        } else {
+        } else if indexPath.item < dragonImagesCache.count {
             cell?.planetImage.image = dragonImagesCache[indexPath.item]
+            cell?.planetImage.contentMode = .scaleAspectFill
         }
     }
     
@@ -90,7 +91,7 @@ extension LibraryViewController {
                     cell?.planetImage.contentMode = .scaleAspectFill
                 }
             }
-        } else {
+        } else if indexPath.item < rocketsImagesCache.count {
             cell?.planetImage.image = rocketsImagesCache[indexPath.item]
             cell?.planetImage.contentMode = .scaleAspectFill
         }
@@ -108,6 +109,7 @@ extension LibraryViewController {
             }
         } else {
             cell?.planetImage.image = roadsterImageCache
+            cell?.planetImage.contentMode = .scaleAspectFill
         }
     }
     

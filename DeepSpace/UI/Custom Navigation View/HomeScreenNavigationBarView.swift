@@ -12,7 +12,7 @@ class HomeScreenNavigationBarView: UIView {
     
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var middleConstraint: NSLayoutConstraint!
-    private var bottomConstraintConstant: CGFloat = 16
+    private var bottomConstraintConstant: CGFloat = 4
     
     @IBOutlet weak var contentView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -44,10 +44,10 @@ class HomeScreenNavigationBarView: UIView {
     
     func collapse(font: UIFont = UIFont.systemFont(ofSize: 17, weight: .regular)) {
         titleLabel.textAlignment = .center
-        titleLabelTopConstraint.constant = 8
+        titleLabelTopConstraint.constant = 4
         titleLabel.font = font
-        middleConstraint.constant = 8
-        bottomConstraintConstant = 8
+        middleConstraint.constant = 0
+        bottomConstraintConstant = 0
         isExpanded = false
     }
     
@@ -55,8 +55,8 @@ class HomeScreenNavigationBarView: UIView {
         titleLabel.textAlignment = .left
         titleLabelTopConstraint.constant = 16
         titleLabel.font = font
-        middleConstraint.constant = 16
-        bottomConstraintConstant = 16
+        middleConstraint.constant = 4
+        bottomConstraintConstant = 4
         isExpanded = true
     }
     

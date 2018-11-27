@@ -70,7 +70,7 @@ class DetailsViewController: UIViewController {
         headerImageExpandedScrollView.clipsToBounds = true
         headerImageExpandedScrollView.contentSize = self.view.bounds.size
         
-        headerImageExpandedImageView = UIImageView(frame: self.view.bounds)
+        headerImageExpandedImageView = UIImageView(frame: self.headerImageExpandedScrollView.bounds)
         headerImageExpandedImageView.contentMode = .scaleAspectFit
         headerImageExpandedImageView.clipsToBounds = false
         headerImageExpandedImageView.backgroundColor = UIColor.black
@@ -78,6 +78,10 @@ class DetailsViewController: UIViewController {
         
         headerImageExpandedScrollView.addSubview(headerImageExpandedImageView)
         view.addSubview(headerImageExpandedScrollView)
+        
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapImageGestureHandler(_:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        headerImageExpandedScrollView.addGestureRecognizer(doubleTapGesture)
         
         closeImageExpandedButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeImage(_:)))
         
@@ -93,16 +97,18 @@ class DetailsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         activityIndicator.positionate(inCenter: view.center,
                                       withSize: view.frame.size)
+        centerImageOnScrollView(headerImageExpandedScrollView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.transparent()
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .default
+        return .lightContent
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -137,6 +143,23 @@ class DetailsViewController: UIViewController {
     @objc func openLinkInSafari(_ link: String) {
         let url = URL(string: link)!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @objc func doubleTapImageGestureHandler(_ sender: UITapGestureRecognizer) {
+        if headerImageExpandedScrollView.zoomScale >= 10 {
+            headerImageExpandedScrollView.setZoomScale(0.0, animated: true)
+        } else {
+            headerImageExpandedScrollView.setZoomScale(10.0, animated: true)
+        }
+    }
+    
+    func centerImageOnScrollView(_ scrollView: UIScrollView) {
+        let subView = headerImageExpandedImageView
+        let offsetX = max(((scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5), 0.0)
+        let offsetY = max((scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5, 0.0)
+        // adjust the center of image view
+        subView?.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX,
+                                  y: scrollView.contentSize.height * 0.5 + offsetY)
     }
     
 }
@@ -176,6 +199,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                 cell = PlanetPropertyDetailsTableViewCell()
             }
             
+            cell?.backgroundColor = UIColor.clear
             if let propertiesArray = presentedModel?.toArray() {
                 let property = propertiesArray[indexPath.row - 1].property
                 cell?.propertyLabel.text = property
@@ -203,13 +227,16 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             cell?.otherPlanetsCollectionView.register(anotherPlanetXIB, forCellWithReuseIdentifier: "planetThumb")
             cell?.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
             
+            cell?.backgroundColor = UIColor.clear
+            cell?.otherPlanetsCollectionView.backgroundColor = UIColor.clear
+            
             return cell!
         }
         
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && self.image != UIImage(named: "picture.png") {
             return true
         }
         
@@ -229,7 +256,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && self.image != UIImage(named: "picture.png") {
             self.expandImage()
             tableView.reloadRows(at: [indexPath], with: .none)
             return
@@ -244,6 +271,10 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
         
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        self.centerImageOnScrollView(scrollView)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

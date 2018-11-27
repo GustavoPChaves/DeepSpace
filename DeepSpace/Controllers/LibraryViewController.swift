@@ -21,11 +21,6 @@ class LibraryViewController: UIViewController {
     @IBOutlet weak var navigationBarView: HomeScreenNavigationBarView!
     var gradientLayerNavigationBar: UIView!
     
-    var gradientLayer: CAGradientLayer!
-    
-    var gradientColors = [UIColor(rgb: 0x0088FF).cgColor,
-                          UIColor(rgb: 0x9911AA).cgColor]
-    
     var selectedMenuOption = 0
     
     var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets", "Dragons", "Rockets", "Roadster"]
@@ -51,7 +46,7 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         self.view.addSubview(activityIndicator)
         
         navigationBarLargeTitleFont = self.navigationController?.navigationBar.getNavigationBarFonts()[0]
@@ -60,7 +55,6 @@ class LibraryViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "universe.jpg")
-        
         self.view.insertSubview(imageView, at: 0)
         
         navigationBarView.titleLabel.text = "Deep Space"
@@ -81,8 +75,14 @@ class LibraryViewController: UIViewController {
         gradientLayerNavigationBar = UIView(frame: navigationBarView.menuCollectionView.frame)
         gradientLayerNavigationBar.frame.origin.y = navigationBarView.getContentHeight()
         gradientLayerNavigationBar.backgroundColor = UIColor.clear
-        let _ = self.gradientLayerNavigationBar.setGradient(colors: [UIColor(red: 0, green: 0, blue: 0, alpha: 0.75).cgColor,
-                                                            UIColor.clear.cgColor])
+        
+        let sublayer = UIView.getGradient(colors: [UIColor(red: 0,
+                                                           green: 0,
+                                                           blue: 0,
+                                                           alpha: 0.75).cgColor, UIColor.clear.cgColor],
+                                          bounds: gradientLayerNavigationBar.bounds)
+        gradientLayerNavigationBar.layer.insertSublayer(sublayer, at: 0)
+        
         self.view.addSubview(gradientLayerNavigationBar)
         self.view.bringSubviewToFront(self.contentCollectionView)
         
@@ -107,6 +107,16 @@ class LibraryViewController: UIViewController {
         activityIndicator.positionate(inOriginY: navBarHeight,
                                       inCenter: contentCollectionView.center,
                                       withSize: contentCollectionView.frame.size)
+        
+        self.navigationBarView.blurredView(withFrame: CGRect(x: 0,
+                                                             y: 0,
+                                                             width: self.navigationBarView.bounds.width,
+                                                             height: navBarHeight),
+                                           opacity: 0.5,
+                                           backgroundColor: UIColor(red: 0,
+                                                                    green: 0,
+                                                                    blue: 0,
+                                                                    alpha: 0.25))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,32 +145,10 @@ class LibraryViewController: UIViewController {
         self.navigationController?.navigationBar.removeTransparency()
     }
     
-    func optionChanged(index: Int) {
-        if selectedMenuOption == index {
-            UIView.animate(withDuration: 0.6) {
-                self.contentCollectionView.contentOffset.y = 0
-            }
-            return
-        }
-        
-        let removedIndexPath = IndexPath(item: selectedMenuOption, section: 0)
-        let addedIndexPath = IndexPath(item: index, section: 0)
-    
-        let removedGradientCell = self.navigationBarView.menuCollectionView.cellForItem(at: removedIndexPath) as? MenuOptionsCollectionViewCell
-        let addedGradientCell = self.navigationBarView.menuCollectionView.cellForItem(at: addedIndexPath) as? MenuOptionsCollectionViewCell
-        
-        removedGradientCell?.background.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        addedGradientCell?.background.backgroundColor = UIColor.clear
-        
-        UIView.animate(withDuration: 0.6) {
-            self.contentCollectionView.contentOffset.y = 0
-            if self.selectedMenuOption != index {
-                removedGradientCell?.removeGradient(layer: self.gradientLayer)
-                self.gradientLayer = addedGradientCell?.setGradient(colors: self.gradientColors, angle: 45.0)
-                self.selectedMenuOption = index
-            }
-        }
-        
+    func optionChanged(indexPath: IndexPath) {
+        self.contentCollectionView.contentOffset.y = 0
+        self.selectedMenuOption = indexPath.item
+        self.navigationBarView.menuCollectionView.reloadData()
         self.reloadContent()
     }
     
@@ -372,9 +360,19 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
                 cell = MenuOptionsCollectionViewCell()
             }
             
-            if indexPath.item == 0 {
+            let bounds = CGRect(x: 0,
+                                y: 0,
+                                width: 150,
+                                height: cell!.bounds.height)
+            
+            cell?.setupGradient(bounds: bounds)
+            if indexPath.item == selectedMenuOption {
+                cell?.showGradient()
                 cell?.background.backgroundColor = UIColor.clear
-                gradientLayer = cell?.setGradient(colors: gradientColors, angle: -45.0)
+            } else {
+                cell?.hideGradient()
+                cell?.background.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+                
             }
             
             cell?.optionTitleLabel.text = menuOptions[indexPath.item]
@@ -405,7 +403,7 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
             self.performSegue(withIdentifier: identifier, sender: sender)
             
         } else {
-            self.optionChanged(index: indexPath.item)
+            self.optionChanged(indexPath: indexPath)
         }
     }
     

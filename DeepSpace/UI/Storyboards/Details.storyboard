@@ -30,14 +30,12 @@
                         <constraints>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="trailing" secondItem="cot-5Y-sU0" secondAttribute="trailing" id="0Vp-OJ-mKO"/>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="6h8-Ox-biT"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="6iS-hK-GIh"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="8js-FK-bRr"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="height" secondItem="NVL-XK-2NE" secondAttribute="height" id="AC3-yJ-r5G"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="width" secondItem="NVL-XK-2NE" secondAttribute="width" id="JZB-uW-o64"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="top" secondItem="NVL-XK-2NE" secondAttribute="top" id="Jqr-J0-t5z"/>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="TRY-6U-5A9"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="trailing" secondItem="cot-5Y-sU0" secondAttribute="trailing" id="VZg-Gc-Dan"/>
+                            <constraint firstItem="1vN-N9-JJX" firstAttribute="leading" secondItem="NVL-XK-2NE" secondAttribute="leading" id="VKV-BE-Ql5"/>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="ei0-kg-skJ"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="width" secondItem="cot-5Y-sU0" secondAttribute="width" id="k5M-K8-kqx"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="height" secondItem="cot-5Y-sU0" secondAttribute="height" id="u1s-xp-XaC"/>
-                            <constraint firstItem="1vN-N9-JJX" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="xpt-jg-Q8f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cot-5Y-sU0"/>
                     </view>

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func setGradient(colors: [CGColor], angle: Float = 0) -> CAGradientLayer {
+    static func getGradient(colors: [CGColor], angle: Float = 0, bounds: CGRect = CGRect.zero) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         
         gradient.frame = bounds
@@ -37,17 +37,52 @@ extension UIView {
         gradient.endPoint = CGPoint(x: CGFloat(endPointX),y: CGFloat(endPointY))
         gradient.startPoint = CGPoint(x: CGFloat(startPointX), y: CGFloat(startPointY))
         
-        layer.insertSublayer(gradient, at: 0)
         return gradient
     }
     
-    func removeGradient(layer: CAGradientLayer) {
-        for index in 0..<self.layer.sublayers!.count {
-            if self.layer.sublayers![index] == layer {
-                self.layer.sublayers?.remove(at: index)
-                break
+    static func getBlurredView(withFrame frame: CGRect = CGRect.zero, opacity: CGFloat = 0.5, backgroundColor: UIColor = .clear) -> UIView {
+        //only apply the blur if the user hasn't disabled transparency effects
+        let view = UIView(frame: frame)
+        view.backgroundColor = backgroundColor
+        
+        let subview = UIView(frame: frame)
+        subview.backgroundColor = UIColor.clear
+        
+        
+        if !UIAccessibility.isReduceTransparencyEnabled {
+            
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = frame
+            
+            subview.addSubview(blurEffectView)
+            subview.alpha = opacity
+        }
+        
+        view.addSubview(subview)
+        return view
+        
+    }
+    
+    func blurredView(withFrame frame: CGRect = CGRect.zero, opacity: CGFloat = 0.5, backgroundColor: UIColor = .clear) {
+        let blurredView = UIView.getBlurredView(withFrame: frame, opacity: opacity, backgroundColor: backgroundColor)
+        let _ = self.removeBlurredSubview(view: blurredView)
+        self.insertSubview(blurredView, at: 0)
+        
+    }
+    
+    func removeBlurredSubview(view: UIView) -> Bool {
+        for view in subviews {
+            for subview in view.subviews {
+                for subsubview in subview.subviews {
+                    if subsubview.isKind(of: UIVisualEffectView.self) {
+                        view.removeFromSuperview()
+                        return true
+                    }
+                }
             }
         }
+        return false
     }
     
 }

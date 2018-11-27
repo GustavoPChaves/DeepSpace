@@ -18,6 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7j-tQ-uho">
+                        <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-Io-NhY">
                         <rect key="frame" x="0.0" y="0.0" width="79" height="48"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
@@ -31,9 +35,13 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="p7j-tQ-uho" firstAttribute="width" secondItem="EDz-Io-NhY" secondAttribute="width" id="CVE-Hh-Jke"/>
+                <constraint firstItem="p7j-tQ-uho" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DPd-Ch-bOg"/>
+                <constraint firstItem="p7j-tQ-uho" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FDW-Ws-a5I"/>
                 <constraint firstItem="EDz-Io-NhY" firstAttribute="height" secondItem="tuT-69-jVP" secondAttribute="height" constant="16" id="Gso-wg-xES"/>
                 <constraint firstItem="EDz-Io-NhY" firstAttribute="width" secondItem="tuT-69-jVP" secondAttribute="width" constant="16" id="I9y-oJ-Dpc"/>
                 <constraint firstItem="tuT-69-jVP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="NEk-U4-MNa"/>
+                <constraint firstItem="p7j-tQ-uho" firstAttribute="height" secondItem="EDz-Io-NhY" secondAttribute="height" id="UzE-qn-vKE"/>
                 <constraint firstAttribute="bottom" secondItem="tuT-69-jVP" secondAttribute="bottom" constant="8" id="g1N-ch-piQ"/>
                 <constraint firstAttribute="trailing" secondItem="tuT-69-jVP" secondAttribute="trailing" constant="8" id="gZX-TC-GdM"/>
                 <constraint firstItem="EDz-Io-NhY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ha8-Sh-wCc"/>
@@ -44,6 +52,7 @@
             <size key="customSize" width="79" height="48"/>
             <connections>
                 <outlet property="background" destination="EDz-Io-NhY" id="7Lg-ds-dHo"/>
+                <outlet property="gradientLayerView" destination="p7j-tQ-uho" id="LfX-zX-64U"/>
                 <outlet property="optionTitleLabel" destination="tuT-69-jVP" id="DwO-CA-QVT"/>
             </connections>
             <point key="canvasLocation" x="0.80000000000000004" y="142.1289355322339"/>
