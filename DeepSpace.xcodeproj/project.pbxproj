@@ -55,6 +55,10 @@
 		3CAE188E21AB9699000ACE1F /* MinorPlanetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */; };
 		3CAE189021AC1969000ACE1F /* ExoplanetHostStarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */; };
 		3CAE189221AC3D83000ACE1F /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */; };
+		3CAE189A21ACC13E000ACE1F /* RocketsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189621ACC13E000ACE1F /* RocketsDTO.swift */; };
+		3CAE189B21ACC13E000ACE1F /* DragonsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */; };
+		3CAE189C21ACC13E000ACE1F /* RoadsterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */; };
+		3CAE189D21ACC13E000ACE1F /* SpaceXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189921ACC13E000ACE1F /* SpaceXAPIManager.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
@@ -130,6 +134,10 @@
 		3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorPlanetExtension.swift; sourceTree = "<group>"; };
 		3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoplanetHostStarExtension.swift; sourceTree = "<group>"; };
 		3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
+		3CAE189621ACC13E000ACE1F /* RocketsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketsDTO.swift; sourceTree = "<group>"; };
+		3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonsDTO.swift; sourceTree = "<group>"; };
+		3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadsterDTO.swift; sourceTree = "<group>"; };
+		3CAE189921ACC13E000ACE1F /* SpaceXAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceXAPIManager.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -301,9 +309,10 @@
 			isa = PBXGroup;
 			children = (
 				3C1E1326219AFC9F0048B34A /* GET.swift */,
+				3C1E1327219AFC9F0048B34A /* NasaAPIs */,
+				3CAE189E21ACC17D000ACE1F /* Space X */,
 				3C1E1348219FC3260048B34A /* Solar System API */,
 				3C1E1343219F20BC0048B34A /* Minor Planet API */,
-				3C1E1327219AFC9F0048B34A /* NasaAPIs */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -415,9 +424,10 @@
 		3C1E1352219FC74F0048B34A /* API Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C1E134B219FC3940048B34A /* NASA */,
+				3CAE189521ACC13E000ACE1F /* Space X */,
 				3C1E134D219FC3AB0048B34A /* Solar System API */,
 				3C1E134C219FC3A00048B34A /* Minor Planet API */,
-				3C1E134B219FC3940048B34A /* NASA */,
 			);
 			path = "API Model";
 			sourceTree = "<group>";
@@ -447,6 +457,24 @@
 				3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3CAE189521ACC13E000ACE1F /* Space X */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE189621ACC13E000ACE1F /* RocketsDTO.swift */,
+				3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */,
+				3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */,
+			);
+			path = "Space X";
+			sourceTree = "<group>";
+		};
+		3CAE189E21ACC17D000ACE1F /* Space X */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE189921ACC13E000ACE1F /* SpaceXAPIManager.swift */,
+			);
+			path = "Space X";
 			sourceTree = "<group>";
 		};
 		FCF158E02199B9620035DF53 = {
@@ -640,13 +668,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CAE189D21ACC13E000ACE1F /* SpaceXAPIManager.swift in Sources */,
 				3C17C8A121A6D71100619919 /* UIViewExtension.swift in Sources */,
 				3C1E1345219F20D90048B34A /* MinorPlanetAPI.swift in Sources */,
 				3C17C89921A5D3AC00619919 /* MenuOptionsCollectionViewCell.swift in Sources */,
+				3CAE189A21ACC13E000ACE1F /* RocketsDTO.swift in Sources */,
 				3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */,
 				3C17C8A621A70CAA00619919 /* StringExtension.swift in Sources */,
 				3C1E133D219C49C00048B34A /* APOD.swift in Sources */,
 				3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */,
+				3CAE189B21ACC13E000ACE1F /* DragonsDTO.swift in Sources */,
 				3C88615A21AB4E5A00E69031 /* UIApplicationExtension.swift in Sources */,
 				3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */,
 				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
@@ -674,6 +705,7 @@
 				3C17C89E21A6D4D100619919 /* UIColorExtension.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 				3C17C8AF21A773ED00619919 /* PrepareForSegueExtension.swift in Sources */,
+				3CAE189C21ACC13E000ACE1F /* RoadsterDTO.swift in Sources */,
 				3C1E1347219F3FCF0048B34A /* MinorPlanet.swift in Sources */,
 				3C17C88521A4512100619919 /* PlanetPropertyDetailsTableViewCell.swift in Sources */,
 				3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */,

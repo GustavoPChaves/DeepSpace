@@ -57,6 +57,60 @@ extension LibraryViewController {
         cell?.planetNameLabel.text = minorPlanets[indexPath.item].name
     }
     
+    func dragonCell(cell: PlanetCollectionViewCell?,
+                    indexPath: IndexPath) {
+        cell?.planetNameLabel.text = dragons[indexPath.item].name
+        if dragonImagesCache.isEmpty {
+            GET.request(dragons[indexPath.item].flickr_images.first ?? "") { data in
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    if let image = image {
+                        self.dragonImagesCache.append(image)
+                    }
+                    cell?.planetImage.image = image
+                    cell?.planetImage.contentMode = .scaleAspectFill
+                }
+            }
+        } else {
+            cell?.planetImage.image = dragonImagesCache[indexPath.item]
+        }
+    }
+    
+    func rocketCell(cell: PlanetCollectionViewCell?,
+                    indexPath: IndexPath) {
+        cell?.planetNameLabel.text = "\(rockets[indexPath.item].id)"
+        if rocketsImagesCache.isEmpty {
+            GET.request(rockets[indexPath.item].flickr_images.first ?? "") { data in
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    if let image = image {
+                        self.rocketsImagesCache.append(image)
+                    }
+                    cell?.planetImage.image = image
+                    cell?.planetImage.contentMode = .scaleAspectFill
+                }
+            }
+        } else {
+            cell?.planetImage.image = rocketsImagesCache[indexPath.item]
+            cell?.planetImage.contentMode = .scaleAspectFill
+        }
+    }
+    
+    func roadsterCell(cell: PlanetCollectionViewCell?) {
+        cell?.planetNameLabel.text = roadster?.name
+        if self.roadsterImageCache == nil {
+            GET.request(roadster?.flickr_images.first ?? "") { data in
+                DispatchQueue.main.async {
+                    self.roadsterImageCache = UIImage(data: data)
+                    cell?.planetImage.image = self.roadsterImageCache
+                    cell?.planetImage.contentMode = .scaleAspectFill
+                }
+            }
+        } else {
+            cell?.planetImage.image = roadsterImageCache
+        }
+    }
+    
     func buildCollectionViewContent(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planetThumb", for: indexPath) as? PlanetCollectionViewCell
         if cell == nil { cell = PlanetCollectionViewCell() }
@@ -90,6 +144,14 @@ extension LibraryViewController {
         case 3:
             self.minorPlanetCell(cell: cell,
                                  indexPath: indexPath)
+        case 4:
+            self.dragonCell(cell: cell,
+                            indexPath: indexPath)
+        case 5:
+            self.rocketCell(cell: cell,
+                            indexPath: indexPath)
+        case 6:
+            self.roadsterCell(cell: cell)
         default:
             break
         }

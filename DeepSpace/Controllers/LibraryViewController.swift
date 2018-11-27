@@ -28,15 +28,25 @@ class LibraryViewController: UIViewController {
     
     var selectedMenuOption = 0
     
-    var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets"]
+    var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets", "Dragons", "Rockets", "Roadster"]
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
     var apods: [APOD] = []
     var exoplanets: [Exoplanet] = []
     var minorPlanets: [MinorPlanet] = []
+    var dragons: [DragonDTO] = []
+    var rockets: [RocketsDTO] = []
+    var roadster: RoadsterDTO?
     
     var apodsIsRequesting = false
     var exoplanetsIsRequesting = false
     var minorPlanetsIsRequesting = false
+    var dragonsIsRequesting = false
+    var rocketsIsRequesting = false
+    var roadsterIsRequesting = false
+    
+    var dragonImagesCache: [UIImage] = []
+    var rocketsImagesCache: [UIImage] = []
+    var roadsterImageCache: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +176,12 @@ class LibraryViewController: UIViewController {
             self.loadExoplanetsContent()
         case 3:
             self.loadMinorPlanetsContent()
+        case 4:
+            self.loadDragonsContent()
+        case 5:
+            self.loadRocketsContent()
+        case 6:
+            self.loadRoadsterContent()
         default:
             break
         }
@@ -244,6 +260,78 @@ class LibraryViewController: UIViewController {
             self.contentCollectionView.reloadData()
         }
     }
+    
+    func loadDragonsContent() {
+        if dragonsIsRequesting || dragons.isEmpty {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !dragonsIsRequesting
+            && dragons.isEmpty {
+            activityIndicator.startAnimating()
+            self.dragonsIsRequesting = true
+            SpaceXAPIManager.requestDragons { dragons in
+                DispatchQueue.main.async {
+                    self.dragons = dragons
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.dragonsIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
+    }
+    
+    func loadRocketsContent() {
+        if rocketsIsRequesting || rockets.isEmpty {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !rocketsIsRequesting
+            && rockets.isEmpty {
+            activityIndicator.startAnimating()
+            self.rocketsIsRequesting = true
+            SpaceXAPIManager.requestRockets { rockets in
+                DispatchQueue.main.async {
+                    self.rockets = rockets
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.rocketsIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
+    }
+    
+    func loadRoadsterContent() {
+        if roadsterIsRequesting || roadster == nil {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        if !roadsterIsRequesting
+            && roadster == nil {
+            activityIndicator.startAnimating()
+            self.roadsterIsRequesting = true
+            SpaceXAPIManager.requestRoadster { roadster in
+                DispatchQueue.main.async {
+                    self.roadster = roadster
+                    self.contentCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.roadsterIsRequesting = false
+                }
+            }
+        } else {
+            self.contentCollectionView.reloadData()
+        }
+    }
 
 }
 
@@ -259,6 +347,12 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
                 return exoplanets.count
             case 3:
                 return minorPlanets.count
+            case 4:
+                return dragons.count
+            case 5:
+                return rockets.count
+            case 6:
+                return 1
             default:
                 return 0
             }
@@ -318,7 +412,7 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView === contentCollectionView {
             switch selectedMenuOption {
-            case 1:
+            case 1, 4, 6:
                 let screenSize = UIScreen.main.bounds.size
                 let cellWidth = screenSize.width - 32
                 return CGSize(width: cellWidth, height: 1.33 * cellWidth)
@@ -335,7 +429,7 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         switch selectedMenuOption {
-        case 1:
+        case 1, 4, 6:
             return 16
         default:
             return 10
