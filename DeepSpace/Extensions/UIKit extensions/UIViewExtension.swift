@@ -66,23 +66,43 @@ extension UIView {
     
     func blurredView(withFrame frame: CGRect = CGRect.zero, opacity: CGFloat = 0.5, backgroundColor: UIColor = .clear) {
         let blurredView = UIView.getBlurredView(withFrame: frame, opacity: opacity, backgroundColor: backgroundColor)
-        let _ = self.removeBlurredSubview(view: blurredView)
+        self.removeBlurredSubview(view: blurredView)
         self.insertSubview(blurredView, at: 0)
         
     }
     
-    func removeBlurredSubview(view: UIView) -> Bool {
+    func removeBlurredSubview(view: UIView) {
         for view in subviews {
             for subview in view.subviews {
                 for subsubview in subview.subviews {
                     if subsubview.isKind(of: UIVisualEffectView.self) {
                         view.removeFromSuperview()
-                        return true
+                        return
                     }
                 }
             }
         }
-        return false
+    }
+    
+    func gradientLayer(colors: [CGColor], angle: Float = 0, bounds: CGRect = CGRect.zero) {
+        let gradient = UIView.getGradient(colors: colors, angle: angle, bounds: bounds)
+        self.removeGradientLayer()
+        
+        let view = UIView(frame: bounds)
+        view.backgroundColor = UIColor.clear
+        view.layer.addSublayer(gradient)
+        
+        self.insertSubview(view, at: 0)
+    }
+    
+    func removeGradientLayer() {
+        for view in subviews {
+            for subview in view.subviews {
+                if subview.isKind(of: CAGradientLayer.self) {
+                    view.removeFromSuperview()
+                }
+            }
+        }
     }
     
 }

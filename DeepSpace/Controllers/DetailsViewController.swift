@@ -60,6 +60,12 @@ class DetailsViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "universe.jpg")
         
+        self.view.blurredView(withFrame: self.view.bounds,
+                              opacity: 0.5,
+                              backgroundColor: UIColor(red: 0,
+                                                       green: 0,
+                                                       blue: 0,
+                                                       alpha: 0.25))
         self.view.insertSubview(imageView, at: 0)
         
         headerImageExpandedScrollView.backgroundColor = UIColor.black
@@ -88,9 +94,14 @@ class DetailsViewController: UIViewController {
         activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(activityIndicator)
         
+        self.view.bringSubviewToFront(self.detailsTableView)
+        self.view.bringSubviewToFront(self.activityIndicator)
+        
         if presentedModel == nil {
             activityIndicator.startAnimating()
         }
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -98,6 +109,7 @@ class DetailsViewController: UIViewController {
         activityIndicator.positionate(inCenter: view.center,
                                       withSize: view.frame.size)
         centerImageOnScrollView(headerImageExpandedScrollView)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +135,7 @@ class DetailsViewController: UIViewController {
         headerImageExpandedScrollView.isHidden = false
         navigationItem.rightBarButtonItem = closeImageExpandedButton
         navigationItem.setHidesBackButton(true, animated: true)
+        detailsTableView.isHidden = true
     }
     
     @objc func closeImage(_ sender: UIBarButtonItem) {
@@ -133,6 +146,7 @@ class DetailsViewController: UIViewController {
         detailsTableView.reloadRows(at: [IndexPath(row: 0, section: 0)],
                                     with: .none)
         navigationItem.setHidesBackButton(false, animated: true)
+        detailsTableView.isHidden = false
     }
     
     func isTheCellWithCollectionView(tableViewRow: Int) -> Bool {
@@ -210,7 +224,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                 if property == "Link" {
                     cell?.valueLabel.textColor = UIColor.blue
                 } else {
-                    cell?.valueLabel.textColor = UIColor.black
+                    cell?.valueLabel.textColor = UIColor.white
                 }
                 
             }
