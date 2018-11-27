@@ -252,6 +252,8 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         if indexPath.row == 0 && self.image != UIImage(named: "picture.png") {
             return true
+        } else if indexPath.row == 0 {
+            return false
         }
         
         let modelArray = presentedModel!.toArray()
