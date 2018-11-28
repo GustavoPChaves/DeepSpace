@@ -180,6 +180,7 @@ class DetailsViewController: UIViewController, BackgroundDefault {
     @objc func openLinkInSafari(_ link: String) {
         activityIndicator.startAnimating()
         let url = URL(string: link)!
+        sleep(1)
         UIApplication.shared.open(url, options: [:]) { _ in
             self.activityIndicator.stopAnimating()
         }
