@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreMotion
+import SceneKit
 
-class APODViewController: UIViewController {
+class APODViewController: UIViewController, BackgroundDefault {
 
-    @IBOutlet weak var apodImageView: UIImageView!
+    @IBOutlet weak var apodSceneView: SCNView!
     @IBOutlet weak var apodTitle: UILabel!
     @IBOutlet weak var labelBackgroundView: UIView!
+    var motionManager: CMMotionManager = CMMotionManager()
+    @IBOutlet weak var headerLabel: UILabel!
     
     var apod: APOD?
     
@@ -23,8 +27,8 @@ class APODViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        headerLabel.text = "Astronomy\nPicture\nOf the\nDay"
+        self.setBackground(myScene: apodSceneView)
         self.view.blurredView(withFrame: self.view.bounds,
                               opacity: 0.5,
                               backgroundColor: UIColor(red: 0,
@@ -34,7 +38,6 @@ class APODViewController: UIViewController {
                               insertAt: 1)
         
         self.view.addSubview(self.activityIndicator)
-        self.apodImageView.frame = UIScreen.main.bounds
         self.activityIndicator.startAnimating()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(apodDetails))
@@ -45,13 +48,15 @@ class APODViewController: UIViewController {
                 GET.request(apod.url ?? "") { data in
                     DispatchQueue.main.async {
                         if let image = UIImage(data: data) {
-                            self.apodImageView.image = image
+                            if let pngData = image.pngData() {
+                                self.setBackground(myScene: self.apodSceneView, imageData: pngData)
+                            } else if let jpegData = image.jpegData(compressionQuality: 1) {
+                                 self.setBackground(myScene: self.apodSceneView, imageData: jpegData)
+                            }
                         }
                     }
                 }
                 self.apod = apod
-                self.apodImageView.image = UIImage(named: "universe.jpg")
-                self.apodImageView.contentMode = .scaleAspectFill
                 self.apodTitle.text = apod.title
                 self.activityIndicator.stopAnimating()
             }
@@ -81,8 +86,6 @@ class APODViewController: UIViewController {
             
             if let image = apod.image {
                 destination?.image = image
-            } else {
-                destination?.image = UIImage(named: "picture.png")
             }
         }
     }

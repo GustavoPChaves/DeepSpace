@@ -47,6 +47,7 @@
 		3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */; };
 		3C2DFD2021A2E5B6009D54C1 /* OrbitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */; };
 		3C2DFD2421A2F0E3009D54C1 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */; };
+		3C3317DB21AEB63F007B74AB /* BackgroundDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3317DA21AEB63F007B74AB /* BackgroundDefault.swift */; };
 		3C88615721AAFEB400E69031 /* ImageHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */; };
 		3C88615821AAFEB400E69031 /* ImageHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */; };
 		3C88615A21AB4E5A00E69031 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88615921AB4E5A00E69031 /* UIApplicationExtension.swift */; };
@@ -134,6 +135,7 @@
 		3C1E1350219FC5830048B34A /* SolarSystemBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemBodies.swift; sourceTree = "<group>"; };
 		3C2DFD1F21A2E5B6009D54C1 /* OrbitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitType.swift; sourceTree = "<group>"; };
 		3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		3C3317DA21AEB63F007B74AB /* BackgroundDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDefault.swift; sourceTree = "<group>"; };
 		3C88615521AAFEB400E69031 /* ImageHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3C88615621AAFEB400E69031 /* ImageHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		3C88615921AB4E5A00E69031 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				3C1E132C219AFC9F0048B34A /* APIManager.swift */,
 				3C1E132D219AFC9F0048B34A /* AppDelegate.swift */,
 				3C17C8A721A741E700619919 /* ConvertibleToArray.swift */,
+				3C3317DA21AEB63F007B74AB /* BackgroundDefault.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				3CAE18AE21ADD332000ACE1F /* RocketsDTOExtension.swift in Sources */,
 				3C1E1336219B011E0048B34A /* NasaExoplanet.swift in Sources */,
 				3C17C89521A5CF8500619919 /* LibraryViewController.swift in Sources */,
+				3C3317DB21AEB63F007B74AB /* BackgroundDefault.swift in Sources */,
 				3C17C8AA21A74B7400619919 /* APODExtension.swift in Sources */,
 				3C17C8AD21A772AB00619919 /* PlanetCollectionViewCellBuildExtension.swift in Sources */,
 				3C1E1338219B0A260048B34A /* Exoplanet.swift in Sources */,

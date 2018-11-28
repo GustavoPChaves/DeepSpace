@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-CO-mLm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zar-F5-rdd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="36"/>
                                 <constraints>
@@ -40,16 +43,21 @@
                             <constraint firstItem="1vN-N9-JJX" firstAttribute="height" secondItem="NVL-XK-2NE" secondAttribute="height" id="AC3-yJ-r5G"/>
                             <constraint firstItem="1vN-N9-JJX" firstAttribute="width" secondItem="NVL-XK-2NE" secondAttribute="width" id="JZB-uW-o64"/>
                             <constraint firstItem="1vN-N9-JJX" firstAttribute="top" secondItem="NVL-XK-2NE" secondAttribute="top" id="Jqr-J0-t5z"/>
+                            <constraint firstItem="cot-5Y-sU0" firstAttribute="bottom" secondItem="NIi-CO-mLm" secondAttribute="bottom" id="Rc5-Kd-u3B"/>
+                            <constraint firstItem="cot-5Y-sU0" firstAttribute="trailing" secondItem="NIi-CO-mLm" secondAttribute="trailing" id="Swm-Ux-ILX"/>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="TRY-6U-5A9"/>
                             <constraint firstItem="1vN-N9-JJX" firstAttribute="leading" secondItem="NVL-XK-2NE" secondAttribute="leading" id="VKV-BE-Ql5"/>
                             <constraint firstItem="zar-F5-rdd" firstAttribute="leading" secondItem="NVL-XK-2NE" secondAttribute="leading" id="Yxl-R5-g07"/>
                             <constraint firstItem="NVL-XK-2NE" firstAttribute="bottom" secondItem="cot-5Y-sU0" secondAttribute="bottom" id="ei0-kg-skJ"/>
                             <constraint firstItem="zar-F5-rdd" firstAttribute="trailing" secondItem="NVL-XK-2NE" secondAttribute="trailing" id="nb3-uc-SfY"/>
+                            <constraint firstItem="NIi-CO-mLm" firstAttribute="top" secondItem="cot-5Y-sU0" secondAttribute="top" id="qmN-mc-62i"/>
+                            <constraint firstItem="NIi-CO-mLm" firstAttribute="leading" secondItem="cot-5Y-sU0" secondAttribute="leading" id="xUS-B7-eUo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cot-5Y-sU0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="8kk-dW-StX"/>
                     <connections>
+                        <outlet property="backgroundSceneView" destination="NIi-CO-mLm" id="40u-oh-NdT"/>
                         <outlet property="detailsTableView" destination="NVL-XK-2NE" id="B0R-mf-Plx"/>
                         <outlet property="gradientLayerView" destination="zar-F5-rdd" id="SU7-xP-Qka"/>
                         <outlet property="headerImageExpandedScrollView" destination="1vN-N9-JJX" id="5IS-Kd-7fr"/>

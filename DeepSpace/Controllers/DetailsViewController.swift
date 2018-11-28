@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import SceneKit
+import CoreMotion
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, BackgroundDefault {
+
+    @IBOutlet weak var backgroundSceneView: SCNView!
+    var motionManager: CMMotionManager = CMMotionManager()
     
     @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var headerImageExpandedScrollView: UIScrollView!
@@ -44,6 +49,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setBackground(myScene: backgroundSceneView)
+        
         self.detailsTableView.dataSource = self
         self.detailsTableView.delegate = self
         
@@ -63,18 +70,13 @@ class DetailsViewController: UIViewController {
         detailsTableView.estimatedRowHeight = 50
         detailsTableView.backgroundColor = UIColor.clear
         
-        let imageView = UIImageView(frame: self.view.bounds)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "universe.jpg")
-        
         self.view.blurredView(withFrame: self.view.bounds,
-                              opacity: 0.5,
+                              opacity: 0.7,
                               backgroundColor: UIColor(red: 0,
                                                        green: 0,
                                                        blue: 0,
-                                                       alpha: 0.25))
-        self.view.insertSubview(imageView, at: 0)
+                                                       alpha: 0.4),
+                              insertAt: 1)
         
         headerImageExpandedScrollView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         headerImageExpandedScrollView.isHidden = true
@@ -102,9 +104,6 @@ class DetailsViewController: UIViewController {
         activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(activityIndicator)
         
-        self.view.bringSubviewToFront(self.detailsTableView)
-        self.view.bringSubviewToFront(self.activityIndicator)
-        
         if presentedModel == nil {
             activityIndicator.startAnimating()
         }
@@ -117,6 +116,8 @@ class DetailsViewController: UIViewController {
         activityIndicator.positionate(inCenter: view.center,
                                       withSize: view.frame.size)
         centerImageOnScrollView(headerImageExpandedScrollView)
+        self.backgroundSceneView.frame = self.view.bounds
+        
         if headerImageExpandedScrollView.isHidden {
             let bounds = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 36.5)
             self.gradientLayerView.gradientLayer(colors: [UIColor(red: 0,
@@ -177,8 +178,11 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func openLinkInSafari(_ link: String) {
+        activityIndicator.startAnimating()
         let url = URL(string: link)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url, options: [:]) { _ in
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     @objc func doubleTapImageGestureHandler(_ sender: UITapGestureRecognizer) {
@@ -216,6 +220,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                 cell = ImageHeaderTableViewCell()
             }
 
+            cell?.selectionStyle = .none
             cell?.headerImageView.image = self.image
             self.headerImageExpandedImageView.image = self.image
             cell?.headerImageView.layer.cornerRadius = 13
@@ -227,7 +232,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             let frame = CGRect(origin: cell!.headerImageView.frame.origin, size: size)
 
             let offset = CGSize(width: 0, height: 5)
-            cell?.applyShadow(offset: offset, layerFrame: frame)
+            cell?.applyShadow(color: UIColor.black.withAlphaComponent(0.8).cgColor, offset: offset, layerFrame: frame)
             
             if self.image != UIImage(named: "picture.png") {
                 cell?.headerImageView.backgroundColor = UIColor.black
@@ -250,6 +255,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                 cell = PlanetPropertyDetailsTableViewCell()
             }
             
+            cell?.selectionStyle = .none
             cell?.backgroundColor = UIColor.clear
             if let propertiesArray = presentedModel?.toArray() {
                 let property = propertiesArray[indexPath.row - 1].property
@@ -284,18 +290,6 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             return cell!
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.row == 0 && self.image != UIImage(named: "picture.png") {
-            return true
-        } else if indexPath.row == 0 {
-            return false
-        }
-        
-        let modelArray = presentedModel!.toArray()
-        let model = modelArray[indexPath.row - 1]
-        return model.property == "Link"
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

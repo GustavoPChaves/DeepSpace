@@ -7,24 +7,17 @@
 //
 
 import UIKit
+import CoreMotion
+import SceneKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, BackgroundDefault {
 
+    @IBOutlet weak var backgroundSceneView: SCNView!
+    var motionManager: CMMotionManager = CMMotionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setBackground(myScene: backgroundSceneView)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

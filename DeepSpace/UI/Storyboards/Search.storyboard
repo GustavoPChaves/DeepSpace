@@ -16,10 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="Bgx-zs-iUu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh6-6D-TVl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oh6-6D-TVl" firstAttribute="top" secondItem="Bgx-zs-iUu" secondAttribute="top" id="6KT-ae-GmL"/>
+                            <constraint firstItem="oh6-6D-TVl" firstAttribute="trailing" secondItem="jHw-4X-Evi" secondAttribute="trailing" id="FOs-Ya-HkN"/>
+                            <constraint firstAttribute="bottom" secondItem="oh6-6D-TVl" secondAttribute="bottom" id="nkM-ej-dvN"/>
+                            <constraint firstItem="oh6-6D-TVl" firstAttribute="leading" secondItem="jHw-4X-Evi" secondAttribute="leading" id="zum-Fc-ylb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jHw-4X-Evi"/>
                     </view>
                     <navigationItem key="navigationItem" id="VU9-iy-dec"/>
+                    <connections>
+                        <outlet property="backgroundSceneView" destination="oh6-6D-TVl" id="0IO-wG-y9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYs-zU-vGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,12 +42,11 @@
         <!--Navigation Controller-->
         <scene sceneID="ee0-sd-fxd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ABJ-j7-2Jc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ABJ-j7-2Jc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="0sO-Z1-7T0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WDn-HD-Oa9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

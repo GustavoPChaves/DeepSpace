@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-ao-nu5">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsL-c4-Upk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRW-9L-e4R">
-                                <rect key="frame" x="0.0" y="454" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="503" width="375" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChN-be-Aff">
                                         <rect key="frame" x="187.5" y="8" width="0.0" height="20"/>
@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="36" id="nWV-dw-ulS"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Picture Of the Day (APOD)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-IX-vi3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Picture Of the Day - APOD" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-IX-vi3">
                                 <rect key="frame" x="16" y="32" width="247.5" height="129"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,23 +50,24 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gou-IX-vi3" secondAttribute="trailing" constant="80" id="1Ly-p9-gcS"/>
-                            <constraint firstAttribute="bottom" secondItem="4nD-ao-nu5" secondAttribute="bottom" id="5h5-V2-b8V"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gou-IX-vi3" secondAttribute="trailing" constant="100" id="1Ly-p9-gcS"/>
                             <constraint firstItem="TRW-9L-e4R" firstAttribute="leading" secondItem="dtP-NB-mbF" secondAttribute="leading" id="8Si-Id-fvo"/>
-                            <constraint firstItem="Gou-IX-vi3" firstAttribute="top" secondItem="4nD-ao-nu5" secondAttribute="top" constant="32" id="9Um-LJ-1IH"/>
-                            <constraint firstItem="4nD-ao-nu5" firstAttribute="leading" secondItem="dtP-NB-mbF" secondAttribute="leading" id="UjI-Va-Dmo"/>
-                            <constraint firstItem="Gou-IX-vi3" firstAttribute="leading" secondItem="4nD-ao-nu5" secondAttribute="leading" constant="16" id="VaV-5w-r3I"/>
+                            <constraint firstItem="WsL-c4-Upk" firstAttribute="trailing" secondItem="dtP-NB-mbF" secondAttribute="trailing" id="997-DW-RfJ"/>
+                            <constraint firstAttribute="bottom" secondItem="WsL-c4-Upk" secondAttribute="bottom" id="FYz-zK-KGo"/>
+                            <constraint firstItem="WsL-c4-Upk" firstAttribute="top" secondItem="pqo-MX-g8L" secondAttribute="top" id="GVq-pr-wNz"/>
+                            <constraint firstItem="TRW-9L-e4R" firstAttribute="bottom" secondItem="WsL-c4-Upk" secondAttribute="bottom" constant="-128" id="H7v-1F-Pf2"/>
+                            <constraint firstItem="Gou-IX-vi3" firstAttribute="leading" secondItem="WsL-c4-Upk" secondAttribute="leading" constant="16" id="Hfd-lG-bUY"/>
+                            <constraint firstItem="Gou-IX-vi3" firstAttribute="top" secondItem="WsL-c4-Upk" secondAttribute="top" constant="32" id="IZa-OV-Z9r"/>
+                            <constraint firstItem="WsL-c4-Upk" firstAttribute="leading" secondItem="dtP-NB-mbF" secondAttribute="leading" id="bdq-D3-GKN"/>
                             <constraint firstItem="TRW-9L-e4R" firstAttribute="trailing" secondItem="dtP-NB-mbF" secondAttribute="trailing" id="c9O-Id-6e0"/>
-                            <constraint firstItem="4nD-ao-nu5" firstAttribute="top" secondItem="dtP-NB-mbF" secondAttribute="top" constant="-20" id="dim-yV-SUK"/>
-                            <constraint firstItem="4nD-ao-nu5" firstAttribute="trailing" secondItem="dtP-NB-mbF" secondAttribute="trailing" id="eWl-F3-mmj"/>
-                            <constraint firstItem="TRW-9L-e4R" firstAttribute="bottom" secondItem="4nD-ao-nu5" secondAttribute="bottom" constant="-177" id="zh7-AI-xD3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtP-NB-mbF"/>
                     </view>
                     <navigationItem key="navigationItem" id="3NB-ib-ShG"/>
                     <connections>
-                        <outlet property="apodImageView" destination="4nD-ao-nu5" id="5ya-ui-gdY"/>
+                        <outlet property="apodSceneView" destination="WsL-c4-Upk" id="iVG-F5-UIg"/>
                         <outlet property="apodTitle" destination="ChN-be-Aff" id="zOq-Mz-V6e"/>
+                        <outlet property="headerLabel" destination="Gou-IX-vi3" id="gDo-lW-3fh"/>
                         <outlet property="labelBackgroundView" destination="TRW-9L-e4R" id="ymb-ZG-Mvu"/>
                         <segue destination="2iM-N0-b5E" kind="show" identifier="details" id="twb-BN-Uvb"/>
                     </connections>
@@ -105,6 +106,5 @@
     </scenes>
     <resources>
         <image name="home-tab-icon" width="25" height="25"/>
-        <image name="picture" width="573" height="481"/>
     </resources>
 </document>

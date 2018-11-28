@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import SceneKit
+import CoreMotion
 
-class LibraryViewController: UIViewController {
+class LibraryViewController: UIViewController, BackgroundDefault {
     
     lazy private var activityIndicator : CustomActivityIndicatorView! = {
         let image : UIImage = UIImage(named: "Loading.png")!
         return CustomActivityIndicatorView(image: image)
     }()
     
-    var navigationBarLargeTitleFont: UIFont?
+    @IBOutlet weak var backgroundSceneView: SCNView!
+    var motionManager: CMMotionManager = CMMotionManager()
     
-    @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var navigationBarView: HomeScreenNavigationBarView!
+    var navigationBarLargeTitleFont: UIFont?
     var gradientLayerNavigationBar: UIView!
     
     var selectedMenuOption = 0
+    @IBOutlet weak var contentCollectionView: UICollectionView!
     
     var menuOptions = ["Solar System", "Last 31 APODs", "Exoplanets", "Minor Planets", "Dragons", "Rockets", "Roadster"]
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
@@ -42,18 +46,11 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setBackground(myScene: backgroundSceneView)
         activityIndicator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         self.view.addSubview(activityIndicator)
         
         navigationBarLargeTitleFont = self.navigationController?.navigationBar.getNavigationBarFonts()[0]
-        
-        let imageView = UIImageView(frame: self.view.bounds)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "universe.jpg")
-        
-        self.view.insertSubview(imageView, at: 0)
-        
         navigationBarView.titleLabel.text = "Deep Space"
         navigationBarView.titleLabel.font = navigationBarLargeTitleFont
         self.navigationItem.title = nil
@@ -113,10 +110,11 @@ class LibraryViewController: UIViewController {
                                                              y: 0,
                                                              width: self.navigationBarView.bounds.width,
                                                              height: navBarHeight),
+                                           opacity: 0.7,
                                            backgroundColor: UIColor(red: 0,
                                                                     green: 0,
                                                                     blue: 0,
-                                                                    alpha: 0.25))
+                                                                    alpha: 0.4))
     }
     
     override func viewDidAppear(_ animated: Bool) {
