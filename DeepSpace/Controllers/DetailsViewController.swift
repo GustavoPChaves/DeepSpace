@@ -179,18 +179,23 @@ class DetailsViewController: UIViewController, BackgroundDefault {
     
     @objc func openLinkInSafari(_ link: String) {
         activityIndicator.startAnimating()
-        let url = URL(string: link)!
-        UIApplication.shared.open(url, options: [:]) { _ in
-            sleep(1)
-            self.activityIndicator.stopAnimating()
+        let workitem = DispatchWorkItem {
+            let url = URL(string: link)!
+            UIApplication.shared.open(url, options: [:]) { _ in
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            workitem.perform()
         }
     }
     
     @objc func doubleTapImageGestureHandler(_ sender: UITapGestureRecognizer) {
-        if headerImageExpandedScrollView.zoomScale >= 10 {
+        if headerImageExpandedScrollView.zoomScale >= 6.0 {
             headerImageExpandedScrollView.setZoomScale(0.0, animated: true)
         } else {
-            headerImageExpandedScrollView.setZoomScale(10.0, animated: true)
+            headerImageExpandedScrollView.setZoomScale(6.0, animated: true)
         }
     }
     
