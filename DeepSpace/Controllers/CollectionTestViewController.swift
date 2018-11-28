@@ -10,23 +10,28 @@ import UIKit
 
 class CollectionTestViewController: UIViewController {
     @IBOutlet weak var myCollection: UICollectionView!
+    let layout = CustomCollectionLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         myCollection.delegate = self
         myCollection.dataSource = self
+        myCollection.collectionViewLayout = layout
         
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        layout.invalidateLayout()
     }
     
 
 }
 
 
-extension CollectionTestViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension CollectionTestViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 500
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -35,10 +40,10 @@ extension CollectionTestViewController: UICollectionViewDelegate, UICollectionVi
         cell.layer.borderWidth = 1
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 200, height: 300)
+//    }
+//    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
         let frame = cell.backgroundImage.frame
@@ -88,18 +93,28 @@ extension CollectionTestViewController: UICollectionViewDelegate, UICollectionVi
         }
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let cell = myCollection.cellForItem(at: IndexPath(row: 2, section: 0))!
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
-            cell.center.y = cell.center.y + 30
-        }) { (finished) in
+        
+        for cell in myCollection.visibleCells{
+//            let b = UISnapBehavior(item: cell, snapTo: myCollection.center) 
             
+//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+//                cell.center.y = cell.center.y + 30
+//            }) { (finished) in
+//
+//            }
         }
-        let cell2 = myCollection.cellForItem(at: IndexPath(row: 1, section: 0))!
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
-            cell2.center.y = cell2.center.y + 30
-        }) { (finished) in
-            
-        }
+//        let cell = myCollection.cellForItem(at: IndexPath(row: 2, section: 0))!
+//        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+//            cell.center.y = cell.center.y + 30
+//        }) { (finished) in
+//
+//        }
+//        let cell2 = myCollection.cellForItem(at: IndexPath(row: 1, section: 0))!
+//        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+//            cell2.center.y = cell2.center.y + 30
+//        }) { (finished) in
+//
+//        }
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         

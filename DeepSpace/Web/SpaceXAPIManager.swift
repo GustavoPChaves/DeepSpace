@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class SpaceXAPIManager:APIManager {
+class SpaceXAPIManager {
     typealias element = elements
     
 

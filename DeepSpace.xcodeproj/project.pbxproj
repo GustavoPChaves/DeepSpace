@@ -10,6 +10,7 @@
 		FC01755D219C5D83002B79CB /* RoadsterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01755C219C5D83002B79CB /* RoadsterDTO.swift */; };
 		FC0F5CC8219AFCB4006D37DE /* RocketsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F5CC7219AFCB4006D37DE /* RocketsDTO.swift */; };
 		FC0F5CCA219B0E50006D37DE /* DragonsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F5CC9219B0E4F006D37DE /* DragonsDTO.swift */; };
+		FC3A981C21AC21210047C7A9 /* CustonCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A981B21AC21210047C7A9 /* CustonCollectionLayout.swift */; };
 		FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EC2199B9630035DF53 /* AppDelegate.swift */; };
 		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		FC01755C219C5D83002B79CB /* RoadsterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterDTO.swift; sourceTree = "<group>"; };
 		FC0F5CC7219AFCB4006D37DE /* RocketsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsDTO.swift; sourceTree = "<group>"; };
 		FC0F5CC9219B0E4F006D37DE /* DragonsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonsDTO.swift; sourceTree = "<group>"; };
+		FC3A981B21AC21210047C7A9 /* CustonCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonCollectionLayout.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF158EC2199B9630035DF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				FCF47A5C21A584A200CE2963 /* CustonTransitionManager.swift */,
 				FCFCD5B121A83554004B1F39 /* FadePushAnimator.swift */,
+				FC3A981B21AC21210047C7A9 /* CustonCollectionLayout.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				FCF47A6221A590BF00CE2963 /* CustomCollectionViewCell.swift in Sources */,
 				FCF158ED2199B9630035DF53 /* AppDelegate.swift in Sources */,
 				FCF159222199BD000035DF53 /* SpaceXAPIManager.swift in Sources */,
+				FC3A981C21AC21210047C7A9 /* CustonCollectionLayout.swift in Sources */,
 				FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */,
 				FC0F5CC8219AFCB4006D37DE /* RocketsDTO.swift in Sources */,
 			);
