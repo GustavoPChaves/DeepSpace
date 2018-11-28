@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.20392156862745098" green="0.47058823529411764" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="1" green="0.46666666666666667" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="FeA-rW-Ziw" kind="relationship" relationship="viewControllers" id="IpD-5H-PKY"/>
-                        <segue destination="lN8-ly-Fm3" kind="relationship" relationship="viewControllers" id="t5f-bg-ovr"/>
                         <segue destination="AGx-gK-mxT" kind="relationship" relationship="viewControllers" id="NKC-qB-FQG"/>
-                        <segue destination="H4K-aV-sNy" kind="relationship" relationship="viewControllers" id="dyb-UL-7kf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmb-no-BnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
