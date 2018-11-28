@@ -64,10 +64,10 @@ extension UIView {
         
     }
     
-    func blurredView(withFrame frame: CGRect = CGRect.zero, opacity: CGFloat = 0.5, backgroundColor: UIColor = .clear) {
+    func blurredView(withFrame frame: CGRect = CGRect.zero, opacity: CGFloat = 0.5, backgroundColor: UIColor = .clear, insertAt: Int = 0) {
         let blurredView = UIView.getBlurredView(withFrame: frame, opacity: opacity, backgroundColor: backgroundColor)
         self.removeBlurredSubview(view: blurredView)
-        self.insertSubview(blurredView, at: 0)
+        self.insertSubview(blurredView, at: insertAt)
         
     }
     
@@ -84,7 +84,7 @@ extension UIView {
         }
     }
     
-    func gradientLayer(colors: [CGColor], angle: Float = 0, bounds: CGRect = CGRect.zero) {
+    func gradientLayer(colors: [CGColor], angle: Float = 0, bounds: CGRect = CGRect.zero, insertAt: Int = 0) {
         let gradient = UIView.getGradient(colors: colors, angle: angle, bounds: bounds)
         self.removeGradientLayer()
         
@@ -92,17 +92,53 @@ extension UIView {
         view.backgroundColor = UIColor.clear
         view.layer.addSublayer(gradient)
         
-        self.insertSubview(view, at: 0)
+        self.insertSubview(view, at: insertAt)
     }
     
     func removeGradientLayer() {
         for view in subviews {
-            for subview in view.subviews {
-                if subview.isKind(of: CAGradientLayer.self) {
-                    view.removeFromSuperview()
+            if let sublayers = view.layer.sublayers {
+                for sublayer in sublayers {
+                    if sublayer.isKind(of: CAGradientLayer.self) {
+                        view.removeFromSuperview()
+                    }
                 }
             }
         }
+    }
+    
+    func applyShadow(radius: CGFloat = 13,
+                     borderWidth: CGFloat = 1,
+                     color: CGColor = UIColor(red: 0,
+                                              green: 0,
+                                              blue: 0,
+                                              alpha: 0.5).cgColor,
+                     offset: CGSize = CGSize.zero,
+                     blur: CGFloat = 0,
+                     alpha: Float = 0.5,
+                     layerFrame: CGRect = CGRect.zero) {
+        if let tableViewCell = self as? UITableViewCell {
+            tableViewCell.contentView.layer.cornerRadius = radius
+            tableViewCell.contentView.layer.borderWidth = borderWidth
+            tableViewCell.contentView.layer.borderColor = UIColor.clear.cgColor
+            tableViewCell.contentView.layer.masksToBounds = true
+        } else if let collectionViewCell = self as? UICollectionViewCell {
+            collectionViewCell.contentView.layer.cornerRadius = radius
+            collectionViewCell.contentView.layer.borderWidth = borderWidth
+            collectionViewCell.contentView.layer.borderColor = UIColor.clear.cgColor
+            collectionViewCell.contentView.layer.masksToBounds = true
+        }
+        
+        self.layer.shadowColor = color
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = blur
+        self.layer.shadowOpacity = alpha
+        self.layer.masksToBounds = false
+        
+        self.layer.shadowPath = UIBezierPath(roundedRect: layerFrame,
+                                             cornerRadius: radius).cgPath
+        self.layer.backgroundColor = UIColor.clear.cgColor
+        
     }
     
 }

@@ -20,7 +20,14 @@ class DetailsViewController: UIViewController {
         return CustomActivityIndicatorView(image: image)
     }()
     
-    var image = UIImage(named: "picture.png")
+    var image = UIImage(named: "picture.png") {
+        didSet {
+            if let tableView = detailsTableView {
+                tableView.reloadData()
+            }
+        }
+    }
+    
     var presentedModel : ConvertibleToArray? {
         didSet {
             if let activityIndicator = activityIndicator {
@@ -32,6 +39,7 @@ class DetailsViewController: UIViewController {
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
     var planets : [SolarSystemBodies] = []
     var cellSize : CGSize?
+    @IBOutlet weak var gradientLayerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +76,7 @@ class DetailsViewController: UIViewController {
                                                        alpha: 0.25))
         self.view.insertSubview(imageView, at: 0)
         
-        headerImageExpandedScrollView.backgroundColor = UIColor.black
+        headerImageExpandedScrollView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         headerImageExpandedScrollView.isHidden = true
         headerImageExpandedScrollView.maximumZoomScale = 15
         headerImageExpandedScrollView.minimumZoomScale = 1
@@ -79,7 +87,7 @@ class DetailsViewController: UIViewController {
         headerImageExpandedImageView = UIImageView(frame: self.headerImageExpandedScrollView.bounds)
         headerImageExpandedImageView.contentMode = .scaleAspectFit
         headerImageExpandedImageView.clipsToBounds = false
-        headerImageExpandedImageView.backgroundColor = UIColor.black
+        headerImageExpandedImageView.backgroundColor = UIColor.clear
         headerImageExpandedImageView.image = image
         
         headerImageExpandedScrollView.addSubview(headerImageExpandedImageView)
@@ -101,7 +109,7 @@ class DetailsViewController: UIViewController {
             activityIndicator.startAnimating()
         }
         
-        
+        detailsTableView.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -109,13 +117,26 @@ class DetailsViewController: UIViewController {
         activityIndicator.positionate(inCenter: view.center,
                                       withSize: view.frame.size)
         centerImageOnScrollView(headerImageExpandedScrollView)
-        
+        if headerImageExpandedScrollView.isHidden {
+            let bounds = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 36.5)
+            self.gradientLayerView.gradientLayer(colors: [UIColor(red: 0,
+                                                                  green: 0,
+                                                                  blue: 0,
+                                                                  alpha: 0.75).cgColor,
+                                                          UIColor.clear.cgColor],
+                                                bounds: bounds,
+                                                insertAt: 0)
+        } else {
+            let imageY = headerImageExpandedScrollView.frame.height/2 - headerImageExpandedImageView.frame.height/2
+            headerImageExpandedImageView.frame.origin.y = imageY
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.transparent()
     }
     
@@ -196,12 +217,25 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
 
             cell?.headerImageView.image = self.image
             self.headerImageExpandedImageView.image = self.image
+            cell?.headerImageView.layer.cornerRadius = 13
+            cell?.backgroundColor = UIColor.clear
+            
+            var frame = cell!.headerImageView.frame
+            frame.size.height = cell!.bounds.height
+
+            let offset = CGSize(width: 0, height: 5)
+            cell?.applyShadow(offset: offset, layerFrame: frame)
             
             if self.image != UIImage(named: "picture.png") {
                 cell?.headerImageView.backgroundColor = UIColor.black
-                if presentedModel is APOD {
+                if presentedModel is APOD
+                || presentedModel is DragonDTO
+                || presentedModel is RocketsDTO
+                || presentedModel is RoadsterDTO {
                     cell?.headerImageView.contentMode = .scaleAspectFill
                 }
+            } else {
+                cell?.headerImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             }
             
             return cell!
@@ -222,7 +256,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
                 cell?.valueLabel.text = value
                 
                 if property == "Link" {
-                    cell?.valueLabel.textColor = UIColor.blue
+                    cell?.valueLabel.textColor = UIColor(rgb: 0x3478F6)
                 } else {
                     cell?.valueLabel.textColor = UIColor.white
                 }
@@ -263,7 +297,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return self.view.bounds.height * 0.3
+            return (self.view.bounds.width - 32) * 1.33
         } else if !isTheCellWithCollectionView(tableViewRow: indexPath.row) {
             return UITableView.automaticDimension
         } else {
@@ -319,18 +353,8 @@ extension DetailsViewController : UICollectionViewDataSource, UICollectionViewDe
         cell?.layer.cornerRadius = 13
         cell?.planetImage.backgroundColor = UIColor.black
         
-        cell?.contentView.layer.cornerRadius = 13
-        cell?.contentView.layer.borderWidth = 1.0
-        cell?.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell?.contentView.layer.masksToBounds = true
-        
-        cell?.layer.shadowColor = UIColor.black.cgColor
-        cell?.layer.shadowOffset = CGSize(width: 1, height: 2)
-        cell?.layer.shadowRadius = 0
-        cell?.layer.shadowOpacity = 0.5
-        cell?.layer.masksToBounds = false
-        cell?.layer.shadowPath = UIBezierPath(roundedRect: cell!.bounds, cornerRadius: cell!.contentView.layer.cornerRadius).cgPath
-        cell?.layer.backgroundColor = UIColor.clear.cgColor
+        let offset = CGSize(width: 0, height: 5)
+        cell?.applyShadow(offset: offset, layerFrame: cell!.bounds)
         
         return cell!
     }

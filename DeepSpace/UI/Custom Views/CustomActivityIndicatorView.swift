@@ -45,16 +45,16 @@ class CustomActivityIndicatorView: UIView {
     }
     
     func positionate(inOriginY originY: CGFloat? = nil, inCenter center: CGPoint, withSize size: CGSize? = nil) {
-        layerView.center = center
-        
-        if let originY = originY {
-            frame.origin.y = originY
-            layerView.frame.origin.y = originY
-        }
-        
         if let size = size {
             self.frame.size = size
         }
+        
+        layerView.center = center
+
+        if let originY = originY {
+            frame.origin.y = originY
+        }
+        
     }
     
     // MARK - Func

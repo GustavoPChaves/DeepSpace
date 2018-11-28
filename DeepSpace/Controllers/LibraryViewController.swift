@@ -39,10 +39,6 @@ class LibraryViewController: UIViewController {
     var rocketsIsRequesting = false
     var roadsterIsRequesting = false
     
-    var dragonImagesCache: [UIImage] = []
-    var rocketsImagesCache: [UIImage] = []
-    var roadsterImageCache: UIImage?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +51,7 @@ class LibraryViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "universe.jpg")
+        
         self.view.insertSubview(imageView, at: 0)
         
         navigationBarView.titleLabel.text = "Deep Space"
@@ -73,6 +70,7 @@ class LibraryViewController: UIViewController {
         self.contentCollectionView.backgroundColor = UIColor.clear
         
         gradientLayerNavigationBar = UIView(frame: navigationBarView.menuCollectionView.frame)
+        gradientLayerNavigationBar.frame.size.width = self.view.bounds.width
         gradientLayerNavigationBar.frame.origin.y = navigationBarView.getContentHeight()
         gradientLayerNavigationBar.backgroundColor = UIColor.clear
         
@@ -104,15 +102,17 @@ class LibraryViewController: UIViewController {
         contentCollectionView.frame.origin.y = navBarHeight
         contentCollectionView.frame.size.height = self.view.frame.height - navBarHeight
         
+        var loadingCenter = view.center
+        loadingCenter.y -= navBarHeight - 32
+        
         activityIndicator.positionate(inOriginY: navBarHeight,
-                                      inCenter: contentCollectionView.center,
+                                      inCenter: loadingCenter,
                                       withSize: contentCollectionView.frame.size)
         
         self.navigationBarView.blurredView(withFrame: CGRect(x: 0,
                                                              y: 0,
                                                              width: self.navigationBarView.bounds.width,
                                                              height: navBarHeight),
-                                           opacity: 0.5,
                                            backgroundColor: UIColor(red: 0,
                                                                     green: 0,
                                                                     blue: 0,
@@ -396,6 +396,12 @@ extension LibraryViewController : UICollectionViewDataSource, UICollectionViewDe
                 sender = exoplanets[indexPath.item]
             case 3:
                 sender = minorPlanets[indexPath.item]
+            case 4:
+                sender = dragons[indexPath.item]
+            case 5:
+                sender = rockets[indexPath.item]
+            case 6:
+                sender = roadster
             default:
                 break
             }

@@ -60,57 +60,21 @@ extension LibraryViewController {
     func dragonCell(cell: PlanetCollectionViewCell?,
                     indexPath: IndexPath) {
         cell?.planetNameLabel.text = dragons[indexPath.item].name
-        if dragonImagesCache.isEmpty {
-            GET.request(dragons[indexPath.item].flickr_images.first ?? "") { data in
-                DispatchQueue.main.async {
-                    let image = UIImage(data: data)
-                    if let image = image {
-                        self.dragonImagesCache.append(image)
-                    }
-                    cell?.planetImage.image = image
-                    cell?.planetImage.contentMode = .scaleAspectFill
-                }
-            }
-        } else if indexPath.item < dragonImagesCache.count {
-            cell?.planetImage.image = dragonImagesCache[indexPath.item]
-            cell?.planetImage.contentMode = .scaleAspectFill
-        }
+        cell?.planetImage.image = dragons[indexPath.item].image
+        cell?.planetImage.contentMode = .scaleAspectFill
     }
     
     func rocketCell(cell: PlanetCollectionViewCell?,
                     indexPath: IndexPath) {
-        cell?.planetNameLabel.text = "\(rockets[indexPath.item].id)"
-        if rocketsImagesCache.isEmpty {
-            GET.request(rockets[indexPath.item].flickr_images.first ?? "") { data in
-                DispatchQueue.main.async {
-                    let image = UIImage(data: data)
-                    if let image = image {
-                        self.rocketsImagesCache.append(image)
-                    }
-                    cell?.planetImage.image = image
-                    cell?.planetImage.contentMode = .scaleAspectFill
-                }
-            }
-        } else if indexPath.item < rocketsImagesCache.count {
-            cell?.planetImage.image = rocketsImagesCache[indexPath.item]
-            cell?.planetImage.contentMode = .scaleAspectFill
-        }
+        cell?.planetNameLabel.text = "\(rockets[indexPath.item].id!)"
+        cell?.planetImage.image = rockets[indexPath.item].image
+        cell?.planetImage.contentMode = .scaleAspectFill
     }
     
     func roadsterCell(cell: PlanetCollectionViewCell?) {
         cell?.planetNameLabel.text = roadster?.name
-        if self.roadsterImageCache == nil {
-            GET.request(roadster?.flickr_images.first ?? "") { data in
-                DispatchQueue.main.async {
-                    self.roadsterImageCache = UIImage(data: data)
-                    cell?.planetImage.image = self.roadsterImageCache
-                    cell?.planetImage.contentMode = .scaleAspectFill
-                }
-            }
-        } else {
-            cell?.planetImage.image = roadsterImageCache
-            cell?.planetImage.contentMode = .scaleAspectFill
-        }
+        cell?.planetImage.image = roadster?.image
+        cell?.planetImage.contentMode = .scaleAspectFill
     }
     
     func buildCollectionViewContent(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,18 +84,13 @@ extension LibraryViewController {
         cell?.layer.cornerRadius = 13
         cell?.planetImage.backgroundColor = UIColor.black
         
-        cell?.contentView.layer.cornerRadius = 13
-        cell?.contentView.layer.borderWidth = 1.0
-        cell?.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell?.contentView.layer.masksToBounds = true
-        
-        cell?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        cell?.layer.shadowOffset = CGSize(width: 0, height: 5)
-        cell?.layer.shadowRadius = 0
-        cell?.layer.shadowOpacity = 0.5
-        cell?.layer.masksToBounds = false
-        cell?.layer.shadowPath = UIBezierPath(roundedRect: cell!.bounds, cornerRadius: cell!.contentView.layer.cornerRadius).cgPath
-        cell?.layer.backgroundColor = UIColor.clear.cgColor
+        let shadowOffset = CGSize(width: 0, height: 5)
+        cell?.applyShadow(radius: 13,
+                          borderWidth: 1,
+                          offset: shadowOffset,
+                          blur: 0,
+                          alpha: 1,
+                          layerFrame: cell!.bounds)
         
         switch selectedMenuOption {
         case 0:

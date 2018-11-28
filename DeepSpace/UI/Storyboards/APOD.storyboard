@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ycu-Bc-LCX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="OjZ-oe-wDM">
+            <objects>
+                <viewController id="ueQ-F4-f1v" customClass="APODViewController" customModule="DeepSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pqo-MX-g8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-ao-nu5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRW-9L-e4R">
+                                <rect key="frame" x="0.0" y="454" width="375" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChN-be-Aff">
+                                        <rect key="frame" x="187.5" y="8" width="0.0" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Q79-Gu-T2F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="ChN-be-Aff" firstAttribute="centerX" secondItem="TRW-9L-e4R" secondAttribute="centerX" id="3ED-qC-o2H"/>
+                                    <constraint firstItem="ChN-be-Aff" firstAttribute="top" secondItem="TRW-9L-e4R" secondAttribute="top" constant="8" id="3fe-se-BsO"/>
+                                    <constraint firstAttribute="bottom" secondItem="ChN-be-Aff" secondAttribute="bottom" constant="8" id="bqE-hc-6RG"/>
+                                    <constraint firstAttribute="height" constant="36" id="nWV-dw-ulS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Picture Of the Day (APOD)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-IX-vi3">
+                                <rect key="frame" x="16" y="32" width="247.5" height="129"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gou-IX-vi3" secondAttribute="trailing" constant="80" id="1Ly-p9-gcS"/>
+                            <constraint firstAttribute="bottom" secondItem="4nD-ao-nu5" secondAttribute="bottom" id="5h5-V2-b8V"/>
+                            <constraint firstItem="TRW-9L-e4R" firstAttribute="leading" secondItem="dtP-NB-mbF" secondAttribute="leading" id="8Si-Id-fvo"/>
+                            <constraint firstItem="Gou-IX-vi3" firstAttribute="top" secondItem="4nD-ao-nu5" secondAttribute="top" constant="32" id="9Um-LJ-1IH"/>
+                            <constraint firstItem="4nD-ao-nu5" firstAttribute="leading" secondItem="dtP-NB-mbF" secondAttribute="leading" id="UjI-Va-Dmo"/>
+                            <constraint firstItem="Gou-IX-vi3" firstAttribute="leading" secondItem="4nD-ao-nu5" secondAttribute="leading" constant="16" id="VaV-5w-r3I"/>
+                            <constraint firstItem="TRW-9L-e4R" firstAttribute="trailing" secondItem="dtP-NB-mbF" secondAttribute="trailing" id="c9O-Id-6e0"/>
+                            <constraint firstItem="4nD-ao-nu5" firstAttribute="top" secondItem="dtP-NB-mbF" secondAttribute="top" constant="-20" id="dim-yV-SUK"/>
+                            <constraint firstItem="4nD-ao-nu5" firstAttribute="trailing" secondItem="dtP-NB-mbF" secondAttribute="trailing" id="eWl-F3-mmj"/>
+                            <constraint firstItem="TRW-9L-e4R" firstAttribute="bottom" secondItem="4nD-ao-nu5" secondAttribute="bottom" constant="-177" id="zh7-AI-xD3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dtP-NB-mbF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3NB-ib-ShG"/>
+                    <connections>
+                        <outlet property="apodImageView" destination="4nD-ao-nu5" id="5ya-ui-gdY"/>
+                        <outlet property="apodTitle" destination="ChN-be-Aff" id="zOq-Mz-V6e"/>
+                        <outlet property="labelBackgroundView" destination="TRW-9L-e4R" id="ymb-ZG-Mvu"/>
+                        <segue destination="2iM-N0-b5E" kind="show" identifier="details" id="twb-BN-Uvb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5lc-HU-GaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.2" y="-74.212893553223395"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="9ir-TF-Zmk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Details" id="2iM-N0-b5E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqq-TO-JFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598.4000000000001" y="-75.562218890554732"/>
+        </scene>
+        <!--APOD-->
+        <scene sceneID="6Pq-da-g5h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ycu-Bc-LCX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="APOD" image="home-tab-icon" id="6QM-CA-gUK"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6k3-H1-MoS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ueQ-F4-f1v" kind="relationship" relationship="rootViewController" id="cLF-sx-qBd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJG-tU-MwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-74.212893553223395"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home-tab-icon" width="25" height="25"/>
+        <image name="picture" width="573" height="481"/>
+    </resources>
+</document>

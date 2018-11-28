@@ -45,4 +45,23 @@ struct SolarSystemPlanet : Codable {
         case updatedAt = "updated_at"
     }
     
+    public init() {
+        self.name = ""
+        self.createdAt = ""
+        self.density = 0
+        self.diameter = 0
+        self.distanceFromSun = ""
+        self.gravity = ""
+        self.id = 0
+        self.lengthOfDay = ""
+        self.mass = ""
+        self.meanTemperature = 0
+        self.numberOfMoons = 0
+        self.orbitalPeriod = ""
+        self.orbitalVelocity = ""
+        self.rotationPeriod = ""
+        self.updatedAt = ""
+        self.solarSystemBody = .moon
+    }
+    
 }

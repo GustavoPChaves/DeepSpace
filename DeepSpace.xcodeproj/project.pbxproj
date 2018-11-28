@@ -59,7 +59,15 @@
 		3CAE189B21ACC13E000ACE1F /* DragonsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */; };
 		3CAE189C21ACC13E000ACE1F /* RoadsterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */; };
 		3CAE189D21ACC13E000ACE1F /* SpaceXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE189921ACC13E000ACE1F /* SpaceXAPIManager.swift */; };
-		FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF158EE2199B9630035DF53 /* ViewController.swift */; };
+		3CAE18A021ADB77E000ACE1F /* APOD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE189F21ADB77E000ACE1F /* APOD.storyboard */; };
+		3CAE18A221ADB7A5000ACE1F /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18A121ADB7A5000ACE1F /* APODViewController.swift */; };
+		3CAE18A421ADB7B5000ACE1F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18A321ADB7B5000ACE1F /* SearchViewController.swift */; };
+		3CAE18A621ADB7C3000ACE1F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE18A521ADB7C3000ACE1F /* Search.storyboard */; };
+		3CAE18A821ADB7D8000ACE1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18A721ADB7D8000ACE1F /* HomeViewController.swift */; };
+		3CAE18AA21ADB811000ACE1F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CAE18A921ADB811000ACE1F /* Home.storyboard */; };
+		3CAE18AC21ADD113000ACE1F /* DragonsDTOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18AB21ADD113000ACE1F /* DragonsDTOExtension.swift */; };
+		3CAE18AE21ADD332000ACE1F /* RocketsDTOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18AD21ADD332000ACE1F /* RocketsDTOExtension.swift */; };
+		3CAE18B021ADD358000ACE1F /* RoadsterDTOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE18AF21ADD358000ACE1F /* RoadsterDTOExtension.swift */; };
 		FCF158F22199B9630035DF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F02199B9630035DF53 /* Main.storyboard */; };
 		FCF158F52199B9630035DF53 /* DeepSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF158F32199B9630035DF53 /* DeepSpace.xcdatamodeld */; };
 		FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF158F62199B9670035DF53 /* Assets.xcassets */; };
@@ -138,8 +146,16 @@
 		3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonsDTO.swift; sourceTree = "<group>"; };
 		3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadsterDTO.swift; sourceTree = "<group>"; };
 		3CAE189921ACC13E000ACE1F /* SpaceXAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceXAPIManager.swift; sourceTree = "<group>"; };
+		3CAE189F21ADB77E000ACE1F /* APOD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APOD.storyboard; sourceTree = "<group>"; };
+		3CAE18A121ADB7A5000ACE1F /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
+		3CAE18A321ADB7B5000ACE1F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3CAE18A521ADB7C3000ACE1F /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		3CAE18A721ADB7D8000ACE1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3CAE18A921ADB811000ACE1F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3CAE18AB21ADD113000ACE1F /* DragonsDTOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonsDTOExtension.swift; sourceTree = "<group>"; };
+		3CAE18AD21ADD332000ACE1F /* RocketsDTOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsDTOExtension.swift; sourceTree = "<group>"; };
+		3CAE18AF21ADD358000ACE1F /* RoadsterDTOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterDTOExtension.swift; sourceTree = "<group>"; };
 		FCF158E92199B9630035DF53 /* DeepSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCF158EE2199B9630035DF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF158F12199B9630035DF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCF158F42199B9630035DF53 /* DeepSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeepSpace.xcdatamodel; sourceTree = "<group>"; };
 		FCF158F62199B9670035DF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -233,6 +249,9 @@
 				FCF158F82199B9670035DF53 /* LaunchScreen.storyboard */,
 				3C2DFD2321A2F0E3009D54C1 /* Details.storyboard */,
 				3C17C88D21A5C8F100619919 /* Library.storyboard */,
+				3CAE189F21ADB77E000ACE1F /* APOD.storyboard */,
+				3CAE18A521ADB7C3000ACE1F /* Search.storyboard */,
+				3CAE18A921ADB811000ACE1F /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -281,6 +300,9 @@
 				3CAE188B21AB80E8000ACE1F /* ExoplanetExtension.swift */,
 				3CAE188F21AC1969000ACE1F /* ExoplanetHostStarExtension.swift */,
 				3CAE188D21AB9699000ACE1F /* MinorPlanetExtension.swift */,
+				3CAE18AB21ADD113000ACE1F /* DragonsDTOExtension.swift */,
+				3CAE18AD21ADD332000ACE1F /* RocketsDTOExtension.swift */,
+				3CAE18AF21ADD358000ACE1F /* RoadsterDTOExtension.swift */,
 			);
 			path = "Model To Array Implement extension";
 			sourceTree = "<group>";
@@ -353,9 +375,6 @@
 			children = (
 				3C17C88721A4525F00619919 /* Storyboards */,
 				3CAE189321AC48D8000ACE1F /* Custom Views */,
-				3C17C88121A450E100619919 /* Table View Cell */,
-				3C17C87821A433B700619919 /* Collection View Cell */,
-				3C17C88F21A5CA8E00619919 /* Custom Navigation View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -371,9 +390,11 @@
 		3C1E1342219C8A020048B34A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FCF158EE2199B9630035DF53 /* ViewController.swift */,
 				3C17C89421A5CF8500619919 /* LibraryViewController.swift */,
 				3C17C8B021A8244D00619919 /* DetailsViewController.swift */,
+				3CAE18A121ADB7A5000ACE1F /* APODViewController.swift */,
+				3CAE18A321ADB7B5000ACE1F /* SearchViewController.swift */,
+				3CAE18A721ADB7D8000ACE1F /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -455,6 +476,9 @@
 			isa = PBXGroup;
 			children = (
 				3CAE189121AC3D83000ACE1F /* CustomActivityIndicatorView.swift */,
+				3C17C88F21A5CA8E00619919 /* Custom Navigation View */,
+				3C17C87821A433B700619919 /* Collection View Cell */,
+				3C17C88121A450E100619919 /* Table View Cell */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -462,8 +486,8 @@
 		3CAE189521ACC13E000ACE1F /* Space X */ = {
 			isa = PBXGroup;
 			children = (
-				3CAE189621ACC13E000ACE1F /* RocketsDTO.swift */,
 				3CAE189721ACC13E000ACE1F /* DragonsDTO.swift */,
+				3CAE189621ACC13E000ACE1F /* RocketsDTO.swift */,
 				3CAE189821ACC13E000ACE1F /* RoadsterDTO.swift */,
 			);
 			path = "Space X";
@@ -639,11 +663,14 @@
 				3C17C89121A5CB7300619919 /* HomeScreenNavigationBarView.xib in Resources */,
 				FCF158F72199B9670035DF53 /* Assets.xcassets in Resources */,
 				3C2DFD2421A2F0E3009D54C1 /* Details.storyboard in Resources */,
+				3CAE18A021ADB77E000ACE1F /* APOD.storyboard in Resources */,
+				3CAE18AA21ADB811000ACE1F /* Home.storyboard in Resources */,
 				3C17C89A21A5D3AC00619919 /* MenuOptionsCollectionViewCell.xib in Resources */,
 				3C17C88E21A5C8F100619919 /* Library.storyboard in Resources */,
 				3C88615821AAFEB400E69031 /* ImageHeaderTableViewCell.xib in Resources */,
 				FCF158F22199B9630035DF53 /* Main.storyboard in Resources */,
 				3C17C88621A4512100619919 /* PlanetPropertyDetailsTableViewCell.xib in Resources */,
+				3CAE18A621ADB7C3000ACE1F /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,14 +703,18 @@
 				3C1E1333219AFC9F0048B34A /* APIManager.swift in Sources */,
 				3C17C8A621A70CAA00619919 /* StringExtension.swift in Sources */,
 				3C1E133D219C49C00048B34A /* APOD.swift in Sources */,
+				3CAE18A421ADB7B5000ACE1F /* SearchViewController.swift in Sources */,
 				3C1E1330219AFC9F0048B34A /* NasaMedia.swift in Sources */,
 				3CAE189B21ACC13E000ACE1F /* DragonsDTO.swift in Sources */,
+				3CAE18A821ADB7D8000ACE1F /* HomeViewController.swift in Sources */,
 				3C88615A21AB4E5A00E69031 /* UIApplicationExtension.swift in Sources */,
 				3C1E1351219FC5830048B34A /* SolarSystemBodies.swift in Sources */,
 				3C1E1332219AFC9F0048B34A /* NasaAPOD.swift in Sources */,
+				3CAE18B021ADD358000ACE1F /* RoadsterDTOExtension.swift in Sources */,
 				3C17C89C21A6D28000619919 /* UINavigationBarExtension.swift in Sources */,
 				3C1E1334219AFC9F0048B34A /* AppDelegate.swift in Sources */,
 				3CAE189221AC3D83000ACE1F /* CustomActivityIndicatorView.swift in Sources */,
+				3CAE18A221ADB7A5000ACE1F /* APODViewController.swift in Sources */,
 				3C17C8B121A8244D00619919 /* DetailsViewController.swift in Sources */,
 				3C1E133A219C42830048B34A /* PlanetStatus.swift in Sources */,
 				3C17C89321A5CBF700619919 /* HomeScreenNavigationBarView.swift in Sources */,
@@ -691,11 +722,12 @@
 				3CAE188C21AB80E8000ACE1F /* ExoplanetExtension.swift in Sources */,
 				3C1E1331219AFC9F0048B34A /* NasaTechport.swift in Sources */,
 				3C17C88021A44A7400619919 /* SolarSystemPlanetExtension.swift in Sources */,
+				3CAE18AC21ADD113000ACE1F /* DragonsDTOExtension.swift in Sources */,
 				3CAE188E21AB9699000ACE1F /* MinorPlanetExtension.swift in Sources */,
 				3C1E132F219AFC9F0048B34A /* GET.swift in Sources */,
 				3C17C8A821A741E700619919 /* ConvertibleToArray.swift in Sources */,
 				3C1E134A219FC3390048B34A /* SolarSystemPlanet.swift in Sources */,
-				FCF158EF2199B9630035DF53 /* ViewController.swift in Sources */,
+				3CAE18AE21ADD332000ACE1F /* RocketsDTOExtension.swift in Sources */,
 				3C1E1336219B011E0048B34A /* NasaExoplanet.swift in Sources */,
 				3C17C89521A5CF8500619919 /* LibraryViewController.swift in Sources */,
 				3C17C8AA21A74B7400619919 /* APODExtension.swift in Sources */,
