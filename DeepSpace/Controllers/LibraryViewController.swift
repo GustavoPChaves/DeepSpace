@@ -23,7 +23,7 @@ class LibraryViewController: UIViewController {
     
     var selectedMenuOption = 0
     
-    var menuOptions = ["Solar System", "APOD", "Exoplanets", "Minor Planets", "Dragons", "Rockets", "Roadster"]
+    var menuOptions = ["Solar System", "Last 31 APODs", "Exoplanets", "Minor Planets", "Dragons", "Rockets", "Roadster"]
     let allPlanets : [SolarSystemBodies] = [.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto]
     var apods: [APOD] = []
     var exoplanets: [Exoplanet] = []

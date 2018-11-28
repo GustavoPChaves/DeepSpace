@@ -223,6 +223,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             
             var frame = cell!.headerImageView.frame
             frame.size.height = cell!.bounds.height
+            frame.size.width = cell!.bounds.width - 32
 
             let offset = CGSize(width: 0, height: 5)
             cell?.applyShadow(offset: offset, layerFrame: frame)
