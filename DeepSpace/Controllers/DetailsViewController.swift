@@ -221,9 +221,10 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
             cell?.headerImageView.layer.cornerRadius = 13
             cell?.backgroundColor = UIColor.clear
             
-            var frame = cell!.headerImageView.frame
-            frame.size.height = cell!.bounds.height
-            frame.size.width = cell!.bounds.width - 32
+            let height = cell!.bounds.height
+            let width = cell!.bounds.width - 32
+            let size = CGSize(width: width, height: height)
+            let frame = CGRect(origin: cell!.headerImageView.frame.origin, size: size)
 
             let offset = CGSize(width: 0, height: 5)
             cell?.applyShadow(offset: offset, layerFrame: frame)
